@@ -90,30 +90,28 @@ export default async function PluginPage({
                   <span className="px-3 py-1 rounded-full bg-white/10 text-sm font-medium border border-white/10">v{plugin.version}</span>
                   <span className="text-muted-foreground text-sm">Updated {plugin.lastUpdated}</span>
                 </div>
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href={plugin.purchaseLinks.superhive}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-accent px-5 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90 sm:w-auto sm:min-w-44"
-                    >
-                      <SuperhiveIcon />
-                      Superhive
-                    </a>
-                    <a
-                      href={plugin.purchaseLinks.gumroad}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-accent px-5 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90 sm:w-auto sm:min-w-44"
-                    >
-                      <GumroadIcon />
-                      Gumroad
-                    </a>
-                  </div>
-                  <Link href="/docs" className="w-full sm:w-fit">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={plugin.purchaseLinks.superhive}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-accent px-5 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90 sm:w-auto sm:min-w-44"
+                  >
+                    <SuperhiveIcon />
+                    Superhive
+                  </a>
+                  <a
+                    href={plugin.purchaseLinks.gumroad}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-accent px-5 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90 sm:w-auto sm:min-w-44"
+                  >
+                    <GumroadIcon />
+                    Gumroad
+                  </a>
+                  <Link href="/docs" className="w-full sm:w-auto">
                     <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                      View Documentation
+                      Documentation
                     </Button>
                   </Link>
                 </div>
