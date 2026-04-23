@@ -2,9 +2,12 @@ import { plugins, getPluginBySlug } from "@/data/plugins";
 import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Download, Play } from "lucide-react";
+import { CheckCircle2, Play } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
+
+const assetBasePath = "/website-smartblender";
 
 export function generateStaticParams() {
   return plugins.map((plugin) => ({
@@ -49,10 +52,40 @@ export default async function PluginPage({
                   <span className="text-muted-foreground text-sm">Updated {plugin.lastUpdated}</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="px-8">
-                    <Download className="mr-2 h-5 w-5" />
-                    Buy for {plugin.price}
-                  </Button>
+                  <a
+                    href={plugin.purchaseLinks.superhive}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 items-center justify-center gap-3 rounded-md bg-accent px-6 text-lg font-medium text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90"
+                  >
+                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded bg-white">
+                      <Image
+                        src={`${assetBasePath}/superhive_icon.svg`}
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="h-5 w-5"
+                      />
+                    </span>
+                    Buy on Superhive
+                  </a>
+                  <a
+                    href={plugin.purchaseLinks.gumroad}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 items-center justify-center gap-3 rounded-md border border-white/10 bg-transparent px-6 text-lg font-medium text-white transition-colors hover:bg-white/5"
+                  >
+                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded bg-white">
+                      <Image
+                        src={`${assetBasePath}/gumroad_icon.svg`}
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="h-5 w-5"
+                      />
+                    </span>
+                    Buy on Gumroad
+                  </a>
                   <Link href="/docs">
                     <Button variant="outline" size="lg">View Documentation</Button>
                   </Link>

@@ -16,6 +16,10 @@ export interface PluginData {
   features: PluginFeature[];
   heroVideo?: string;
   heroImage?: string;
+  purchaseLinks: {
+    superhive: string;
+    gumroad: string;
+  };
   gallery: string[];
 }
 
@@ -31,6 +35,10 @@ export const plugins: PluginData[] = [
     lastUpdated: 'October 2026',
     heroImage: '/plugins/smart-pie/hero.jpg',
     heroVideo: '', // Optional video
+    purchaseLinks: {
+      superhive: 'https://superhivemarket.com/products/smart-pie-menus',
+      gumroad: 'https://gumroad.com/'
+    },
     gallery: [
       '/plugins/smart-pie/gallery-1.jpg',
       '/plugins/smart-pie/gallery-2.jpg'
