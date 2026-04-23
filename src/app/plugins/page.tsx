@@ -3,7 +3,6 @@ import { plugins } from "@/data/plugins";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import Image from "next/image";
 import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 const assetBasePath = "/website-smartblender";
@@ -31,11 +30,10 @@ export default function PluginsPage() {
             <Card className="flex flex-col h-full hoverEffect={true}">
               <div className="aspect-[4/3] bg-white/5 border-b border-white/10 relative overflow-hidden flex items-center justify-center">
                 {plugin.previewImage ? (
-                  <Image
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
                     src={`${assetBasePath}${plugin.previewImage}`}
                     alt={`${plugin.name} preview`}
-                    width={1724}
-                    height={1160}
                     className="h-full w-full object-cover"
                   />
                 ) : (
