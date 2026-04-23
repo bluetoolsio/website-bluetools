@@ -5,11 +5,13 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
+const assetBasePath = "/website-smartblender";
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-28 pb-14 md:pt-36 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-accent/20 via-background to-background" />
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/30 rounded-full blur-[120px] opacity-50" />
@@ -45,8 +47,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Plugin / Showcase */}
+      <section className="py-16 md:py-20 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <FadeIn direction="left">
+              <div>
+                <span className="text-accent font-semibold tracking-wider uppercase text-sm">Featured</span>
+                <h2 className="text-4xl font-bold mt-2 mb-6">
+                  <SmartPieLabel iconBoxClassName="h-12 w-12" iconClassName="h-6 w-6" />
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  The ultimate pie menu enhancement. Radically improve your workflow with menus that predict what you need before you need it.
+                </p>
+                <Link href="/plugins/smart-pie">
+                  <Button>View Smart Pie</Button>
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.2}>
+              <div className="relative aspect-video rounded-lg overflow-hidden bg-white/5 border border-white/10 shadow-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${assetBasePath}/plugins/smart-pie/preview.png`}
+                  alt="Smart Pie preview"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="py-24 bg-background">
+      <section className="py-20 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-16">
@@ -86,39 +120,6 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-3">Highly Customizable</h3>
                 <p className="text-muted-foreground">Tailor every aspect of the plugins to match your exact pipeline and muscle memory.</p>
               </Card>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Plugin / Showcase */}
-      <section className="py-24 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="left">
-              <div>
-                <span className="text-accent font-semibold tracking-wider uppercase text-sm">Featured</span>
-                <h2 className="text-4xl font-bold mt-2 mb-6">
-                  <SmartPieLabel iconBoxClassName="h-12 w-12" iconClassName="h-6 w-6" />
-                </h2>
-                <p className="text-xl text-muted-foreground mb-8">
-                  The ultimate pie menu enhancement. Radically improve your workflow with menus that predict what you need before you need it.
-                </p>
-                <Link href="/plugins/smart-pie">
-                  <Button>View Smart Pie</Button>
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl">
-                {/* Placeholder for video/gif demo */}
-                <div className="text-muted-foreground flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4">
-                    <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
-                  </div>
-                  <p>Interactive Demo</p>
-                </div>
-              </div>
             </FadeIn>
           </div>
         </div>
