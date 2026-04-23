@@ -8,7 +8,7 @@ import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 function SuperhiveIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 1920 1080" className="h-7 w-7">
+    <svg aria-hidden="true" viewBox="0 0 1920 1080" className="h-8 w-8">
       <path
         fill="currentColor"
         d="M987.49,526.61c68.99,74.6,113.93,206.77,41.23,294.08-21.71,26.08-65.99,51.78-100.31,53.65-43.66,2.38-3.06-33.55,4.85-44.48,105.65-146.05-136.97-380.25-275.28-268.6-11.27,9.1-18.62,31.4-36.18,18.76-11.87-8.54.7-43.8,5.4-56.22,60.95-161.18,269.09-95.82,360.3,2.82Z"
