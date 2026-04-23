@@ -8,7 +8,7 @@ import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 function SuperhiveIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 1920 1080" className="h-5 w-5">
+    <svg aria-hidden="true" viewBox="0 0 1920 1080" className="h-7 w-7">
       <path
         fill="currentColor"
         d="M987.49,526.61c68.99,74.6,113.93,206.77,41.23,294.08-21.71,26.08-65.99,51.78-100.31,53.65-43.66,2.38-3.06-33.55,4.85-44.48,105.65-146.05-136.97-380.25-275.28-268.6-11.27,9.1-18.62,31.4-36.18,18.76-11.87-8.54.7-43.8,5.4-56.22,60.95-161.18,269.09-95.82,360.3,2.82Z"
@@ -37,7 +37,7 @@ function GumroadIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 512 512" className="h-5 w-5">
       <path
-        fill="#ff90e8"
+        fill="currentColor"
         d="M256,37c29.58,0,58.26,5.79,85.23,17.2,26.07,11.03,49.5,26.82,69.62,46.95s35.92,43.55,46.95,69.62c11.41,26.98,17.2,55.66,17.2,85.23s-5.79,58.26-17.2,85.23c-11.03,26.07-26.82,49.5-46.95,69.62-20.12,20.12-43.55,35.92-69.62,46.95-26.98,11.41-55.66,17.2-85.23,17.2-29.58,0-58.26-5.79-85.23-17.2-26.07-11.03-49.5-26.82-69.62-46.95-20.12-20.12-35.92-43.55-46.95-69.62-11.41-26.98-17.2-55.66-17.2-85.23s5.79-58.26,17.2-85.23c11.03-26.07,26.82-49.5,46.95-69.62s43.55-35.92,69.62-46.95c26.98-11.41,55.66-17.2,85.23-17.2M256,6C117.93,6,6,117.93,6,256s111.93,250,250,250h0c138.07,0,250-111.93,250-250S394.07,6,256,6h0Z"
       />
       <path
@@ -105,7 +105,7 @@ export default async function PluginPage({
                       href={plugin.purchaseLinks.gumroad}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md border border-white/10 bg-white/10 px-5 text-base font-semibold text-white transition-colors hover:bg-white/15 sm:w-auto sm:min-w-44"
+                      className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-accent px-5 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90 sm:w-auto sm:min-w-44"
                     >
                       <GumroadIcon />
                       Gumroad
