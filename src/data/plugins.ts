@@ -16,6 +16,7 @@ export interface PluginData {
   features: PluginFeature[];
   heroVideo?: string;
   heroImage?: string;
+  previewImage?: string;
   purchaseLinks: {
     superhive: string;
     gumroad: string;
@@ -34,6 +35,7 @@ export const plugins: PluginData[] = [
     version: '1.2.0',
     lastUpdated: 'October 2026',
     heroImage: '/plugins/smart-pie/hero.jpg',
+    previewImage: '/plugins/smart-pie/preview.png',
     heroVideo: '', // Optional video
     purchaseLinks: {
       superhive: 'https://superhivemarket.com/products/smart-pie-menus',

@@ -3,7 +3,10 @@ import { plugins } from "@/data/plugins";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
+
+const assetBasePath = "/website-smartblender";
 
 export const metadata = {
   title: "Plugins | Smartblender.io",
@@ -26,10 +29,18 @@ export default function PluginsPage() {
         {plugins.map((plugin, index) => (
           <FadeIn key={plugin.id} direction="up" delay={index * 0.1}>
             <Card className="flex flex-col h-full hoverEffect={true}">
-              {/* Image Placeholder */}
               <div className="aspect-[4/3] bg-white/5 border-b border-white/10 relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
-                <span className="text-muted-foreground z-0">{plugin.name} Preview</span>
+                {plugin.previewImage ? (
+                  <Image
+                    src={`${assetBasePath}${plugin.previewImage}`}
+                    alt={`${plugin.name} preview`}
+                    width={1724}
+                    height={1160}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <span className="text-muted-foreground">{plugin.name} Preview</span>
+                )}
               </div>
               
               <div className="p-6 flex flex-col flex-grow">
