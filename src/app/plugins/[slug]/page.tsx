@@ -4,6 +4,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Download, Play } from "lucide-react";
 import Link from "next/link";
+import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 export function generateStaticParams() {
   return plugins.map((plugin) => ({
@@ -33,7 +34,13 @@ export default async function PluginPage({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right">
               <div>
-                <h1 className="text-5xl font-bold mb-4">{plugin.name}</h1>
+                <h1 className="text-5xl font-bold mb-4">
+                  {plugin.slug === "smart-pie" ? (
+                    <SmartPieLabel iconBoxClassName="h-14 w-14" iconClassName="h-7 w-7" />
+                  ) : (
+                    plugin.name
+                  )}
+                </h1>
                 <p className="text-2xl text-muted-foreground mb-8">
                   {plugin.tagline}
                 </p>

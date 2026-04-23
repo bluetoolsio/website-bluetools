@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { ArrowRight, Zap, Layers, Cpu } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
+import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 export default function Home() {
   return (
@@ -97,7 +98,9 @@ export default function Home() {
             <FadeIn direction="left">
               <div>
                 <span className="text-accent font-semibold tracking-wider uppercase text-sm">Featured</span>
-                <h2 className="text-4xl font-bold mt-2 mb-6">Smart Pie</h2>
+                <h2 className="text-4xl font-bold mt-2 mb-6">
+                  <SmartPieLabel iconBoxClassName="h-12 w-12" iconClassName="h-6 w-6" />
+                </h2>
                 <p className="text-xl text-muted-foreground mb-8">
                   The ultimate pie menu enhancement. Radically improve your workflow with menus that predict what you need before you need it.
                 </p>

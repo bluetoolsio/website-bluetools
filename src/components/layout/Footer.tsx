@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 export default function Footer() {
   return (
@@ -19,7 +20,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/plugins/smart-pie" className="text-sm text-muted-foreground hover:text-white transition-colors">
-                  Smart Pie
+                  <SmartPieLabel
+                    className="gap-2"
+                    iconBoxClassName="h-6 w-6 rounded-md"
+                    iconClassName="h-3.5 w-3.5"
+                  />
                 </Link>
               </li>
               <li>

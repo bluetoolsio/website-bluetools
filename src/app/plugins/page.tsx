@@ -3,7 +3,7 @@ import { plugins } from "@/data/plugins";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 export const metadata = {
   title: "Plugins | Smartblender.io",
@@ -17,7 +17,7 @@ export default function PluginsPage() {
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Plugins</h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
-            Professional grade tools designed to streamline your workflow and expand what's possible in Blender.
+            Professional grade tools designed to streamline your workflow and expand what&apos;s possible in Blender.
           </p>
         </div>
       </FadeIn>
@@ -34,7 +34,16 @@ export default function PluginsPage() {
               
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
-                  <h2 className="text-2xl font-bold">{plugin.name}</h2>
+                  <h2 className="text-2xl font-bold">
+                    {plugin.slug === "smart-pie" ? (
+                      <SmartPieLabel
+                        iconBoxClassName="h-9 w-9"
+                        iconClassName="h-5 w-5"
+                      />
+                    ) : (
+                      plugin.name
+                    )}
+                  </h2>
                   <span className="text-accent font-semibold">{plugin.price}</span>
                 </div>
                 

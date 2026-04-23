@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/animations/FadeIn";
+import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
 
 export const metadata = {
   title: "Documentation | Smartblender.io",
@@ -22,7 +23,14 @@ export default function DocsPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">Smart Pie</h3>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                <SmartPieLabel
+                  className="gap-2"
+                  iconBoxClassName="h-6 w-6 rounded-md"
+                  iconClassName="h-3.5 w-3.5"
+                  textClassName="normal-case"
+                />
+              </h3>
               <ul className="space-y-2">
                 <li><a href="#" className="text-muted-foreground hover:text-white transition-colors block border-l-2 border-transparent pl-3 -ml-[2px]">Configuration</a></li>
                 <li><a href="#" className="text-muted-foreground hover:text-white transition-colors block border-l-2 border-transparent pl-3 -ml-[2px]">Adding Custom Tools</a></li>
