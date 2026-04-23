@@ -29,8 +29,8 @@ export const plugins: PluginData[] = [
     id: '1',
     slug: 'smart-pie',
     name: 'Smart Pie',
-    tagline: 'The ultimate pie menu enhancement for Blender',
-    description: 'Smart Pie radically improves your workflow in Blender by introducing context-aware pie menus that adapt to your current mode, selection, and tools. Work faster, smarter, and with less friction.',
+    tagline: 'Context-aware pie menus, shortcuts, assets, and scripts for Blender',
+    description: 'Smart Pie lets you build your own Blender pie menus around the way you work. Create editor- and mode-aware profiles, fill slots with operators, shortcuts, scripts, assets, macros, lists, or nested pies, and keep your most-used actions within one fast gesture.',
     price: '$15.00',
     version: '1.2.0',
     lastUpdated: 'October 2026',
@@ -48,15 +48,15 @@ export const plugins: PluginData[] = [
     features: [
       {
         title: 'Context Aware',
-        description: 'Menus change automatically depending on whether you are in Object, Edit, or Sculpt mode.'
+        description: 'Menus can change by editor and mode, including Object, Edit, Sculpt, Geometry Nodes, UV, Sequencer, Graph Editor, and more.'
       },
       {
-        title: 'Customizable',
-        description: 'Easily add your own favorite tools, macros, and scripts directly into any pie slot.'
+        title: 'Slot-Based Workflows',
+        description: 'Each pie has eight directional slots that can run operators, shortcuts, scripts, assets, macros, lists, or nested pies.'
       },
       {
-        title: 'Fast Execution',
-        description: 'Built for speed with minimal overhead, ensuring menus pop up instantly.'
+        title: 'Portable Setup',
+        description: 'Export, import, back up, and restore your Smart Pie settings, scripts, icons, profiles, and keymaps.'
       }
     ]
   }

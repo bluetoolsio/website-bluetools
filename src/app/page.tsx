@@ -27,7 +27,7 @@ export default function Home() {
           
           <FadeIn direction="up" delay={0.1}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10">
-              Premium context-aware plugins for Blender professionals. Work faster, smarter, and with less friction.
+              We build Blender plugins that turn repeated clicks, menu hunting, and scattered shortcuts into focused tools that stay close to your workflow.
             </p>
           </FadeIn>
 
@@ -58,7 +58,7 @@ export default function Home() {
                   <SmartPieLabel iconBoxClassName="h-12 w-12" iconClassName="h-6 w-6" />
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
-                  The ultimate pie menu enhancement. Radically improve your workflow with menus that predict what you need before you need it.
+                  Build your own context-aware pie menus with operators, shortcuts, scripts, assets, macros, nested lists, and reusable profiles.
                 </p>
                 <Link href="/plugins/smart-pie">
                   <Button>View Smart Pie</Button>
@@ -84,9 +84,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Built for Professionals</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Plugins Built Around Real Blender Work</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Every plugin is designed from the ground up to eliminate repetitive tasks and keep you in the creative flow.
+                Our tools are designed for artists who want fewer UI detours, more control, and workflows that can be shaped around how they already use Blender.
               </p>
             </div>
           </FadeIn>
@@ -97,8 +97,8 @@ export default function Home() {
                 <div className="h-12 w-12 rounded-lg bg-accent/20 flex items-center justify-center mb-6">
                   <Zap className="h-6 w-6 text-accent" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Lightning Fast</h3>
-                <p className="text-muted-foreground">Optimized C++ and Python code ensures zero lag, even in heavy scenes with millions of polygons.</p>
+                <h3 className="text-xl font-semibold mb-3">Less Menu Diving</h3>
+                <p className="text-muted-foreground">Put the operators, shortcuts, scripts, and assets you actually use behind one direct action.</p>
               </Card>
             </FadeIn>
             
@@ -108,7 +108,7 @@ export default function Home() {
                   <Layers className="h-6 w-6 text-accent" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Context Aware</h3>
-                <p className="text-muted-foreground">Menus and tools adapt to your current selection, mode, and active tool dynamically.</p>
+                <p className="text-muted-foreground">Tools can change by editor and mode, so Object Mode, Sculpt, Geometry Nodes, UV, and other contexts get the right setup.</p>
               </Card>
             </FadeIn>
 
@@ -117,8 +117,8 @@ export default function Home() {
                 <div className="h-12 w-12 rounded-lg bg-accent/20 flex items-center justify-center mb-6">
                   <Cpu className="h-6 w-6 text-accent" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Highly Customizable</h3>
-                <p className="text-muted-foreground">Tailor every aspect of the plugins to match your exact pipeline and muscle memory.</p>
+                <h3 className="text-xl font-semibold mb-3">Built to Be Shaped</h3>
+                <p className="text-muted-foreground">Profiles, shortcuts, local icons, scripts, assets, and backups let each plugin fit into your own pipeline.</p>
               </Card>
             </FadeIn>
           </div>
@@ -130,9 +130,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-accent/10" />
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
           <FadeIn direction="up">
-            <h2 className="text-4xl font-bold mb-6">Ready to upgrade your workflow?</h2>
+            <h2 className="text-4xl font-bold mb-6">Make Blender feel closer to your hands.</h2>
             <p className="text-xl text-muted-foreground mb-10">
-              Join thousands of 3D artists who have already revolutionized how they use Blender.
+              Start with Smart Pie and build menus around the actions, assets, and scripts you reach for every day.
             </p>
             <Link href="/plugins">
               <Button size="lg" className="px-12">

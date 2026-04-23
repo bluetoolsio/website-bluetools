@@ -11,7 +11,7 @@ export default function Footer() {
               Smart<span className="text-accent">Blender</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Premium plugins and workflow enhancements for Blender professionals.
+              Blender workflow plugins for menus, shortcuts, scripts, assets, and custom daily tools.
             </p>
           </div>
           

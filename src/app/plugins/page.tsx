@@ -9,7 +9,7 @@ const assetBasePath = "/website-smartblender";
 
 export const metadata = {
   title: "Plugins | Smartblender.io",
-  description: "Browse our collection of premium Blender plugins.",
+  description: "Browse focused Blender workflow plugins from Smartblender.io.",
 };
 
 export default function PluginsPage() {
@@ -19,7 +19,7 @@ export default function PluginsPage() {
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Plugins</h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
-            Professional grade tools designed to streamline your workflow and expand what&apos;s possible in Blender.
+            Focused Blender add-ons built to reduce repetitive UI work, organize your most-used actions, and keep custom tools close to your hands.
           </p>
         </div>
       </FadeIn>
