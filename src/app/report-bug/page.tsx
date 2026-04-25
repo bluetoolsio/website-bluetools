@@ -59,7 +59,7 @@ export default function BugReportPage() {
                     required
                   >
                     <option value="" disabled selected>Select a plugin</option>
-                    <option value="smart-pie">Smart Pie</option>
+                    <option value="octopie">OctoPie</option>
                   </select>
                 </div>
                 

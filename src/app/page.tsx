@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { ArrowRight, Zap, Layers, Cpu } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
-import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
+import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 const assetBasePath = "/website-smartblender";
 
@@ -55,13 +55,13 @@ export default function Home() {
               <div>
                 <span className="text-accent font-semibold tracking-wider uppercase text-sm">Featured</span>
                 <h2 className="text-4xl font-bold mt-2 mb-6">
-                  <SmartPieLabel iconBoxClassName="h-12 w-12" iconClassName="h-6 w-6" />
+                  <OctoPieLabel iconBoxClassName="h-12 w-12" iconClassName="h-6 w-6" />
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
                   Build your own context-aware pie menus with operators, shortcuts, scripts, assets, macros, nested lists, and reusable profiles.
                 </p>
-                <Link href="/plugins/smart-pie">
-                  <Button>View Smart Pie</Button>
+                <Link href="/plugins/octopie">
+                  <Button>View OctoPie</Button>
                 </Link>
               </div>
             </FadeIn>
@@ -69,8 +69,8 @@ export default function Home() {
               <div className="relative aspect-video rounded-lg overflow-hidden bg-white/5 border border-white/10 shadow-2xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`${assetBasePath}/plugins/smart-pie/preview.png`}
-                  alt="Smart Pie preview"
+                  src={`${assetBasePath}/plugins/octopie/preview.png`}
+                  alt="OctoPie preview"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -132,7 +132,7 @@ export default function Home() {
           <FadeIn direction="up">
             <h2 className="text-4xl font-bold mb-6">Make Blender feel closer to your hands.</h2>
             <p className="text-xl text-muted-foreground mb-10">
-              Start with Smart Pie and build menus around the actions, assets, and scripts you reach for every day.
+              Start with OctoPie and build menus around the actions, assets, and scripts you reach for every day.
             </p>
             <Link href="/plugins">
               <Button size="lg" className="px-12">

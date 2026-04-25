@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Play } from "lucide-react";
 import Link from "next/link";
-import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
+import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 function SuperhiveIcon() {
   return (
@@ -77,8 +77,8 @@ export default async function PluginPage({
             <FadeIn direction="right">
               <div>
                 <h1 className="text-5xl font-bold mb-4">
-                  {plugin.slug === "smart-pie" ? (
-                    <SmartPieLabel iconBoxClassName="h-14 w-14" iconClassName="h-7 w-7" />
+                  {plugin.slug === "octopie" ? (
+                    <OctoPieLabel iconBoxClassName="h-14 w-14" iconClassName="h-7 w-7" />
                   ) : (
                     plugin.name
                   )}

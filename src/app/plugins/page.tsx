@@ -3,7 +3,7 @@ import { plugins } from "@/data/plugins";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
+import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 const assetBasePath = "/website-smartblender";
 
@@ -44,8 +44,8 @@ export default function PluginsPage() {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl font-bold">
-                    {plugin.slug === "smart-pie" ? (
-                      <SmartPieLabel
+                    {plugin.slug === "octopie" ? (
+                      <OctoPieLabel
                         iconBoxClassName="h-9 w-9"
                         iconClassName="h-5 w-5"
                       />

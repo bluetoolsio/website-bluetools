@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SmartPieLabel } from "@/components/brand/SmartPieLabel";
+import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 export default function Footer() {
   return (
@@ -19,8 +19,8 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Products</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/plugins/smart-pie" className="text-sm text-muted-foreground hover:text-white transition-colors">
-                  <SmartPieLabel
+                <Link href="/plugins/octopie" className="text-sm text-muted-foreground hover:text-white transition-colors">
+                  <OctoPieLabel
                     className="gap-2"
                     iconBoxClassName="h-6 w-6 rounded-md"
                     iconClassName="h-3.5 w-3.5"

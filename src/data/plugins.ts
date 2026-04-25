@@ -27,23 +27,23 @@ export interface PluginData {
 export const plugins: PluginData[] = [
   {
     id: '1',
-    slug: 'smart-pie',
-    name: 'Smart Pie',
+    slug: 'octopie',
+    name: 'OctoPie',
     tagline: 'Context-aware pie menus, shortcuts, assets, and scripts for Blender',
-    description: 'Smart Pie lets you build your own Blender pie menus around the way you work. Create editor- and mode-aware profiles, fill slots with operators, shortcuts, scripts, assets, macros, lists, or nested pies, and keep your most-used actions within one fast gesture.',
+    description: 'OctoPie lets you build your own Blender pie menus around the way you work. Create editor- and mode-aware profiles, fill slots with operators, shortcuts, scripts, assets, macros, lists, or nested pies, and keep your most-used actions within one fast gesture.',
     price: '$15.00',
     version: '1.2.0',
-    lastUpdated: 'October 2026',
-    heroImage: '/plugins/smart-pie/hero.jpg',
-    previewImage: '/plugins/smart-pie/preview.png',
+    lastUpdated: 'April 2026',
+    heroImage: '/plugins/octopie/hero.jpg',
+    previewImage: '/plugins/octopie/preview.png',
     heroVideo: '', // Optional video
     purchaseLinks: {
       superhive: 'https://superhivemarket.com/products/smart-pie-menus',
       gumroad: 'https://gumroad.com/'
     },
     gallery: [
-      '/plugins/smart-pie/gallery-1.jpg',
-      '/plugins/smart-pie/gallery-2.jpg'
+      '/plugins/octopie/gallery-1.jpg',
+      '/plugins/octopie/gallery-2.jpg'
     ],
     features: [
       {
@@ -56,7 +56,7 @@ export const plugins: PluginData[] = [
       },
       {
         title: 'Portable Setup',
-        description: 'Export, import, back up, and restore your Smart Pie settings, scripts, icons, profiles, and keymaps.'
+        description: 'Export, import, back up, and restore your OctoPie settings, scripts, icons, profiles, and keymaps.'
       }
     ]
   }
