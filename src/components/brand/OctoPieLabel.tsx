@@ -6,7 +6,7 @@ interface OctoPieIconProps {
   className?: string;
 }
 
-function OctoPieIcon({ className }: OctoPieIconProps) {
+export function OctoPieIcon({ className }: OctoPieIconProps) {
   return (
     <span
       aria-hidden="true"

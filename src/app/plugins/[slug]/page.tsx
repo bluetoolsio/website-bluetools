@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Play } from "lucide-react";
 import Link from "next/link";
-import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
+import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 function SuperhiveIcon() {
   return (
@@ -149,7 +149,13 @@ export default async function PluginPage({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {plugin.features.map((feature, index) => (
                     <div key={index} className="flex gap-4 p-6 rounded-xl bg-white/5 border border-white/10">
-                      <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0" />
+                      {plugin.slug === "octopie" ? (
+                        <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
+                          <OctoPieIcon className="h-4 w-4" />
+                        </span>
+                      ) : (
+                        <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0" />
+                      )}
                       <div>
                         <h3 className="font-semibold mb-2">{feature.title}</h3>
                         <p className="text-sm text-muted-foreground">{feature.description}</p>

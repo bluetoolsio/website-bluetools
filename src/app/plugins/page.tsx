@@ -9,7 +9,7 @@ const assetBasePath = "/website-smartblender";
 
 export const metadata = {
   title: "Plugins | Reploy",
-  description: "Browse focused Blender workflow plugins from Reploy.",
+  description: "Browse focused plugins and specialist tools from Reploy.",
 };
 
 export default function PluginsPage() {
@@ -18,9 +18,9 @@ export default function PluginsPage() {
       <FadeIn direction="up">
         <div className="mb-16">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-accent">Reploy plugins</p>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4">Red-lit tools for Blender work.</h1>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4">Plugins and specialist tools for focused work.</h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
-            Focused Blender add-ons built to reduce repetitive UI work, organize your most-used actions, and keep custom tools close to your hands.
+            Reploy is a base for sharp, practical products across creative and technical workflows — starting with OctoPie for Blender.
           </p>
         </div>
       </FadeIn>
@@ -30,6 +30,12 @@ export default function PluginsPage() {
           <FadeIn key={plugin.id} direction="up" delay={index * 0.1}>
             <Card hoverEffect className="flex flex-col h-full night-card">
               <div className="aspect-[4/3] bg-black border-b border-white/10 relative overflow-hidden flex items-center justify-center">
+                {plugin.slug === "octopie" && (
+                  <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-black/60 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-accent backdrop-blur">
+                    <OctoPieLabel iconBoxClassName="h-6 w-6 rounded-md" iconClassName="h-3.5 w-3.5" textClassName="sr-only" />
+                    OctoPie
+                  </div>
+                )}
                 {plugin.previewImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img

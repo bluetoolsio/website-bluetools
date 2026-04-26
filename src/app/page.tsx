@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ArrowRight, Boxes, Command, Moon, ShieldCheck, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, Command, Moon, ShieldCheck, Sparkles, Workflow } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
-import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
+import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 const assetBasePath = "/website-smartblender";
 
@@ -28,26 +28,26 @@ export default function Home() {
             <FadeIn direction="up">
               <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-accent shadow-lg shadow-accent/10">
                 <Moon className="h-4 w-4" />
-OctoPie for Blender workflows
+                Reploy tools for creators
               </div>
               <h1 className="max-w-5xl text-5xl font-black tracking-[-0.06em] text-white md:text-7xl lg:text-8xl">
-                Build custom Blender pie menus for
+                Deploy sharper creative tools into
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-300 via-accent to-red-700">
-                  faster work.
+                  real workflows.
                 </span>
               </h1>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
               <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-                OctoPie lets Blender artists create context-aware radial menus for operators, shortcuts, scripts, assets, macros, and profiles — keeping the tools you use most right at your cursor.
+                Reploy is the home base for focused plugins and specialist tools — starting with OctoPie, a breakthrough Blender add-on for custom, context-aware pie menus.
               </p>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.2} className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/plugins/octopie">
+              <Link href="/plugins">
                 <Button size="lg" className="w-full sm:w-auto">
-                  View OctoPie
+                  Explore plugins
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -79,8 +79,8 @@ OctoPie for Blender workflows
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`${assetBasePath}/plugins/octopie/preview-animated.svg`}
-                    alt="Animated OctoPie preview"
+                    src={`${assetBasePath}/plugins/octopie/preview.png`}
+                    alt="OctoPie preview"
                     className="h-full w-full object-cover opacity-85 saturate-125"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
@@ -141,7 +141,9 @@ OctoPie for Blender workflows
         <div className="absolute inset-x-0 top-0 -z-10 mx-auto h-80 max-w-4xl rounded-full bg-accent/10 blur-3xl" />
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <FadeIn direction="up">
-            <Boxes className="mx-auto mb-6 h-10 w-10 text-accent" />
+            <span className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-accent/25 bg-accent/15 text-accent shadow-lg shadow-accent/10">
+              <OctoPieIcon className="h-8 w-8" />
+            </span>
             <h2 className="text-4xl font-black tracking-tight md:text-6xl">Start with OctoPie.</h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
               Build menus around the actions, assets, scripts, and macros you reach for every day — then reploy them wherever your workflow moves next.
