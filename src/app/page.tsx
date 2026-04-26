@@ -60,7 +60,11 @@ export default function Home() {
           </div>
 
           <FadeIn direction="left" delay={0.15}>
-            <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-2xl shadow-black/60 backdrop-blur-xl">
+            <Link
+              href="/plugins/octopie"
+              aria-label="Open OctoPie plugin page"
+              className="group relative block rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-2xl shadow-black/60 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-accent/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
               <div className="absolute -inset-1 -z-10 rounded-[2.2rem] bg-gradient-to-br from-accent/35 via-transparent to-red-950/50 blur-xl" />
               <div className="rounded-[1.5rem] border border-white/10 bg-[#08070b] p-5">
                 <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
@@ -70,27 +74,31 @@ export default function Home() {
                       <OctoPieLabel iconBoxClassName="h-11 w-11" iconClassName="h-6 w-6" />
                     </h2>
                   </div>
-                  <Sparkles className="h-7 w-7 text-accent" />
+                  <Sparkles className="h-7 w-7 text-accent transition duration-300 group-hover:scale-110 group-hover:rotate-6" />
                 </div>
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`${assetBasePath}/plugins/octopie/preview.png`}
-                    alt="OctoPie preview"
+                    src={`${assetBasePath}/plugins/octopie/preview-animated.svg`}
+                    alt="Animated OctoPie preview"
                     className="h-full w-full object-cover opacity-85 saturate-125"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
+                  <div className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-black/55 px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-accent opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100">
+                    Open OctoPie
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
                 </div>
                 <div className="mt-5 grid grid-cols-3 gap-3">
                   {workflowStats.map(([value, label]) => (
-                    <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                    <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition duration-300 group-hover:border-accent/20 group-hover:bg-white/[0.06]">
                       <div className="text-2xl font-black text-accent">{value}</div>
                       <div className="mt-1 text-xs text-muted-foreground">{label}</div>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           </FadeIn>
         </div>
       </section>
