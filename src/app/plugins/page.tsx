@@ -8,8 +8,8 @@ import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 const assetBasePath = "/website-smartblender";
 
 export const metadata = {
-  title: "Plugins | Smartblender.io",
-  description: "Browse focused Blender workflow plugins from Smartblender.io.",
+  title: "Plugins | Reploy",
+  description: "Browse focused Blender workflow plugins from Reploy.",
 };
 
 export default function PluginsPage() {
@@ -17,7 +17,8 @@ export default function PluginsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <FadeIn direction="up">
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Plugins</h1>
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-accent">Reploy plugins</p>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4">Red-lit tools for Blender work.</h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
             Focused Blender add-ons built to reduce repetitive UI work, organize your most-used actions, and keep custom tools close to your hands.
           </p>
@@ -27,8 +28,8 @@ export default function PluginsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {plugins.map((plugin, index) => (
           <FadeIn key={plugin.id} direction="up" delay={index * 0.1}>
-            <Card className="flex flex-col h-full hoverEffect={true}">
-              <div className="aspect-[4/3] bg-white/5 border-b border-white/10 relative overflow-hidden flex items-center justify-center">
+            <Card hoverEffect className="flex flex-col h-full night-card">
+              <div className="aspect-[4/3] bg-black border-b border-white/10 relative overflow-hidden flex items-center justify-center">
                 {plugin.previewImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img

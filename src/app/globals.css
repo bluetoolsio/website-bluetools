@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505; /* Deep rich black */
-  --foreground: #fafafa;
-  --muted: #171717; /* Lighter black for cards/panels */
-  --muted-foreground: #a1a1aa; /* Zinc 400 */
-  --accent: #3b82f6; /* Premium blue accent */
+  --background: #050308;
+  --foreground: #fff7f7;
+  --muted: #120b10;
+  --muted-foreground: #b8a6aa;
+  --accent: #ff2048;
   --accent-foreground: #ffffff;
-  --border: #27272a; /* Zinc 800 */
+  --border: #2a151c;
 }
 
 @theme inline {
@@ -18,23 +18,47 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
-  
+
   --font-sans: var(--font-inter);
 }
 
-body {
+* {
+  box-sizing: border-box;
+}
+
+html {
   background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 32, 72, 0.2), transparent 34rem),
+    radial-gradient(circle at 12% 20%, rgba(127, 29, 29, 0.18), transparent 28rem),
+    linear-gradient(180deg, #09070c 0%, var(--background) 42%, #030203 100%);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background: rgba(255, 32, 72, 0.38);
+  color: white;
+}
+
 /* Custom Utilities */
 @layer utilities {
   .glass {
-    background: rgba(23, 23, 23, 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(9, 7, 12, 0.76);
+    backdrop-filter: blur(18px) saturate(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+  }
+
+  .night-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+    border: 1px solid rgba(255,255,255,0.09);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 }

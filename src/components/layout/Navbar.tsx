@@ -12,15 +12,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-              Smart<span className="text-accent">Blender</span>
+            <Link href="/" className="group inline-flex items-center gap-2 text-xl font-black tracking-[-0.04em] text-white">
+              <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(255,32,72,.9)] transition-transform group-hover:scale-125" />
+              Re<span className="text-accent">ploy</span>
             </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <Link href="/plugins" className="hover:text-white transition-colors text-sm font-medium">Plugins</Link>
-              <Link href="/docs" className="hover:text-white transition-colors text-sm font-medium">Docs</Link>
-              <Link href="/report-bug" className="hover:text-white transition-colors text-sm font-medium">Report Bug</Link>
+              <Link href="/plugins" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Plugins</Link>
+              <Link href="/docs" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Docs</Link>
+              <Link href="/report-bug" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Report Bug</Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">

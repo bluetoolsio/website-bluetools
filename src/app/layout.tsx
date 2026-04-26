@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Smartblender.io | Blender Workflow Plugins",
-  description: "Focused Blender add-ons for context-aware menus, shortcuts, scripts, assets, and faster day-to-day workflows.",
+  title: "Reploy | Night-mode Blender Workflow Plugins",
+  description: "Red-lit Blender plugins for context-aware menus, shortcuts, scripts, assets, and faster creative workflows.",
 };
 
 export default function RootLayout({
