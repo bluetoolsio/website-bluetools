@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ArrowRight, Command, Gauge, Moon, Radar, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Command, Gauge, Orbit, Radar, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
@@ -18,25 +18,22 @@ export default function Home() {
         </div>
 
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-5xl">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn direction="up">
-              <div className="hud-label mb-7">
-                <Moon className="h-4 w-4" />
+              <div className="hud-label mx-auto mb-7 w-fit">
+                <Orbit className="h-4 w-4" />
                 Creative systems for builders
               </div>
-              <p className="mb-5 text-sm font-bold uppercase tracking-[0.28em] text-accent/80">
-                Rewriting how creators work.
-              </p>
-              <h1 className="max-w-5xl text-5xl font-black tracking-[-0.065em] text-white md:text-7xl lg:text-8xl">
-                A system layer for
+              <h1 className="mx-auto max-w-5xl text-5xl font-black tracking-[-0.065em] text-white md:text-7xl lg:text-8xl">
+                Rewriting how
                 <span className="block text-addonline">
-                  creative tools.
+                  creators work.
                 </span>
               </h1>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
-              <div className="mt-8 max-w-3xl space-y-4 text-lg leading-8 text-muted-foreground md:text-xl">
+              <div className="mx-auto mt-8 max-w-3xl space-y-4 text-lg leading-8 text-muted-foreground md:text-xl">
                 <p>Built to replace friction with control.</p>
                 <p>
                   Reploy is a growing suite of tools designed to streamline how you create. Less clutter. Faster execution. A workflow that scales with you.
@@ -44,7 +41,7 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <FadeIn direction="up" delay={0.2} className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <FadeIn direction="up" delay={0.2} className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
               <Link href="/plugins">
                 <Button size="lg" className="w-full sm:w-auto">
                   Explore plugins
@@ -59,7 +56,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <FadeIn direction="up" delay={0.25} className="mt-16 max-w-4xl">
+          <FadeIn direction="up" delay={0.25} className="mx-auto mt-16 max-w-4xl">
             <Link
               href="/plugins/octopie"
               aria-label="Open OctoPie plugin page"
