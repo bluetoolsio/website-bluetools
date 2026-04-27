@@ -13,8 +13,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="group inline-flex items-center gap-3 text-xl font-black tracking-[-0.04em] text-white">
-              <span className="relative flex h-7 w-7 items-center justify-center rounded-lg border border-accent/35 bg-accent/10 shadow-[0_0_24px_rgba(255,31,69,.38)]">
-                <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(255,31,69,.9)] transition-transform group-hover:scale-125" />
+              <span className="relative flex h-7 w-7 items-center justify-center rounded-lg border border-accent/35 bg-accent/10 shadow-[0_0_24px_rgba(110,168,255,.38)]">
+                <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(110,168,255,.9)] transition-transform group-hover:scale-125" />
               </span>
               Re<span className="text-accent">ploy</span>
             </Link>

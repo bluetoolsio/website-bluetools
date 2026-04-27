@@ -121,7 +121,7 @@ export default async function PluginPage({
             </FadeIn>
             
             <FadeIn direction="left" delay={0.2}>
-              <div className="terminal-panel red-glow group relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl">
+              <div className="terminal-panel addon-glow group relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl">
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <div className="flex h-20 w-20 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-accent/80 shadow-lg shadow-accent/50 backdrop-blur-sm transition-transform group-hover:scale-110">
                     <Play className="h-8 w-8 text-white ml-1" />

@@ -26,10 +26,10 @@ export default function BugReportPage() {
       <div className="absolute inset-x-0 top-20 -z-10 h-72 rounded-full bg-accent/10 blur-3xl" />
       <FadeIn direction="up">
         <div className="text-center mb-12">
-          <div className="red-glow mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10 text-accent">
+          <div className="addon-glow mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10 text-accent">
             <Bug className="h-8 w-8" />
           </div>
-          <h1 className="mb-4 text-4xl font-black tracking-tight">Report a <span className="text-redline">Bug</span></h1>
+          <h1 className="mb-4 text-4xl font-black tracking-tight">Report a <span className="text-addonline">Bug</span></h1>
           <p className="text-xl text-muted-foreground">
             Help us improve our plugins. Please provide as much detail as possible so we can reproduce and fix the issue.
           </p>

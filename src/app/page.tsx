@@ -7,12 +7,6 @@ import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 const assetBasePath = "/website-smartblender";
 
-const workflowStats = [
-  ["01", "Context-first menus"],
-  ["08", "Radial slots per pie"],
-  ["∞", "Profiles for every scene"],
-];
-
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col overflow-hidden">
@@ -32,8 +26,8 @@ export default function Home() {
               </div>
               <h1 className="max-w-5xl text-5xl font-black tracking-[-0.065em] text-white md:text-7xl lg:text-8xl">
                 Reploy your creative workflow from the
-                <span className="block text-redline">
-                  red-lit command layer.
+                <span className="block text-addonline">
+                  addon command layer.
                 </span>
               </h1>
             </FadeIn>
@@ -63,20 +57,17 @@ Reploy is a dark-mode base for sharp Blender tools — built for artists who wan
             <Link
               href="/plugins/octopie"
               aria-label="Open OctoPie plugin page"
-              className="group relative block rounded-[1.75rem] border border-white/10 bg-white/[0.035] p-2 shadow-2xl shadow-black/50 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.05] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group relative block rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-2 shadow-2xl shadow-black/45 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/25 hover:bg-white/[0.045] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <div className="absolute -inset-px -z-10 rounded-[1.8rem] bg-gradient-to-br from-accent/18 via-transparent to-transparent opacity-70 blur-lg" />
-              <div className="rounded-[1.35rem] border border-white/10 bg-[#070508]/95 p-4 sm:p-5">
-                <div className="mb-4 flex items-center justify-between gap-4">
+              <div className="absolute -inset-px -z-10 rounded-[1.55rem] bg-gradient-to-br from-accent/14 via-transparent to-transparent opacity-70 blur-lg" />
+              <div className="rounded-[1.2rem] border border-white/10 bg-[#080b12]/95 p-4 sm:p-5">
+                <div className="mb-4 flex items-center gap-4">
                   <div>
-                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent/80">Featured tool</p>
+                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent/75">Featured add-on</p>
                     <h2 className="mt-3 text-3xl font-black tracking-tight text-white">
                       <OctoPieLabel iconBoxClassName="h-10 w-10 rounded-xl" iconClassName="h-5 w-5" />
                     </h2>
                   </div>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/8 text-accent/90 transition duration-300 group-hover:border-accent/35 group-hover:bg-accent/12">
-                    <Sparkles className="h-5 w-5" />
-                  </span>
                 </div>
 
                 <div className="relative aspect-video overflow-hidden rounded-[1.1rem] border border-white/10 bg-[#0b0b0c]">
@@ -84,11 +75,11 @@ Reploy is a dark-mode base for sharp Blender tools — built for artists who wan
                   <img
                     src={`${assetBasePath}/plugins/octopie/preview.png`}
                     alt="OctoPie preview"
-                    className="h-full w-full object-cover opacity-70 grayscale-[15%] saturate-110 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-82"
+                    className="h-full w-full object-cover opacity-76 saturate-105 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/68" />
                   <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-4">
-                    <span className="text-xs font-medium text-white/70">Context-aware Blender menus</span>
+                    <span className="text-xs font-medium text-white/72">Context-aware Blender menus</span>
                     <span className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-black/55 px-3 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent backdrop-blur">
                       Open
                       <ArrowRight className="h-3.5 w-3.5" />
@@ -96,14 +87,6 @@ Reploy is a dark-mode base for sharp Blender tools — built for artists who wan
                   </div>
                 </div>
 
-                <div className="mt-4 grid grid-cols-3 gap-2.5">
-                  {workflowStats.map(([value, label]) => (
-                    <div key={label} className="rounded-xl border border-white/8 bg-white/[0.035] px-3 py-3 transition duration-300 group-hover:border-accent/15 group-hover:bg-white/[0.055]">
-                      <div className="text-xl font-black tracking-tight text-accent/95">{value}</div>
-                      <div className="mt-1 text-[0.72rem] leading-snug text-muted-foreground">{label}</div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </Link>
           </FadeIn>
@@ -114,7 +97,7 @@ Reploy is a dark-mode base for sharp Blender tools — built for artists who wan
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Batcave-adjacent, not noisy</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Add-on friendly, not noisy</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl">
                 Low light. High signal. Everything reachable.
               </h2>

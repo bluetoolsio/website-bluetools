@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030205;
-  --foreground: #fff8f8;
-  --muted: #10070b;
-  --muted-foreground: #b9a2a7;
-  --accent: #ff1f45;
-  --accent-foreground: #ffffff;
-  --border: #341019;
-  --danger-red: #d80f2f;
-  --deep-red: #5f0715;
-  --panel: #080509;
+  --background: #05070d;
+  --foreground: #f5f7fb;
+  --muted: #0d111b;
+  --muted-foreground: #a8b0c0;
+  --accent: #6ea8ff;
+  --accent-foreground: #06101f;
+  --border: #1a2435;
+  --warm-accent: #ff9b50;
+  --deep-accent: #1d2b4a;
+  --panel: #080b12;
 }
 
 @theme inline {
@@ -36,10 +36,10 @@ html {
 
 body {
   background:
-    radial-gradient(circle at 50% -18%, rgba(255, 31, 69, 0.32), transparent 34rem),
-    radial-gradient(circle at 10% 18%, rgba(216, 15, 47, 0.18), transparent 27rem),
-    radial-gradient(circle at 92% 8%, rgba(255, 88, 88, 0.12), transparent 24rem),
-    linear-gradient(180deg, #0a0609 0%, var(--background) 46%, #020103 100%);
+    radial-gradient(circle at 50% -18%, rgba(110, 168, 255, 0.24), transparent 34rem),
+    radial-gradient(circle at 10% 18%, rgba(124, 92, 255, 0.14), transparent 27rem),
+    radial-gradient(circle at 92% 8%, rgba(255, 155, 80, 0.10), transparent 24rem),
+    linear-gradient(180deg, #070a12 0%, var(--background) 46%, #03050a 100%);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -77,7 +77,7 @@ body::after {
 }
 
 ::selection {
-  background: rgba(255, 32, 72, 0.38);
+  background: rgba(110, 168, 255, 0.38);
   color: white;
 }
 
@@ -94,7 +94,7 @@ body::after {
     position: relative;
     background:
       linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.026)),
-      radial-gradient(circle at 12% 0%, rgba(255,31,69,.12), transparent 34%);
+      radial-gradient(circle at 12% 0%, rgba(110,168,255,.12), transparent 34%);
     border: 1px solid rgba(255,255,255,0.10);
     box-shadow: 0 24px 90px rgba(0,0,0,0.56), inset 0 1px 0 rgba(255,255,255,0.06);
   }
@@ -105,19 +105,19 @@ body::after {
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(135deg, rgba(255,31,69,.36), transparent 18%, transparent 78%, rgba(255,31,69,.12));
+    background: linear-gradient(135deg, rgba(110,168,255,.36), transparent 18%, transparent 78%, rgba(110,168,255,.12));
     opacity: .42;
   }
 
-  .red-glow {
-    box-shadow: 0 0 0 1px rgba(255,31,69,.22), 0 0 36px rgba(255,31,69,.20), 0 26px 90px rgba(0,0,0,.58);
+  .addon-glow {
+    box-shadow: 0 0 0 1px rgba(110,168,255,.22), 0 0 36px rgba(110,168,255,.20), 0 26px 90px rgba(0,0,0,.58);
   }
 
   .bat-grid {
     background-image:
-      linear-gradient(rgba(255,31,69,.12) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,31,69,.10) 1px, transparent 1px),
-      radial-gradient(circle at 50% 0%, rgba(255,31,69,.20), transparent 42rem);
+      linear-gradient(rgba(110,168,255,.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(110,168,255,.10) 1px, transparent 1px),
+      radial-gradient(circle at 50% 0%, rgba(110,168,255,.20), transparent 42rem);
     background-size: 56px 56px, 56px 56px, auto;
   }
 
@@ -126,26 +126,26 @@ body::after {
     align-items: center;
     gap: .5rem;
     border-radius: 999px;
-    border: 1px solid rgba(255,31,69,.28);
-    background: rgba(255,31,69,.095);
+    border: 1px solid rgba(110,168,255,.28);
+    background: rgba(110,168,255,.095);
     padding: .5rem .85rem;
     color: var(--accent);
     font-size: .72rem;
     font-weight: 800;
     letter-spacing: .22em;
     text-transform: uppercase;
-    box-shadow: 0 0 32px rgba(255,31,69,.08);
+    box-shadow: 0 0 32px rgba(110,168,255,.08);
   }
 
   .terminal-panel {
     border: 1px solid rgba(255,255,255,.11);
     background: linear-gradient(180deg, rgba(9,5,9,.92), rgba(3,2,4,.92));
-    box-shadow: 0 30px 100px rgba(0,0,0,.72), 0 0 48px rgba(255,31,69,.10);
+    box-shadow: 0 30px 100px rgba(0,0,0,.72), 0 0 48px rgba(110,168,255,.10);
   }
 
-  .text-redline {
+  .text-addonline {
     color: transparent;
     background-clip: text;
-    background-image: linear-gradient(90deg, #ffd7d7 0%, #ff3155 42%, #8b0b1d 100%);
+    background-image: linear-gradient(90deg, #e9f2ff 0%, #6ea8ff 45%, #7c5cff 100%);
   }
 }

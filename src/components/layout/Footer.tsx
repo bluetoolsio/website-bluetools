@@ -8,13 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3 text-xl font-black tracking-[-0.04em] text-white">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/35 bg-accent/10 shadow-[0_0_24px_rgba(255,31,69,.35)]">
-                <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(255,31,69,.9)]" />
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/35 bg-accent/10 shadow-[0_0_24px_rgba(110,168,255,.35)]">
+                <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(110,168,255,.9)]" />
               </span>
               Re<span className="text-accent">ploy</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Red-lit Blender workflow plugins for menus, shortcuts, scripts, assets, and custom daily tools.
+              Polished Blender workflow add-ons for menus, shortcuts, scripts, assets, and custom daily tools.
             </p>
           </div>
           

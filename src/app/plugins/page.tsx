@@ -19,7 +19,7 @@ export default function PluginsPage() {
       <FadeIn direction="up">
         <div className="mb-16">
           <p className="hud-label mb-4">Reploy plugins</p>
-          <h1 className="mb-4 text-4xl font-black tracking-tight md:text-6xl">Plugins and specialist tools for <span className="text-redline">focused work.</span></h1>
+          <h1 className="mb-4 text-4xl font-black tracking-tight md:text-6xl">Plugins and specialist tools for <span className="text-addonline">focused work.</span></h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
             Reploy is a base for sharp, practical products across creative and technical workflows — starting with OctoPie for Blender.
           </p>
