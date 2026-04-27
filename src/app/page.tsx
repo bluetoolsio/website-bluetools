@@ -63,37 +63,44 @@ Reploy is a dark-mode base for sharp Blender tools — built for artists who wan
             <Link
               href="/plugins/octopie"
               aria-label="Open OctoPie plugin page"
-              className="group terminal-panel red-glow relative block rounded-[2rem] p-3 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-accent/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group relative block rounded-[1.75rem] border border-white/10 bg-white/[0.035] p-2 shadow-2xl shadow-black/50 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.05] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <div className="absolute -inset-1 -z-10 rounded-[2.2rem] bg-gradient-to-br from-accent/35 via-transparent to-red-950/50 blur-xl" />
-              <div className="rounded-[1.5rem] border border-white/10 bg-[#070407] p-5">
-                <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="absolute -inset-px -z-10 rounded-[1.8rem] bg-gradient-to-br from-accent/18 via-transparent to-transparent opacity-70 blur-lg" />
+              <div className="rounded-[1.35rem] border border-white/10 bg-[#070508]/95 p-4 sm:p-5">
+                <div className="mb-4 flex items-center justify-between gap-4">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.24em] text-accent">Command module / featured</p>
-                    <h2 className="mt-2 text-3xl font-black tracking-tight text-white">
-                      <OctoPieLabel iconBoxClassName="h-11 w-11" iconClassName="h-6 w-6" />
+                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent/80">Featured tool</p>
+                    <h2 className="mt-3 text-3xl font-black tracking-tight text-white">
+                      <OctoPieLabel iconBoxClassName="h-10 w-10 rounded-xl" iconClassName="h-5 w-5" />
                     </h2>
                   </div>
-                  <Sparkles className="h-7 w-7 text-accent transition duration-300 group-hover:scale-110 group-hover:rotate-6" />
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/8 text-accent/90 transition duration-300 group-hover:border-accent/35 group-hover:bg-accent/12">
+                    <Sparkles className="h-5 w-5" />
+                  </span>
                 </div>
-                <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black">
+
+                <div className="relative aspect-video overflow-hidden rounded-[1.1rem] border border-white/10 bg-[#0b0b0c]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${assetBasePath}/plugins/octopie/preview.png`}
                     alt="OctoPie preview"
-                    className="h-full w-full object-cover opacity-85 saturate-125"
+                    className="h-full w-full object-cover opacity-70 grayscale-[15%] saturate-110 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-82"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
-                  <div className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-black/55 px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-accent opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100">
-                    Open OctoPie
-                    <ArrowRight className="h-4 w-4" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/68" />
+                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-4">
+                    <span className="text-xs font-medium text-white/70">Context-aware Blender menus</span>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-black/55 px-3 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent backdrop-blur">
+                      Open
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
                   </div>
                 </div>
-                <div className="mt-5 grid grid-cols-3 gap-3">
+
+                <div className="mt-4 grid grid-cols-3 gap-2.5">
                   {workflowStats.map(([value, label]) => (
-                    <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition duration-300 group-hover:border-accent/20 group-hover:bg-white/[0.06]">
-                      <div className="text-2xl font-black text-accent">{value}</div>
-                      <div className="mt-1 text-xs text-muted-foreground">{label}</div>
+                    <div key={label} className="rounded-xl border border-white/8 bg-white/[0.035] px-3 py-3 transition duration-300 group-hover:border-accent/15 group-hover:bg-white/[0.055]">
+                      <div className="text-xl font-black tracking-tight text-accent/95">{value}</div>
+                      <div className="mt-1 text-[0.72rem] leading-snug text-muted-foreground">{label}</div>
                     </div>
                   ))}
                 </div>
