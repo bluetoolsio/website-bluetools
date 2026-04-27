@@ -22,13 +22,14 @@ export default function BugReportPage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div className="relative mx-auto max-w-3xl px-4 py-24 sm:px-6 lg:px-8">
+      <div className="absolute inset-x-0 top-20 -z-10 h-72 rounded-full bg-accent/10 blur-3xl" />
       <FadeIn direction="up">
         <div className="text-center mb-12">
-          <div className="mx-auto w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-6">
+          <div className="red-glow mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10 text-accent">
             <Bug className="h-8 w-8" />
           </div>
-          <h1 className="text-4xl font-bold mb-4">Report a Bug</h1>
+          <h1 className="mb-4 text-4xl font-black tracking-tight">Report a <span className="text-redline">Bug</span></h1>
           <p className="text-xl text-muted-foreground">
             Help us improve our plugins. Please provide as much detail as possible so we can reproduce and fix the issue.
           </p>
@@ -36,7 +37,7 @@ export default function BugReportPage() {
       </FadeIn>
 
       <FadeIn direction="up" delay={0.1}>
-        <Card className="p-8 border-white/10 bg-white/5">
+        <Card className="night-card p-8">
           {isSuccess ? (
             <div className="text-center py-12">
               <div className="mx-auto w-16 h-16 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mb-6">
@@ -55,7 +56,7 @@ export default function BugReportPage() {
                   <label htmlFor="plugin" className="text-sm font-medium text-white">Plugin</label>
                   <select 
                     id="plugin" 
-                    className="w-full bg-background border border-white/10 rounded-md h-10 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="h-10 w-full rounded-lg border border-white/10 bg-black/35 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
                     required
                   >
                     <option value="" disabled selected>Select a plugin</option>
@@ -69,7 +70,7 @@ export default function BugReportPage() {
                     type="text" 
                     id="version" 
                     placeholder="e.g. 1.2.0"
-                    className="w-full bg-background border border-white/10 rounded-md h-10 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="h-10 w-full rounded-lg border border-white/10 bg-black/35 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
                     required
                   />
                 </div>
@@ -81,7 +82,7 @@ export default function BugReportPage() {
                   type="text" 
                   id="title" 
                   placeholder="Brief summary of the issue"
-                  className="w-full bg-background border border-white/10 rounded-md h-10 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="h-10 w-full rounded-lg border border-white/10 bg-black/35 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
                   required
                 />
               </div>
@@ -92,14 +93,14 @@ export default function BugReportPage() {
                   id="description" 
                   rows={6}
                   placeholder="1. Open Blender&#10;2. Click on...&#10;3. The following error occurs..."
-                  className="w-full bg-background border border-white/10 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-accent resize-y"
+                  className="w-full resize-y rounded-lg border border-white/10 bg-black/35 p-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
                   required
                 />
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-white">Attachments (Optional)</label>
-                <div className="border-2 border-dashed border-white/10 rounded-md p-6 text-center hover:bg-white/5 transition-colors cursor-pointer">
+                <div className="cursor-pointer rounded-xl border-2 border-dashed border-accent/20 bg-black/20 p-6 text-center transition-colors hover:bg-accent/5">
                   <p className="text-sm text-muted-foreground">
                     Drag and drop screenshots or log files here, or <span className="text-accent">browse</span>.
                   </p>

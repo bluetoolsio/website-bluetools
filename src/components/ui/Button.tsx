@@ -13,12 +13,12 @@ interface ButtonProps extends HTMLMotionProps<"button"> {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", children, ...props }, ref) => {
     
-    const baseStyles = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50";
+    const baseStyles = "inline-flex items-center justify-center rounded-lg font-bold tracking-[-0.01em] transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50";
     
     const variants = {
-      primary: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20",
-      secondary: "bg-white/10 text-white hover:bg-white/20",
-      outline: "border border-white/10 bg-transparent hover:bg-white/5 text-white",
+      primary: "bg-accent text-accent-foreground hover:bg-[#ff3659] shadow-lg shadow-accent/25 hover:shadow-accent/35",
+      secondary: "border border-white/10 bg-white/10 text-white hover:border-accent/25 hover:bg-white/15",
+      outline: "border border-accent/25 bg-accent/5 text-white hover:bg-accent/12 hover:border-accent/45",
       ghost: "hover:bg-white/5 hover:text-white text-muted-foreground",
     };
 

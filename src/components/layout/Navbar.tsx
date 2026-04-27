@@ -8,12 +8,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
+    <nav className="fixed top-0 w-full z-50 glass border-b border-accent/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className="group inline-flex items-center gap-2 text-xl font-black tracking-[-0.04em] text-white">
-              <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(255,32,72,.9)] transition-transform group-hover:scale-125" />
+            <Link href="/" className="group inline-flex items-center gap-3 text-xl font-black tracking-[-0.04em] text-white">
+              <span className="relative flex h-7 w-7 items-center justify-center rounded-lg border border-accent/35 bg-accent/10 shadow-[0_0_24px_rgba(255,31,69,.38)]">
+                <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(255,31,69,.9)] transition-transform group-hover:scale-125" />
+              </span>
               Re<span className="text-accent">ploy</span>
             </Link>
           </div>
@@ -21,7 +23,7 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link href="/plugins" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Plugins</Link>
               <Link href="/docs" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Docs</Link>
-              <Link href="/report-bug" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Report Bug</Link>
+              <Link href="/report-bug" className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/15 hover:text-white">Report Bug</Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">

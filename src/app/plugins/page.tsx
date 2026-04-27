@@ -14,11 +14,12 @@ export const metadata = {
 
 export default function PluginsPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+      <div className="absolute inset-x-4 top-24 -z-10 h-72 rounded-full bg-accent/10 blur-3xl" />
       <FadeIn direction="up">
         <div className="mb-16">
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-accent">Reploy plugins</p>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4">Plugins and specialist tools for focused work.</h1>
+          <p className="hud-label mb-4">Reploy plugins</p>
+          <h1 className="mb-4 text-4xl font-black tracking-tight md:text-6xl">Plugins and specialist tools for <span className="text-redline">focused work.</span></h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
             Reploy is a base for sharp, practical products across creative and technical workflows — starting with OctoPie for Blender.
           </p>
@@ -29,7 +30,7 @@ export default function PluginsPage() {
         {plugins.map((plugin, index) => (
           <FadeIn key={plugin.id} direction="up" delay={index * 0.1}>
             <Card hoverEffect className="flex flex-col h-full night-card">
-              <div className="aspect-[4/3] bg-black border-b border-white/10 relative overflow-hidden flex items-center justify-center">
+              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-white/10 bg-black">
                 {plugin.slug === "octopie" && (
                   <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-black/60 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-accent backdrop-blur">
                     <OctoPieLabel iconBoxClassName="h-6 w-6 rounded-md" iconClassName="h-3.5 w-3.5" textClassName="sr-only" />
@@ -41,14 +42,14 @@ export default function PluginsPage() {
                   <img
                     src={`${assetBasePath}${plugin.previewImage}`}
                     alt={`${plugin.name} preview`}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover opacity-90 saturate-125 transition duration-500 hover:scale-105"
                   />
                 ) : (
                   <span className="text-muted-foreground">{plugin.name} Preview</span>
                 )}
               </div>
               
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="relative z-10 flex flex-grow flex-col p-6">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl font-bold">
                     {plugin.slug === "octopie" ? (

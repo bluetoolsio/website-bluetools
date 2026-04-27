@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ArrowRight, Command, Moon, ShieldCheck, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, Command, Gauge, Moon, Radar, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
@@ -26,21 +26,21 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <FadeIn direction="up">
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-accent shadow-lg shadow-accent/10">
+              <div className="hud-label mb-7">
                 <Moon className="h-4 w-4" />
-                Reploy tools for creators
+                Night ops for creators
               </div>
-              <h1 className="max-w-5xl text-5xl font-black tracking-[-0.06em] text-white md:text-7xl lg:text-8xl">
-                Deploy sharper creative tools into
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-300 via-accent to-red-700">
-                  real workflows.
+              <h1 className="max-w-5xl text-5xl font-black tracking-[-0.065em] text-white md:text-7xl lg:text-8xl">
+                Reploy your creative workflow from the
+                <span className="block text-redline">
+                  red-lit command layer.
                 </span>
               </h1>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
               <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-                Reploy is the home base for focused plugins and specialist tools — starting with OctoPie, a breakthrough Blender add-on for custom, context-aware pie menus.
+Reploy is a dark-mode base for sharp Blender tools — built for artists who want fewer panels, faster commands, and a cockpit-feel workspace that stays out of the way.
               </p>
             </FadeIn>
 
@@ -63,13 +63,13 @@ export default function Home() {
             <Link
               href="/plugins/octopie"
               aria-label="Open OctoPie plugin page"
-              className="group relative block rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-2xl shadow-black/60 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-accent/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group terminal-panel red-glow relative block rounded-[2rem] p-3 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-accent/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <div className="absolute -inset-1 -z-10 rounded-[2.2rem] bg-gradient-to-br from-accent/35 via-transparent to-red-950/50 blur-xl" />
-              <div className="rounded-[1.5rem] border border-white/10 bg-[#08070b] p-5">
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#070407] p-5">
                 <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.24em] text-accent">Featured tool</p>
+                    <p className="text-xs uppercase tracking-[0.24em] text-accent">Command module / featured</p>
                     <h2 className="mt-2 text-3xl font-black tracking-tight text-white">
                       <OctoPieLabel iconBoxClassName="h-11 w-11" iconClassName="h-6 w-6" />
                     </h2>
@@ -103,13 +103,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-black/20 py-18 md:py-24">
+      <section className="bat-grid border-y border-white/10 bg-black/30 py-18 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Built for focus</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Batcave-adjacent, not noisy</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl">
-                A red-lit command layer for Blender.
+                Low light. High signal. Everything reachable.
               </h2>
               <p className="mt-5 text-muted-foreground">
                 Reploy keeps the interface quiet and the tools close: radial menus, scripts, shortcuts, assets, and repeatable profiles for real production work.
@@ -119,8 +119,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              [Command, "Fewer detours", "Put the Blender actions you actually use behind one direct gesture."],
-              [Workflow, "Context aware", "Switch menus by editor, mode, profile, or the exact creative task in front of you."],
+              [Command, "Command density", "Put the Blender actions you actually use behind one direct gesture."],
+              [Radar, "Context radar", "Switch menus by editor, mode, profile, or the exact creative task in front of you."],
               [ShieldCheck, "Pipeline safe", "Export, back up, restore, and carry your setup between machines without drama."],
             ].map(([Icon, title, copy], index) => (
               <FadeIn key={String(title)} direction="up" delay={index * 0.1}>
@@ -139,11 +139,16 @@ export default function Home() {
 
       <section className="relative py-24 md:py-32">
         <div className="absolute inset-x-0 top-0 -z-10 mx-auto h-80 max-w-4xl rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute inset-x-0 top-16 -z-10 mx-auto h-px max-w-5xl bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <span className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-accent/25 bg-accent/15 text-accent shadow-lg shadow-accent/10">
               <OctoPieIcon className="h-8 w-8" />
             </span>
+            <div className="mb-5 flex justify-center gap-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2"><Gauge className="h-3.5 w-3.5 text-accent" /> Fast</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2"><Sparkles className="h-3.5 w-3.5 text-accent" /> Focused</span>
+            </div>
             <h2 className="text-4xl font-black tracking-tight md:text-6xl">Start with OctoPie.</h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
               Build menus around the actions, assets, scripts, and macros you reach for every day — then reploy them wherever your workflow moves next.

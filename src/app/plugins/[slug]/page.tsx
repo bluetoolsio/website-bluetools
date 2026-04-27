@@ -69,14 +69,16 @@ export default async function PluginPage({
   return (
     <div className="pb-24">
       {/* Plugin Hero */}
-      <section className="relative pt-24 pb-20 border-b border-white/10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-background z-0" />
+      <section className="bat-grid relative overflow-hidden border-b border-white/10 pb-20 pt-24">
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-accent/16 via-background/40 to-background" />
+        <div className="absolute left-1/2 top-20 z-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right">
               <div>
-                <h1 className="text-5xl font-bold mb-4">
+                <p className="hud-label mb-5">Plugin dossier</p>
+                <h1 className="mb-4 text-5xl font-black tracking-tight">
                   {plugin.slug === "octopie" ? (
                     <OctoPieLabel iconBoxClassName="h-14 w-14" iconClassName="h-7 w-7" />
                   ) : (
@@ -87,15 +89,15 @@ export default async function PluginPage({
                   {plugin.tagline}
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-8">
-                  <span className="px-3 py-1 rounded-full bg-white/10 text-sm font-medium border border-white/10">v{plugin.version}</span>
-                  <span className="text-muted-foreground text-sm">Updated {plugin.lastUpdated}</span>
+                  <span className="rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-sm font-bold text-accent">v{plugin.version}</span>
+                  <span className="text-sm text-muted-foreground">Updated {plugin.lastUpdated}</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={plugin.purchaseLinks.superhive}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-accent px-5 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90 sm:w-auto sm:min-w-44"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-lg bg-accent px-5 text-base font-bold text-accent-foreground shadow-lg shadow-accent/25 transition-colors hover:bg-[#ff3659] sm:w-auto sm:min-w-44"
                   >
                     <SuperhiveIcon />
                     Superhive
@@ -104,7 +106,7 @@ export default async function PluginPage({
                     href={plugin.purchaseLinks.gumroad}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-accent px-5 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90 sm:w-auto sm:min-w-44"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-lg bg-accent px-5 text-base font-bold text-accent-foreground shadow-lg shadow-accent/25 transition-colors hover:bg-[#ff3659] sm:w-auto sm:min-w-44"
                   >
                     <GumroadIcon />
                     Gumroad
@@ -119,9 +121,9 @@ export default async function PluginPage({
             </FadeIn>
             
             <FadeIn direction="left" delay={0.2}>
-              <div className="aspect-video bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center relative overflow-hidden group shadow-2xl">
+              <div className="terminal-panel red-glow group relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl">
                 <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="w-20 h-20 rounded-full bg-accent/80 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform cursor-pointer shadow-lg shadow-accent/50">
+                  <div className="flex h-20 w-20 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-accent/80 shadow-lg shadow-accent/50 backdrop-blur-sm transition-transform group-hover:scale-110">
                     <Play className="h-8 w-8 text-white ml-1" />
                   </div>
                 </div>
@@ -148,7 +150,7 @@ export default async function PluginPage({
                 <h2 className="text-3xl font-bold mb-8">Key Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {plugin.features.map((feature, index) => (
-                    <div key={index} className="flex gap-4 p-6 rounded-xl bg-white/5 border border-white/10">
+                    <div key={index} className="night-card flex gap-4 rounded-2xl p-6">
                       {plugin.slug === "octopie" ? (
                         <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
                           <OctoPieIcon className="h-4 w-4" />
@@ -169,7 +171,7 @@ export default async function PluginPage({
             {/* Sidebar */}
             <div className="space-y-8">
               <FadeIn direction="up" delay={0.2}>
-                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                <div className="night-card p-6">
                   <h3 className="font-semibold mb-4">Plugin Info</h3>
                   <ul className="space-y-4 text-sm">
                     <li className="flex justify-between">
@@ -189,7 +191,7 @@ export default async function PluginPage({
               </FadeIn>
 
               <FadeIn direction="up" delay={0.3}>
-                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                <div className="night-card p-6">
                   <h3 className="font-semibold mb-4">Support</h3>
                   <div className="space-y-3 flex flex-col">
                     <Link href="/docs" className="text-sm text-muted-foreground hover:text-white transition-colors">Documentation</Link>
