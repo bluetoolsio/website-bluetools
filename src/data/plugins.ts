@@ -106,16 +106,12 @@ export const plugins: PluginData[] = [
     ],
     features: [
       {
-        title: 'Context Aware',
-        description: 'Menus can change by editor and mode, including Object, Edit, Sculpt, Geometry Nodes, UV, Sequencer, Graph Editor, and more.'
+        title: 'Build From Scratch',
+        description: 'Create your own Blender pie menus from the ground up, then fill each eight-slot layout with the operators, shortcuts, scripts, assets, macros, lists, or nested pies you actually use.'
       },
       {
-        title: 'Slot-Based Workflows',
-        description: 'Each pie has eight directional slots that can run operators, shortcuts, scripts, assets, macros, lists, or nested pies.'
-      },
-      {
-        title: 'Portable Setup',
-        description: 'Export, import, back up, and restore your OctoPie settings, scripts, icons, profiles, and keymaps.'
+        title: 'Context-Aware Profiles',
+        description: 'Build different profiles for Blender editors and modes, so OctoPie can surface the right commands whether you are modeling, editing UVs, working in Geometry Nodes, or managing assets.'
       }
     ]
   }

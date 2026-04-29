@@ -3,11 +3,10 @@ import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 import {
-  ArchiveRestore,
+  ChartPie,
   CheckCircle2,
   Play,
   Radar,
-  Waypoints,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
@@ -17,9 +16,8 @@ import { ShowcaseCarousel } from "@/components/plugins/ShowcaseCarousel";
 const assetBasePath = "/website-smartblender";
 
 const featureIcons: Record<string, LucideIcon> = {
-  "Context Aware": Radar,
-  "Slot-Based Workflows": Waypoints,
-  "Portable Setup": ArchiveRestore,
+  "Build From Scratch": ChartPie,
+  "Context-Aware Profiles": Radar,
 };
 
 function SuperhiveIcon() {
@@ -150,6 +148,50 @@ export default async function PluginPage({
         </div>
       </section>
 
+      {/* Overview & Features */}
+      <section className="border-b border-white/10 py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <FadeIn direction="up">
+              <div>
+                <p className="hud-label mb-4">Overview</p>
+                <h2 className="text-4xl font-black tracking-tight md:text-5xl">
+                  A custom command surface for Blender.
+                </h2>
+                <div className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
+                  <p>{plugin.description}</p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="up" delay={0.1}>
+              <div>
+                <h2 className="text-3xl font-bold mb-6">Key Features</h2>
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-1">
+                  {plugin.features.map((feature, index) => {
+                    const Icon = plugin.slug === "octopie"
+                      ? featureIcons[feature.title] ?? CheckCircle2
+                      : CheckCircle2;
+
+                    return (
+                      <div key={index} className="night-card flex gap-4 rounded-2xl p-6">
+                        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <div>
+                          <h3 className="font-semibold mb-2">{feature.title}</h3>
+                          <p className="text-sm leading-6 text-muted-foreground">{feature.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {plugin.showcase && plugin.showcase.length > 0 ? (
         <section className="relative border-b border-white/10 bg-black/25 py-24">
           <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[radial-gradient(circle_at_50%_0%,rgba(110,168,255,0.16),transparent_45%)]" />
@@ -173,77 +215,47 @@ export default async function PluginPage({
         </section>
       ) : null}
 
-      {/* Overview & Features */}
-      <section className="py-24">
+      {/* Details */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            <div className="lg:col-span-2">
-              <FadeIn direction="up">
-                <h2 className="text-3xl font-bold mb-6">Overview</h2>
-                <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed">
-                  <p>{plugin.description}</p>
-                </div>
-              </FadeIn>
-
-              <FadeIn direction="up" delay={0.1} className="mt-16">
-                <h2 className="text-3xl font-bold mb-8">Key Features</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {plugin.features.map((feature, index) => (
-                    (() => {
-                      const Icon = plugin.slug === "octopie"
-                        ? featureIcons[feature.title] ?? CheckCircle2
-                        : CheckCircle2;
-
-                      return (
-                        <div key={index} className="night-card flex gap-4 rounded-2xl p-6">
-                          <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
-                            <Icon className="h-4 w-4" />
-                          </span>
-                          <div>
-                            <h3 className="font-semibold mb-2">{feature.title}</h3>
-                            <p className="text-sm text-muted-foreground">{feature.description}</p>
-                          </div>
-                        </div>
-                      );
-                    })()
-                  ))}
-                </div>
-              </FadeIn>
+          <FadeIn direction="up">
+            <div className="mb-8 max-w-3xl">
+              <p className="hud-label mb-4">Details</p>
+              <h2 className="text-3xl font-bold">Plugin Info & Support</h2>
             </div>
+          </FadeIn>
 
-            {/* Sidebar */}
-            <div className="space-y-8">
-              <FadeIn direction="up" delay={0.2}>
-                <div className="night-card p-6">
-                  <h3 className="font-semibold mb-4">Plugin Info</h3>
-                  <ul className="space-y-4 text-sm">
-                    <li className="flex justify-between">
-                      <span className="text-muted-foreground">Version</span>
-                      <span>{plugin.version}</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-muted-foreground">Last Updated</span>
-                      <span>{plugin.lastUpdated}</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-muted-foreground">Compatibility</span>
-                      <span>Blender 4.0+</span>
-                    </li>
-                  </ul>
-                </div>
-              </FadeIn>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <FadeIn direction="up" delay={0.1}>
+              <div className="night-card p-6">
+                <h3 className="font-semibold mb-4">Plugin Info</h3>
+                <ul className="space-y-4 text-sm">
+                  <li className="flex justify-between gap-4">
+                    <span className="text-muted-foreground">Version</span>
+                    <span>{plugin.version}</span>
+                  </li>
+                  <li className="flex justify-between gap-4">
+                    <span className="text-muted-foreground">Last Updated</span>
+                    <span>{plugin.lastUpdated}</span>
+                  </li>
+                  <li className="flex justify-between gap-4">
+                    <span className="text-muted-foreground">Compatibility</span>
+                    <span>Blender 4.0+</span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
 
-              <FadeIn direction="up" delay={0.3}>
-                <div className="night-card p-6">
-                  <h3 className="font-semibold mb-4">Support</h3>
-                  <div className="space-y-3 flex flex-col">
-                    <Link href="/docs" className="text-sm text-muted-foreground hover:text-white transition-colors">Documentation</Link>
-                    <Link href="/report-bug" className="text-sm text-muted-foreground hover:text-white transition-colors">Report an Issue</Link>
-                    <Link href="#" className="text-sm text-muted-foreground hover:text-white transition-colors">Contact Support</Link>
-                  </div>
+            <FadeIn direction="up" delay={0.2}>
+              <div className="night-card p-6">
+                <h3 className="font-semibold mb-4">Support</h3>
+                <div className="space-y-3 flex flex-col">
+                  <Link href="/docs" className="text-sm text-muted-foreground hover:text-white transition-colors">Documentation</Link>
+                  <Link href="/report-bug" className="text-sm text-muted-foreground hover:text-white transition-colors">Report an Issue</Link>
+                  <Link href="#" className="text-sm text-muted-foreground hover:text-white transition-colors">Contact Support</Link>
                 </div>
-              </FadeIn>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
