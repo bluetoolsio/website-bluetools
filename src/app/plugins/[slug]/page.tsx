@@ -152,13 +152,12 @@ export default async function PluginPage({
               </div>
             </FadeIn>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col gap-10">
               {plugin.showcase.map((item, index) => (
                 <FadeIn
                   key={item.media}
                   direction="up"
                   delay={Math.min(index * 0.04, 0.24)}
-                  className={index === 0 ? "md:col-span-2 lg:col-span-3" : undefined}
                 >
                   <article className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
                     <div className="relative aspect-video overflow-hidden bg-black">
