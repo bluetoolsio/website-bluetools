@@ -80,46 +80,50 @@ export function ShowcaseCarousel({ items, assetBasePath }: ShowcaseCarouselProps
         </div>
       </article>
 
-      <div
-        aria-label="Choose showcase step"
-        className="-mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:px-0"
-      >
-        {items.map((item, index) => {
-          const Icon = showcaseIcons[item.title] ?? CheckCircle2;
-          const isActive = index === activeIndex;
+      <div className="relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-4 bg-gradient-to-r from-[#05070d] to-transparent sm:hidden" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-[#05070d] to-transparent sm:hidden" />
+        <div
+          aria-label="Choose showcase step"
+          className="scrollbar-hidden -mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0"
+        >
+          {items.map((item, index) => {
+            const Icon = showcaseIcons[item.title] ?? CheckCircle2;
+            const isActive = index === activeIndex;
 
-          return (
-            <button
-              key={item.media}
-              type="button"
-              aria-pressed={isActive}
-              onClick={() => setActiveIndex(index)}
-              className={cn(
-                "group flex min-w-44 snap-start items-center gap-3 rounded-xl border p-3 text-left transition sm:min-w-48",
-                isActive
-                  ? "border-accent/55 bg-accent/15 text-white shadow-lg shadow-accent/10"
-                  : "border-white/10 bg-white/[0.035] text-muted-foreground hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
-              )}
-            >
-              <span
+            return (
+              <button
+                key={item.media}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition",
+                  "group flex min-w-44 snap-start items-center gap-3 rounded-xl border p-3 text-left transition sm:min-w-48",
                   isActive
-                    ? "border-accent/35 bg-accent/20 text-accent"
-                    : "border-white/10 bg-white/[0.04] text-muted-foreground group-hover:text-white"
+                    ? "border-accent/55 bg-accent/15 text-white shadow-lg shadow-accent/10"
+                    : "border-white/10 bg-white/[0.035] text-muted-foreground hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
                 )}
               >
-                <Icon className="h-4 w-4" />
-              </span>
-              <span className="min-w-0">
-                <span className="block truncate text-sm font-bold">{item.title}</span>
-                <span className="mt-0.5 block text-xs text-muted-foreground">
-                  {String(index + 1).padStart(2, "0")}
+                <span
+                  className={cn(
+                    "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition",
+                    isActive
+                      ? "border-accent/35 bg-accent/20 text-accent"
+                      : "border-white/10 bg-white/[0.04] text-muted-foreground group-hover:text-white"
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
                 </span>
-              </span>
-            </button>
-          );
-        })}
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-bold">{item.title}</span>
+                  <span className="mt-0.5 block text-xs text-muted-foreground">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

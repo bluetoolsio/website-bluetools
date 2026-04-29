@@ -148,4 +148,13 @@ body::after {
     background-clip: text;
     background-image: linear-gradient(90deg, #e9f2ff 0%, #6ea8ff 45%, #7c5cff 100%);
   }
+
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }
