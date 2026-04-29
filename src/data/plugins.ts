@@ -4,6 +4,12 @@ export interface PluginFeature {
   icon?: string;
 }
 
+export interface PluginShowcase {
+  title: string;
+  description: string;
+  media: string;
+}
+
 export interface PluginData {
   id: string;
   slug: string;
@@ -22,6 +28,7 @@ export interface PluginData {
     gumroad: string;
   };
   gallery: string[];
+  showcase?: PluginShowcase[];
 }
 
 export const plugins: PluginData[] = [
@@ -44,6 +51,58 @@ export const plugins: PluginData[] = [
     gallery: [
       '/plugins/octopie/gallery-1.jpg',
       '/plugins/octopie/gallery-2.jpg'
+    ],
+    showcase: [
+      {
+        title: 'Activate',
+        description: 'Open OctoPie instantly and keep your most-used actions right under the cursor.',
+        media: '/plugins/octopie/showcase/activate.mp4'
+      },
+      {
+        title: 'Assets',
+        description: 'Turn asset placement into a slot-based workflow, so libraries stay one gesture away.',
+        media: '/plugins/octopie/showcase/assets.mp4'
+      },
+      {
+        title: 'Emulate Keyboard',
+        description: 'Trigger keyboard-style input from a pie slot when a direct operator is not enough.',
+        media: '/plugins/octopie/showcase/emulate-keyboard.mp4'
+      },
+      {
+        title: 'Lists',
+        description: 'Use compact lists for longer command sets without crowding the main pie.',
+        media: '/plugins/octopie/showcase/list.mp4'
+      },
+      {
+        title: 'Macros',
+        description: 'Chain repeated Blender actions into one clean slot for multi-step work.',
+        media: '/plugins/octopie/showcase/macros.mp4'
+      },
+      {
+        title: 'Menus',
+        description: 'Bring familiar Blender menus into OctoPie and reach them from a faster layout.',
+        media: '/plugins/octopie/showcase/menus.mp4'
+      },
+      {
+        title: 'Operators',
+        description: 'Call Blender operators directly from context-aware pie slots.',
+        media: '/plugins/octopie/showcase/operator.mp4'
+      },
+      {
+        title: 'Pie Menus',
+        description: 'Nest focused pies for different modes, editors, profiles, and tasks.',
+        media: '/plugins/octopie/showcase/pie.mp4'
+      },
+      {
+        title: 'Scripts',
+        description: 'Run custom scripts from a slot for personal tools and pipeline actions.',
+        media: '/plugins/octopie/showcase/script.mp4'
+      },
+      {
+        title: 'Shortcuts',
+        description: 'Map shortcuts into visual slots for commands you reach for constantly.',
+        media: '/plugins/octopie/showcase/shortcut.mp4'
+      }
     ],
     features: [
       {

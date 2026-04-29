@@ -6,6 +6,8 @@ import { CheckCircle2, Play } from "lucide-react";
 import Link from "next/link";
 import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
+const assetBasePath = "/website-smartblender";
+
 function SuperhiveIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 1920 1080" className="h-8 w-8">
@@ -133,6 +135,62 @@ export default async function PluginPage({
           </div>
         </div>
       </section>
+
+      {plugin.showcase && plugin.showcase.length > 0 ? (
+        <section className="relative border-b border-white/10 bg-black/25 py-24">
+          <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[radial-gradient(circle_at_50%_0%,rgba(110,168,255,0.16),transparent_45%)]" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <FadeIn direction="up">
+              <div className="mb-12 max-w-3xl">
+                <p className="hud-label mb-4">Workflow showcase</p>
+                <h2 className="text-4xl font-black tracking-tight md:text-5xl">
+                  Build the pie menu around the way you actually work.
+                </h2>
+                <p className="mt-5 text-lg leading-8 text-muted-foreground">
+                  OctoPie slots can launch operators, shortcuts, scripts, assets, macros, lists, and nested pies, so each profile becomes a fast command surface for the current Blender context.
+                </p>
+              </div>
+            </FadeIn>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {plugin.showcase.map((item, index) => (
+                <FadeIn
+                  key={item.media}
+                  direction="up"
+                  delay={Math.min(index * 0.04, 0.24)}
+                  className={index === 0 ? "md:col-span-2 lg:col-span-3" : undefined}
+                >
+                  <article className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+                    <div className="relative aspect-video overflow-hidden bg-black">
+                      <video
+                        aria-label={`${item.title} showcase`}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-100"
+                      >
+                        <source src={`${assetBasePath}${item.media}`} type="video/mp4" />
+                      </video>
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                    </div>
+                    <div className="p-5">
+                      <div className="mb-3 flex items-center gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
+                          <OctoPieIcon className="h-4 w-4" />
+                        </span>
+                        <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                      </div>
+                      <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
+                    </div>
+                  </article>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* Overview & Features */}
       <section className="py-24">
