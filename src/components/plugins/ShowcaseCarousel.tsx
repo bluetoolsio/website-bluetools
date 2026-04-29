@@ -85,7 +85,7 @@ export function ShowcaseCarousel({ items, assetBasePath }: ShowcaseCarouselProps
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-[#05070d] to-transparent sm:hidden" />
         <div
           aria-label="Choose showcase step"
-          className="scrollbar-hidden -mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0"
+          className="scrollbar-hidden -mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible"
         >
           {items.map((item, index) => {
             const Icon = showcaseIcons[item.title] ?? CheckCircle2;
@@ -98,7 +98,7 @@ export function ShowcaseCarousel({ items, assetBasePath }: ShowcaseCarouselProps
                 aria-pressed={isActive}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "group flex min-w-44 snap-start items-center gap-3 rounded-xl border p-3 text-left transition sm:min-w-48",
+                  "group flex min-w-44 snap-start items-center gap-3 rounded-xl border p-3 text-left transition sm:min-w-48 lg:min-w-0",
                   isActive
                     ? "border-accent/55 bg-accent/15 text-white shadow-lg shadow-accent/10"
                     : "border-white/10 bg-white/[0.035] text-muted-foreground hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
