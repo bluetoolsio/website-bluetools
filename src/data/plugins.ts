@@ -35,7 +35,7 @@ export const plugins: PluginData[] = [
     version: '1.2.0',
     lastUpdated: 'April 2026',
     heroImage: '/plugins/octopie/hero.jpg',
-    previewImage: '/plugins/octopie/preview.png',
+    previewImage: '/plugins/octopie/preview.gif',
     heroVideo: '', // Optional video
     purchaseLinks: {
       superhive: 'https://superhivemarket.com/products/smart-pie-menus',

@@ -82,7 +82,7 @@ export default function Home() {
               <div className="relative min-h-[260px] overflow-hidden rounded-[1.2rem] border border-white/10 bg-[#0b0b0c] md:rounded-l-none">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`${assetBasePath}/plugins/octopie/preview.png`}
+                  src={`${assetBasePath}/plugins/octopie/preview.gif`}
                   alt="OctoPie preview"
                   className="h-full w-full object-cover opacity-80 saturate-105 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-92"
                 />
