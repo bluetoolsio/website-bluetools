@@ -70,7 +70,7 @@ export default function Home() {
                     <OctoPieLabel iconBoxClassName="h-10 w-10 rounded-xl" iconClassName="h-5 w-5" />
                   </h2>
                   <p className="mt-5 text-sm leading-6 text-muted-foreground">
-                    Context-aware Blender pie menus for faster commands, cleaner panels, and production-ready profiles.
+                    A customizable Blender pie menu system for Operator, Shortcut, Keyboard, Menu, Script, Asset, Macro, List, and nested Pie Menus.
                   </p>
                 </div>
                 <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-accent/25 bg-black/45 px-3 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent backdrop-blur">
