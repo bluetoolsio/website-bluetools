@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ArrowRight, Command, Gauge, Orbit, Radar, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Gauge, Orbit, Sparkles, Workflow, Zap } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
@@ -97,21 +97,22 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Add-on friendly, not noisy</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Smart Blender add-ons, built for flow</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl">
-                Low light. High signal. Everything reachable.
+                Less clutter. More control.
+                <span className="block">A faster way to create.</span>
               </h2>
               <p className="mt-5 text-muted-foreground">
-                Reploy keeps the interface quiet and the tools close: radial menus, scripts, shortcuts, assets, and repeatable profiles for real production work.
+                Reploy builds smart Blender add-ons that reduce friction, speed up repetitive work, and change how creators move through production.
               </p>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              [Command, "Command density", "Put the Blender actions you actually use behind one direct gesture."],
-              [Radar, "Context radar", "Switch menus by editor, mode, profile, or the exact creative task in front of you."],
-              [ShieldCheck, "Pipeline safe", "Export, back up, restore, and carry your setup between machines without drama."],
+              [Workflow, "Workflow first", "Add-ons designed around real production habits, not bloated feature lists."],
+              [Zap, "Built for speed", "Turn repetitive actions into cleaner, faster, more direct workflows."],
+              [Sparkles, "Creator focused", "Tools that stay out of the way until the moment you need them."],
             ].map(([Icon, title, copy], index) => (
               <FadeIn key={String(title)} direction="up" delay={index * 0.1}>
                 <Card hoverEffect className="h-full border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.025] p-7">
