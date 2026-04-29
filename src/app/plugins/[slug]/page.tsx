@@ -2,11 +2,47 @@ import { plugins, getPluginBySlug } from "@/data/plugins";
 import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Play } from "lucide-react";
+import {
+  ArchiveRestore,
+  ChartPie,
+  CheckCircle2,
+  Command,
+  FileCode,
+  Keyboard,
+  List,
+  Package,
+  Play,
+  Power,
+  Radar,
+  SquareFunction,
+  SquareMenu,
+  Waypoints,
+  Workflow,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
-import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
+import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
 const assetBasePath = "/website-smartblender";
+
+const showcaseIcons: Record<string, LucideIcon> = {
+  Activate: Power,
+  Operator: SquareFunction,
+  Shortcut: Command,
+  Keyboard,
+  Menu: SquareMenu,
+  Script: FileCode,
+  Asset: Package,
+  Macro: Workflow,
+  List,
+  "Pie Menu": ChartPie,
+};
+
+const featureIcons: Record<string, LucideIcon> = {
+  "Context Aware": Radar,
+  "Slot-Based Workflows": Waypoints,
+  "Portable Setup": ArchiveRestore,
+};
 
 function SuperhiveIcon() {
   return (
@@ -154,37 +190,43 @@ export default async function PluginPage({
 
             <div className="flex flex-col gap-10">
               {plugin.showcase.map((item, index) => (
-                <FadeIn
-                  key={item.media}
-                  direction="up"
-                  delay={Math.min(index * 0.04, 0.24)}
-                >
-                  <article className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
-                    <div className="relative aspect-video overflow-hidden bg-black">
-                      <video
-                        aria-label={`${item.title} showcase`}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-100"
-                      >
-                        <source src={`${assetBasePath}${item.media}`} type="video/mp4" />
-                      </video>
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-                    </div>
-                    <div className="p-5">
-                      <div className="mb-3 flex items-center gap-3">
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
-                          <OctoPieIcon className="h-4 w-4" />
-                        </span>
-                        <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                      </div>
-                      <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
-                    </div>
-                  </article>
-                </FadeIn>
+                (() => {
+                  const Icon = showcaseIcons[item.title] ?? CheckCircle2;
+
+                  return (
+                    <FadeIn
+                      key={item.media}
+                      direction="up"
+                      delay={Math.min(index * 0.04, 0.24)}
+                    >
+                      <article className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+                        <div className="relative aspect-video overflow-hidden bg-black">
+                          <video
+                            aria-label={`${item.title} showcase`}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="metadata"
+                            className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-100"
+                          >
+                            <source src={`${assetBasePath}${item.media}`} type="video/mp4" />
+                          </video>
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                        </div>
+                        <div className="p-5">
+                          <div className="mb-3 flex items-center gap-3">
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
+                              <Icon className="h-4 w-4" />
+                            </span>
+                            <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                          </div>
+                          <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
+                        </div>
+                      </article>
+                    </FadeIn>
+                  );
+                })()
               ))}
             </div>
           </div>
@@ -207,19 +249,23 @@ export default async function PluginPage({
                 <h2 className="text-3xl font-bold mb-8">Key Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {plugin.features.map((feature, index) => (
-                    <div key={index} className="night-card flex gap-4 rounded-2xl p-6">
-                      {plugin.slug === "octopie" ? (
-                        <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
-                          <OctoPieIcon className="h-4 w-4" />
-                        </span>
-                      ) : (
-                        <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0" />
-                      )}
-                      <div>
-                        <h3 className="font-semibold mb-2">{feature.title}</h3>
-                        <p className="text-sm text-muted-foreground">{feature.description}</p>
-                      </div>
-                    </div>
+                    (() => {
+                      const Icon = plugin.slug === "octopie"
+                        ? featureIcons[feature.title] ?? CheckCircle2
+                        : CheckCircle2;
+
+                      return (
+                        <div key={index} className="night-card flex gap-4 rounded-2xl p-6">
+                          <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          <div>
+                            <h3 className="font-semibold mb-2">{feature.title}</h3>
+                            <p className="text-sm text-muted-foreground">{feature.description}</p>
+                          </div>
+                        </div>
+                      );
+                    })()
                   ))}
                 </div>
               </FadeIn>
