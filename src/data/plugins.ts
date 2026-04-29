@@ -55,7 +55,7 @@ export const plugins: PluginData[] = [
     showcase: [
       {
         title: 'Activate',
-        description: 'Open OctoPie instantly and keep your most-used actions right under the cursor.',
+        description: 'Set a shortcut to open OctoPie from the N-panel and get instant access to eight slots you can customize with your own tools, actions, and workflows.',
         media: '/plugins/octopie/showcase/activate.mp4'
       },
       {

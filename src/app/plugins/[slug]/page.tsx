@@ -4,39 +4,17 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 import {
   ArchiveRestore,
-  ChartPie,
   CheckCircle2,
-  Command,
-  FileCode,
-  Keyboard,
-  List,
-  Package,
   Play,
-  Power,
   Radar,
-  SquareFunction,
-  SquareMenu,
   Waypoints,
-  Workflow,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
+import { ShowcaseCarousel } from "@/components/plugins/ShowcaseCarousel";
 
 const assetBasePath = "/website-smartblender";
-
-const showcaseIcons: Record<string, LucideIcon> = {
-  Activate: Power,
-  Operator: SquareFunction,
-  Shortcut: Command,
-  Keyboard,
-  Menu: SquareMenu,
-  Script: FileCode,
-  Asset: Package,
-  Macro: Workflow,
-  List,
-  "Pie Menu": ChartPie,
-};
 
 const featureIcons: Record<string, LucideIcon> = {
   "Context Aware": Radar,
@@ -188,47 +166,9 @@ export default async function PluginPage({
               </div>
             </FadeIn>
 
-            <div className="flex flex-col gap-10">
-              {plugin.showcase.map((item, index) => (
-                (() => {
-                  const Icon = showcaseIcons[item.title] ?? CheckCircle2;
-
-                  return (
-                    <FadeIn
-                      key={item.media}
-                      direction="up"
-                      delay={Math.min(index * 0.04, 0.24)}
-                    >
-                      <article className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
-                        <div className="relative aspect-video overflow-hidden bg-black">
-                          <video
-                            aria-label={`${item.title} showcase`}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="metadata"
-                            className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-100"
-                          >
-                            <source src={`${assetBasePath}${item.media}`} type="video/mp4" />
-                          </video>
-                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-                        </div>
-                        <div className="p-5">
-                          <div className="mb-3 flex items-center gap-3">
-                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
-                              <Icon className="h-4 w-4" />
-                            </span>
-                            <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                          </div>
-                          <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
-                        </div>
-                      </article>
-                    </FadeIn>
-                  );
-                })()
-              ))}
-            </div>
+            <FadeIn direction="up" delay={0.1}>
+              <ShowcaseCarousel items={plugin.showcase} assetBasePath={assetBasePath} />
+            </FadeIn>
           </div>
         </section>
       ) : null}
