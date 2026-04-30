@@ -83,11 +83,11 @@ export default async function PluginPage({
   return (
     <div className="pb-24">
       {/* Plugin Hero */}
-      <section className="neo-field relative overflow-hidden border-b border-white/10 pb-20 pt-24">
-        <div className="absolute inset-0 z-0 opacity-[0.11] [background-image:linear-gradient(rgba(199,251,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(65,223,241,.045)_1px,transparent_1px)] [background-size:96px_96px]" />
-        <div className="absolute inset-x-0 bottom-0 z-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
+      <section className="neo-field relative overflow-hidden border-b border-[rgba(199,251,255,.1)] pb-20 pt-24">
+        <div className="absolute inset-0 z-0 opacity-[0.08] [background-image:linear-gradient(rgba(199,251,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(65,223,241,.045)_1px,transparent_1px)] [background-size:96px_96px]" />
+        <div className="absolute inset-x-0 bottom-0 z-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right">
               <div>
@@ -99,11 +99,11 @@ export default async function PluginPage({
                     plugin.name
                   )}
                 </h1>
-                <p className="mb-8 max-w-xl text-xl leading-8 text-muted-foreground md:text-2xl">
+                <p className="section-copy mb-8 max-w-xl text-xl md:text-2xl">
                   {plugin.tagline}
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-8">
-                  <span className="border border-cyan-200/20 bg-black/40 px-3 py-1 font-mono text-sm font-bold text-cyan-100">v{plugin.version}</span>
+                  <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 font-mono text-sm font-bold text-cyan-100">v{plugin.version}</span>
                   <span className="text-sm text-muted-foreground">Updated {plugin.lastUpdated}</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -111,7 +111,7 @@ export default async function PluginPage({
                     href={plugin.purchaseLinks.superhive}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 border border-white/12 bg-black/40 px-5 font-mono text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,.025)] transition-colors hover:border-cyan-200/34 hover:bg-cyan-300/10 hover:text-cyan-50 sm:w-auto sm:min-w-44"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-5 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,.025)] transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50 sm:w-auto sm:min-w-44"
                   >
                     <SuperhiveIcon />
                     Superhive
@@ -120,7 +120,7 @@ export default async function PluginPage({
                     href={plugin.purchaseLinks.gumroad}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 border border-white/12 bg-black/40 px-5 font-mono text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,.025)] transition-colors hover:border-cyan-200/34 hover:bg-cyan-300/10 hover:text-cyan-50 sm:w-auto sm:min-w-44"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-5 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,.025)] transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50 sm:w-auto sm:min-w-44"
                   >
                     <GumroadIcon />
                     Gumroad
@@ -137,11 +137,11 @@ export default async function PluginPage({
             <FadeIn direction="left" delay={0.2}>
               <div className="terminal-panel addon-glow group relative flex aspect-video items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="flex h-20 w-20 cursor-pointer items-center justify-center border border-cyan-200/30 bg-black/55 text-cyan-100 backdrop-blur-sm transition-transform group-hover:scale-110">
+                  <div className="flex h-20 w-20 cursor-pointer items-center justify-center border border-[rgba(199,251,255,.18)] bg-black/45 text-cyan-100 backdrop-blur-sm transition-transform group-hover:scale-105">
                     <Play className="h-8 w-8 ml-1" />
                   </div>
                 </div>
-                <span className="text-muted-foreground z-10">Trailer Video Placeholder</span>
+                <span className="section-copy z-10 text-sm">Trailer Video Placeholder</span>
               </div>
             </FadeIn>
           </div>
@@ -149,8 +149,8 @@ export default async function PluginPage({
       </section>
 
       {/* Overview & Features */}
-      <section className="border-b border-white/10 bg-black/20 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-b border-[rgba(199,251,255,.1)] bg-black/16 py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <FadeIn direction="up">
               <div>
@@ -158,7 +158,7 @@ export default async function PluginPage({
                 <h2 className="font-mono text-3xl font-bold uppercase tracking-[0.06em] md:text-5xl">
                   A custom command surface for Blender.
                 </h2>
-                <div className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
+                <div className="section-copy mt-6 max-w-3xl text-lg">
                   <p>{plugin.description}</p>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default async function PluginPage({
 
             <FadeIn direction="up" delay={0.1}>
               <div>
-                <h2 className="mb-6 font-mono text-3xl font-bold tracking-[0.04em]">Key Features</h2>
+                <h2 className="mb-6 font-mono text-3xl font-bold uppercase tracking-[0.05em]">Key Features</h2>
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-1">
                   {plugin.features.map((feature, index) => {
                     const Icon = plugin.slug === "octopie"
@@ -175,12 +175,12 @@ export default async function PluginPage({
 
                     return (
                       <div key={index} className="night-card flex gap-4 p-6">
-                        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-cyan-200/20 bg-black/35 text-cyan-100">
+                        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-[rgba(199,251,255,.14)] bg-black/28 text-cyan-100">
                           <Icon className="h-4 w-4" />
                         </span>
                         <div>
                           <h3 className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.08em] text-white">{feature.title}</h3>
-                          <p className="text-sm leading-6 text-muted-foreground">{feature.description}</p>
+                          <p className="section-copy text-sm">{feature.description}</p>
                         </div>
                       </div>
                     );
@@ -193,16 +193,16 @@ export default async function PluginPage({
       </section>
 
       {plugin.showcase && plugin.showcase.length > 0 ? (
-        <section className="relative border-b border-white/10 bg-black/25 py-24">
-          <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[linear-gradient(180deg,rgba(65,223,241,0.04),transparent_72%)]" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative border-b border-[rgba(199,251,255,.1)] bg-black/18 py-24">
+          <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[linear-gradient(180deg,rgba(65,223,241,0.025),transparent_72%)]" />
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <FadeIn direction="up">
               <div className="mb-12 max-w-3xl">
                 <p className="hud-label mb-4">Workflow showcase</p>
                 <h2 className="font-mono text-3xl font-bold uppercase tracking-[0.06em] md:text-5xl">
                   Build the pie menu around the way you actually work.
                 </h2>
-                <p className="mt-5 text-lg leading-8 text-muted-foreground">
+                <p className="section-copy mt-5 text-lg">
                   OctoPie slots can launch operators, shortcuts, scripts, assets, macros, lists, and nested pies, so each profile becomes a fast command surface for the current Blender context.
                 </p>
               </div>
@@ -217,11 +217,11 @@ export default async function PluginPage({
 
       {/* Details */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="mb-8 max-w-3xl">
               <p className="hud-label mb-4">Details</p>
-              <h2 className="font-mono text-3xl font-bold tracking-[0.04em]">Plugin Info & Support</h2>
+              <h2 className="font-mono text-3xl font-bold uppercase tracking-[0.05em]">Plugin Info & Support</h2>
             </div>
           </FadeIn>
 

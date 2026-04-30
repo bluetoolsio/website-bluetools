@@ -4,8 +4,8 @@ import { BlueToolsLogo } from "@/components/brand/BlueToolsLogo";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-accent/10 bg-black/35 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-[rgba(199,251,255,.1)] bg-black/32 pt-16 pb-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center text-xl text-white">
@@ -65,7 +65,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-16 flex flex-col items-center justify-between border-t border-[rgba(199,251,255,.1)] pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} BlueTools. All rights reserved.
           </p>

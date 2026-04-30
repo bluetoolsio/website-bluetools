@@ -23,14 +23,14 @@ export default function BugReportPage() {
 
   return (
     <div className="relative mx-auto max-w-3xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="absolute inset-x-0 top-20 -z-10 h-72  bg-black/20" />
+      <div className="absolute inset-x-0 top-20 -z-10 h-72 bg-black/16" />
       <FadeIn direction="up">
-        <div className="text-center mb-12">
-          <div className="addon-glow mx-auto mb-6 flex h-16 w-16 items-center justify-center  border border-cyan-200/20 bg-black/30 text-cyan-100">
+        <div className="mb-12 text-center">
+          <div className="addon-glow mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-[rgba(199,251,255,.16)] bg-black/28 text-cyan-100">
             <Bug className="h-8 w-8" />
           </div>
-          <h1 className="mb-4 font-mono text-3xl font-bold uppercase tracking-[0.12em]">Report a <span className="text-addonline">Bug</span></h1>
-          <p className="text-xl text-muted-foreground">
+          <h1 className="mb-4 font-mono text-3xl font-bold uppercase tracking-[0.1em]">Report a <span className="text-addonline">Bug</span></h1>
+          <p className="section-copy text-xl">
             Help us improve our plugins. Please provide as much detail as possible so we can reproduce and fix the issue.
           </p>
         </div>
@@ -39,24 +39,24 @@ export default function BugReportPage() {
       <FadeIn direction="up" delay={0.1}>
         <Card className="night-card p-8">
           {isSuccess ? (
-            <div className="text-center py-12">
-              <div className="mx-auto w-16 h-16 bg-green-500/10 text-green-500  flex items-center justify-center mb-6">
+            <div className="py-12 text-center">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-green-300/20 bg-green-500/10 text-green-300">
                 <Send className="h-8 w-8" />
               </div>
-              <h2 className="font-mono text-2xl font-bold tracking-[0.06em] mb-2">Report Submitted!</h2>
-              <p className="text-muted-foreground mb-8">
+              <h2 className="mb-2 font-mono text-2xl font-bold uppercase tracking-[0.055em]">Report Submitted!</h2>
+              <p className="section-copy mb-8">
                 Thank you for your feedback. Our team will review the issue shortly.
               </p>
               <Button onClick={() => setIsSuccess(false)}>Submit Another Bug</Button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="plugin" className="text-sm font-medium text-white">Plugin</label>
                   <select 
                     id="plugin" 
-                    className="h-10 w-full  border border-white/10 bg-black/35 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="h-10 w-full border border-[rgba(199,251,255,.12)] bg-black/32 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/60"
                     required
                   >
                     <option value="" disabled selected>Select a plugin</option>
@@ -70,7 +70,7 @@ export default function BugReportPage() {
                     type="text" 
                     id="version" 
                     placeholder="e.g. 1.2.0"
-                    className="h-10 w-full  border border-white/10 bg-black/35 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="h-10 w-full border border-[rgba(199,251,255,.12)] bg-black/32 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/60"
                     required
                   />
                 </div>
@@ -82,7 +82,7 @@ export default function BugReportPage() {
                   type="text" 
                   id="title" 
                   placeholder="Brief summary of the issue"
-                  className="h-10 w-full  border border-white/10 bg-black/35 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="h-10 w-full border border-[rgba(199,251,255,.12)] bg-black/32 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/60"
                   required
                 />
               </div>
@@ -93,15 +93,15 @@ export default function BugReportPage() {
                   id="description" 
                   rows={6}
                   placeholder="1. Open Blender&#10;2. Click on...&#10;3. The following error occurs..."
-                  className="w-full resize-y  border border-white/10 bg-black/35 p-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="w-full resize-y border border-[rgba(199,251,255,.12)] bg-black/32 p-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/60"
                   required
                 />
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-white">Attachments (Optional)</label>
-                <div className="cursor-pointer  border-2 border-dashed border-cyan-200/18 bg-black/20 p-6 text-center transition-colors hover:bg-accent/5">
-                  <p className="text-sm text-muted-foreground">
+                <div className="cursor-pointer border-2 border-dashed border-[rgba(199,251,255,.14)] bg-black/20 p-6 text-center transition-colors hover:bg-accent/5">
+                  <p className="section-copy text-sm">
                     Drag and drop screenshots or log files here, or <span className="text-cyan-100">browse</span>.
                   </p>
                 </div>

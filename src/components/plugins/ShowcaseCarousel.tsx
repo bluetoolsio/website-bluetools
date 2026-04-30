@@ -49,7 +49,7 @@ export function ShowcaseCarousel({ items, assetBasePath }: ShowcaseCarouselProps
 
   return (
     <div className="space-y-5">
-      <article className="overflow-hidden  border border-white/10 bg-black/28 shadow-black/25">
+      <article className="media-panel overflow-hidden shadow-black/25">
         <div className="relative aspect-video overflow-hidden bg-black">
           <video
             ref={videoRef}
@@ -66,12 +66,12 @@ export function ShowcaseCarousel({ items, assetBasePath }: ShowcaseCarouselProps
           </video>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-4 pt-16 sm:p-6 sm:pt-24">
             <div className="flex items-end gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center  border border-cyan-200/20 bg-black/35 text-cyan-100 backdrop-blur">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[rgba(199,251,255,.16)] bg-black/35 text-cyan-100 backdrop-blur">
                 <ActiveIcon className="h-5 w-5" />
               </span>
               <div>
                 <h3 className="text-2xl font-black text-white sm:text-3xl">{activeItem.title}</h3>
-                <p className="mt-1 max-w-2xl text-sm leading-6 text-white/75 sm:text-base">
+                <p className="mt-1 max-w-2xl text-sm leading-6 text-cyan-50/72 sm:text-base">
                   {activeItem.description}
                 </p>
               </div>
@@ -98,18 +98,18 @@ export function ShowcaseCarousel({ items, assetBasePath }: ShowcaseCarouselProps
                 aria-pressed={isActive}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "group flex min-w-44 snap-start items-center gap-3  border p-3 text-left transition sm:min-w-48 lg:min-w-0",
+                  "group flex min-w-44 snap-start items-center gap-3 border p-3 text-left transition sm:min-w-48 lg:min-w-0",
                   isActive
-                    ? "border-accent/55 bg-black/35 text-white "
-                    : "border-white/10 bg-black/28 text-muted-foreground hover:border-white/20 hover:bg-cyan-300/7 hover:text-white"
+                    ? "border-cyan-200/28 bg-black/45 text-white"
+                    : "border-[rgba(199,251,255,.1)] bg-black/24 text-muted-foreground hover:border-cyan-200/18 hover:bg-cyan-300/7 hover:text-white"
                 )}
               >
                 <span
                   className={cn(
-                    "flex h-9 w-9 shrink-0 items-center justify-center  border transition",
+                    "flex h-9 w-9 shrink-0 items-center justify-center border transition",
                     isActive
-                      ? "border-accent/35 bg-black/35 text-cyan-100"
-                      : "border-white/10 bg-black/28 text-muted-foreground group-hover:text-white"
+                      ? "border-cyan-200/24 bg-black/35 text-cyan-100"
+                      : "border-[rgba(199,251,255,.1)] bg-black/24 text-muted-foreground group-hover:text-white"
                   )}
                 >
                   <Icon className="h-4 w-4" />
