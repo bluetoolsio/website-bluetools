@@ -20,9 +20,9 @@ export default function Home() {
         </div>
 
         <div className="mx-auto max-w-7xl">
-          <div className="tech-frame mx-auto max-w-6xl p-5 sm:p-8 md:p-10">
+          <div className="mx-auto max-w-6xl">
             <FadeIn direction="up">
-              <div className="mb-8 flex items-center justify-between gap-4">
+              <div className="mb-10 flex items-center justify-between gap-4">
                 <BlueToolsLogo markClassName="h-10 w-10 rounded-xl" wordClassName="text-2xl md:text-3xl" showTagline />
                 <div className="hud-label hidden w-fit sm:inline-flex">
                   <Orbit className="h-4 w-4" />
@@ -61,17 +61,17 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <FadeIn direction="up" delay={0.25} className="mx-auto mt-16 max-w-4xl">
+          <FadeIn direction="up" delay={0.25} className="tech-frame mx-auto mt-16 max-w-5xl p-3 sm:p-4">
             <Link
               href="/plugins/octopie"
               aria-label="Open OctoPie plugin page"
-              className="group relative grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-2 shadow-2xl shadow-black/45 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/25 hover:bg-white/[0.045] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background md:grid-cols-[0.9fr_1.1fr]"
+              className="group relative grid overflow-hidden border border-cyan-200/10 bg-black/20 p-2 shadow-2xl shadow-black/45 backdrop-blur-xl transition duration-300 hover:border-accent/30 hover:bg-cyan-300/[0.025] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background md:grid-cols-[0.9fr_1.1fr]"
             >
               <div className="absolute -inset-px -z-10 rounded-[1.55rem] bg-gradient-to-br from-accent/14 via-transparent to-transparent opacity-70 blur-lg" />
               <div className="flex flex-col justify-between rounded-[1.2rem] border border-white/10 bg-[#080b12]/95 p-5 md:rounded-r-none md:border-r-0">
                 <div>
                   <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent/75">Featured add-on</p>
-                  <h2 className="mt-3 text-3xl font-black tracking-tight text-white">
+                  <h2 className="mt-3 font-mono text-2xl font-bold uppercase tracking-[0.12em] text-white">
                     <OctoPieLabel iconBoxClassName="h-10 w-10 rounded-xl" iconClassName="h-5 w-5" />
                   </h2>
                   <p className="mt-5 text-sm leading-6 text-muted-foreground">
@@ -124,7 +124,7 @@ export default function Home() {
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/30 bg-accent/15 text-accent shadow-lg shadow-accent/10">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mb-3 text-xl font-bold text-white">{title as string}</h3>
+                  <h3 className="mb-3 font-mono text-xl font-bold tracking-[0.04em] text-white">{title as string}</h3>
                   <p className="text-muted-foreground">{copy as string}</p>
                 </Card>
               </FadeIn>

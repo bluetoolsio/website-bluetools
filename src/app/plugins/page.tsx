@@ -19,7 +19,7 @@ export default function PluginsPage() {
       <FadeIn direction="up">
         <div className="mb-16">
           <p className="hud-label mb-4">BlueTools plugins</p>
-          <h1 className="mb-4 text-4xl font-black tracking-tight md:text-6xl">Plugins and specialist tools for <span className="text-addonline">focused work.</span></h1>
+          <h1 className="mb-4 font-mono text-3xl font-bold uppercase tracking-[0.12em] md:text-5xl">Plugins and specialist tools for <span className="text-addonline">focused work.</span></h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
             BlueTools is a base for sharp, practical products across creative and technical workflows — starting with OctoPie for Blender.
           </p>
@@ -51,7 +51,7 @@ export default function PluginsPage() {
               
               <div className="relative z-10 flex flex-grow flex-col p-6">
                 <div className="flex justify-between items-start mb-4">
-                  <h2 className="text-2xl font-bold">
+                  <h2 className="font-mono text-2xl font-bold tracking-[0.06em]">
                     {plugin.slug === "octopie" ? (
                       <OctoPieLabel
                         iconBoxClassName="h-9 w-9"

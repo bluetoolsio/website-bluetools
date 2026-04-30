@@ -29,7 +29,7 @@ export default function BugReportPage() {
           <div className="addon-glow mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10 text-accent">
             <Bug className="h-8 w-8" />
           </div>
-          <h1 className="mb-4 text-4xl font-black tracking-tight">Report a <span className="text-addonline">Bug</span></h1>
+          <h1 className="mb-4 font-mono text-3xl font-bold uppercase tracking-[0.12em]">Report a <span className="text-addonline">Bug</span></h1>
           <p className="text-xl text-muted-foreground">
             Help us improve our plugins. Please provide as much detail as possible so we can reproduce and fix the issue.
           </p>
@@ -43,7 +43,7 @@ export default function BugReportPage() {
               <div className="mx-auto w-16 h-16 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mb-6">
                 <Send className="h-8 w-8" />
               </div>
-              <h2 className="text-2xl font-bold mb-2">Report Submitted!</h2>
+              <h2 className="font-mono text-2xl font-bold tracking-[0.06em] mb-2">Report Submitted!</h2>
               <p className="text-muted-foreground mb-8">
                 Thank you for your feedback. Our team will review the issue shortly.
               </p>
