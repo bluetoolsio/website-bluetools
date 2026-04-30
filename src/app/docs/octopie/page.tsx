@@ -257,7 +257,7 @@ export default function DocsPage() {
                   ["Add slots and test", "Add up to eight slots, set each module and target, then press the shortcut in Blender to test the pie at your cursor."],
                 ].map(([title, body], index) => (
                   <div key={title} className="flex gap-4">
-                    <div className={index === 4 ? "flex-shrink-0 w-8 h-8  bg-accent text-cyan-100-foreground flex items-center justify-center font-bold" : "flex-shrink-0 w-8 h-8  bg-white/10 flex items-center justify-center font-bold text-white"}>
+                    <div className={index === 4 ? "flex h-8 w-8 flex-shrink-0 items-center justify-center bg-accent font-bold text-accent-foreground" : "flex h-8 w-8 flex-shrink-0 items-center justify-center bg-white/10 font-bold text-white"}>
                       {index + 1}
                     </div>
                     <div>
