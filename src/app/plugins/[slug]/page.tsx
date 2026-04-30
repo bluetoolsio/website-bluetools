@@ -104,8 +104,11 @@ export default async function PluginPage({
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 font-mono text-sm font-bold text-cyan-100">v{plugin.version}</span>
-                  <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 text-sm text-cyan-100">
-                    {plugin.priceNote} {plugin.price} / regular {plugin.regularPrice}
+                  <span className="inline-flex items-baseline gap-3 border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 text-sm">
+                    <span className="font-semibold text-muted-foreground/75 line-through decoration-cyan-100/35">
+                      {plugin.regularPrice}
+                    </span>
+                    <span className="font-semibold text-cyan-100">{plugin.price}</span>
                   </span>
                   <span className="text-sm text-muted-foreground">Updated {plugin.lastUpdated}</span>
                 </div>
@@ -246,7 +249,12 @@ export default async function PluginPage({
                   </li>
                   <li className="flex justify-between gap-4">
                     <span className="text-muted-foreground">Price</span>
-                    <span>{plugin.priceNote} {plugin.price} / regular {plugin.regularPrice}</span>
+                    <span className="inline-flex items-baseline gap-3">
+                      <span className="text-muted-foreground/75 line-through decoration-cyan-100/35">
+                        {plugin.regularPrice}
+                      </span>
+                      <span>{plugin.price}</span>
+                    </span>
                   </li>
                 </ul>
               </div>
