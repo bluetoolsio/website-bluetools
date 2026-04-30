@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ArrowRight, Gauge, Sparkles, Workflow, Zap } from "lucide-react";
+import { ArrowRight, Focus, Gauge, Workflow, Zap } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
@@ -108,7 +108,7 @@ export default function Home() {
             {[
               [Workflow, "Workflow first", "Add-ons designed around real production habits, not bloated feature lists."],
               [Zap, "Built for speed", "Turn repetitive actions into cleaner, faster, more direct workflows."],
-              [Sparkles, "Creator focused", "Tools that stay out of the way until the moment you need them."],
+              [Focus, "Creator focused", "Tools that stay out of the way until the moment you need them."],
             ].map(([Icon, title, copy], index) => (
               <FadeIn key={String(title)} direction="up" delay={index * 0.1}>
                 <Card hoverEffect className="h-full p-7">
@@ -134,7 +134,7 @@ export default function Home() {
               <span className="inline-flex h-14 w-14 items-center justify-center border border-[rgba(199,251,255,.15)] bg-black/30 text-cyan-100">
                 <OctoPieIcon className="h-8 w-8" />
               </span>
-              <span className="inline-flex h-10 items-center justify-center gap-2 border border-[rgba(199,251,255,.12)] bg-black/24 px-2 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground sm:px-3 sm:text-xs sm:tracking-[0.18em]"><Sparkles className="h-3.5 w-3.5 text-cyan-100" /> Focused</span>
+              <span className="inline-flex h-10 items-center justify-center gap-2 border border-[rgba(199,251,255,.12)] bg-black/24 px-2 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground sm:px-3 sm:text-xs sm:tracking-[0.18em]"><Focus className="h-3.5 w-3.5 text-cyan-100" /> Focused</span>
             </div>
             <h2 className="font-mono text-3xl font-bold uppercase tracking-[0.07em] md:text-5xl">Start with OctoPie.</h2>
             <p className="section-copy mx-auto mt-6 max-w-2xl text-lg">
