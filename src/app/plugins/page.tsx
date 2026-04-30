@@ -62,8 +62,8 @@ export default function PluginsPage() {
                       plugin.name
                     )}
                   </h2>
-                  <span className="flex items-baseline gap-3 text-right">
-                    <span className="font-semibold text-muted-foreground/75 line-through decoration-cyan-100/35">
+                  <span className="flex flex-col items-end gap-1 text-right leading-none">
+                    <span className="text-xs font-semibold text-red-300/75 line-through decoration-red-300/60">
                       {plugin.regularPrice}
                     </span>
                     <span className="font-semibold text-cyan-100">{plugin.price}</span>
