@@ -22,7 +22,7 @@ export default function Home() {
           <div>
             <FadeIn direction="up">
               <h1 className="max-w-4xl font-mono text-3xl font-bold uppercase leading-tight tracking-[0.16em] text-white md:text-5xl">
-                Rewriting how
+                Rewriting how{" "}
                 <span className="block text-addonline">
                   creators work.
                 </span>
@@ -30,10 +30,9 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
-              <div className="section-copy mt-8 max-w-2xl space-y-4 text-base md:text-lg">
-                <p>Built to replace friction with control.</p>
+              <div className="section-copy mt-8 max-w-2xl text-base md:text-lg">
                 <p>
-                  BlueTools is a growing suite of tools designed to streamline how you create. Less clutter. Faster execution. A workflow that scales with you.
+                  We build creative add-ons that replace friction with control. Less clutter. Faster execution. Smarter workflows that scale with you.
                 </p>
               </div>
             </FadeIn>
