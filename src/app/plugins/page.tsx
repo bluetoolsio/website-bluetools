@@ -63,7 +63,12 @@ export default function PluginsPage() {
                       plugin.name
                     )}
                   </h2>
-                  <span className="font-semibold text-cyan-100">{plugin.price}</span>
+                  <span className="text-right">
+                    <span className="block font-semibold text-cyan-100">{plugin.price}</span>
+                    <span className="block text-xs text-muted-foreground">
+                      {plugin.priceNote} - regular {plugin.regularPrice}
+                    </span>
+                  </span>
                 </div>
 
                 <p className="section-copy mb-6 flex-grow text-sm">
