@@ -11,43 +11,42 @@ const assetBasePath = "/website-smartblender";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col overflow-hidden">
-      <section className="relative overflow-hidden px-4 pb-20 pt-28 sm:px-6 md:pb-28 md:pt-36 lg:px-8">
+      <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-6 md:pb-28 md:pt-32 lg:px-8">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 neo-field" />
-          <div className="absolute left-[-12%] bottom-[-22%] h-[620px] w-[620px] rounded-full bg-cyan-300/35 blur-3xl" />
-          <div className="absolute right-[-10%] top-[-20%] h-[560px] w-[560px] rounded-full bg-blue-950/70 blur-3xl" />
-          <div className="absolute left-1/2 top-16 h-[480px] w-[480px] -translate-x-1/2 rounded-full border border-cyan-200/20 bg-accent/10 blur-3xl" />
-          <div className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:72px_72px]" />
+          <div className="absolute left-[-18%] bottom-[-28%] h-[620px] w-[620px] rounded-full bg-cyan-300/22 blur-3xl" />
+          <div className="absolute right-[-16%] top-[-24%] h-[620px] w-[620px] rounded-full bg-blue-950/80 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(94,234,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(94,234,255,.075)_1px,transparent_1px)] [background-size:88px_88px]" />
         </div>
 
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-5xl text-center">
+          <div className="tech-frame mx-auto max-w-6xl p-5 sm:p-8 md:p-10">
             <FadeIn direction="up">
-              <div className="hud-label mx-auto mb-7 w-fit">
-                <Orbit className="h-4 w-4" />
-Electric workflow systems
+              <div className="mb-8 flex items-center justify-between gap-4">
+                <BlueToolsLogo markClassName="h-10 w-10 rounded-xl" wordClassName="text-2xl md:text-3xl" showTagline />
+                <div className="hud-label hidden w-fit sm:inline-flex">
+                  <Orbit className="h-4 w-4" />
+                  Creative systems for builders
+                </div>
               </div>
-              <div className="mb-7 flex justify-center">
-                <BlueToolsLogo markClassName="h-14 w-14 rounded-2xl" wordClassName="text-4xl md:text-5xl" showTagline />
-              </div>
-              <h1 className="mx-auto max-w-5xl text-5xl font-black tracking-[-0.065em] text-white md:text-7xl lg:text-8xl">
-                Tools that feel
+              <h1 className="max-w-4xl font-mono text-3xl font-bold uppercase leading-tight tracking-[0.18em] text-white md:text-5xl">
+                Rewriting how
                 <span className="block text-addonline">
-                  electrically fast.
+                  creators work.
                 </span>
               </h1>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
-              <div className="mx-auto mt-8 max-w-3xl space-y-4 text-lg leading-8 text-muted-foreground md:text-xl">
-                <p>BlueTools replaces friction with clean, precise creative control.</p>
+              <div className="mt-8 max-w-2xl space-y-4 text-base leading-7 text-muted-foreground md:text-lg">
+                <p>Built to replace friction with control.</p>
                 <p>
-                  A growing suite of electric-blue workflow tools for creators who want less clutter, faster execution, and software that stays out of the way.
+                  BlueTools is a growing suite of tools designed to streamline how you create. Less clutter. Faster execution. A workflow that scales with you.
                 </p>
               </div>
             </FadeIn>
 
-            <FadeIn direction="up" delay={0.2} className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <FadeIn direction="up" delay={0.2} className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link href="/plugins">
                 <Button size="lg" className="w-full sm:w-auto">
                   Explore plugins
@@ -103,13 +102,13 @@ Electric workflow systems
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">BlueTools add-ons, built for flow</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Smart Blender add-ons, built for flow</p>
+              <h2 className="mt-4 font-mono text-2xl font-bold tracking-[0.08em] text-white md:text-4xl">
                 Less clutter. More control.
                 <span className="block">A faster way to create.</span>
               </h2>
               <p className="mt-5 text-muted-foreground">
-                BlueTools builds smart Blender add-ons that reduce friction, speed up repetitive work, and make production feel lighter, cleaner, and faster.
+                BlueTools builds smart Blender add-ons that reduce friction, speed up repetitive work, and change how creators move through production.
               </p>
             </div>
           </FadeIn>
@@ -146,9 +145,9 @@ Electric workflow systems
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2"><Gauge className="h-3.5 w-3.5 text-accent" /> Fast</span>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2"><Sparkles className="h-3.5 w-3.5 text-accent" /> Focused</span>
             </div>
-            <h2 className="text-4xl font-black tracking-tight md:text-6xl">Start with OctoPie.</h2>
+            <h2 className="font-mono text-3xl font-bold tracking-[0.08em] md:text-5xl">Start with OctoPie.</h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Build menus around the actions, assets, scripts, and macros you reach for every day — then deploy them wherever your workflow moves next.
+              Build menus around the actions, assets, scripts, and macros you reach for every day — then reploy them wherever your workflow moves next.
             </p>
             <div className="mt-10">
               <Link href="/plugins/octopie">
