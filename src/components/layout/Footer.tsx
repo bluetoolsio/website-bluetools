@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 import { BlueToolsLogo } from "@/components/brand/BlueToolsLogo";
 
 export default function Footer() {
@@ -18,11 +17,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/plugins/octopie" className="text-sm text-muted-foreground hover:text-white transition-colors">
-                  <OctoPieLabel
-                    className="gap-2"
-                    iconBoxClassName="h-6 w-6 "
-                    iconClassName="h-3.5 w-3.5"
-                  />
+                  OctoPie
                 </Link>
               </li>
               <li>

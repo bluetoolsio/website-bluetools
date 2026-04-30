@@ -10,7 +10,7 @@ const assetBasePath = "/website-smartblender";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col overflow-hidden">
-      <section className="relative overflow-hidden px-4 pb-18 pt-22 sm:px-6 md:pb-24 md:pt-28 lg:px-8">
+      <section className="relative overflow-hidden pb-16 pt-12 md:pb-20 md:pt-16">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 neo-field" />
           <div className="absolute left-[-18%] bottom-[-30%] h-[620px] w-[620px]  bg-cyan-300/[0.035]" />
@@ -18,8 +18,8 @@ export default function Home() {
           <div className="absolute inset-0 opacity-[0.11] [background-image:linear-gradient(rgba(94,234,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(94,234,255,.05)_1px,transparent_1px)] [background-size:96px_96px]" />
         </div>
 
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div>
             <FadeIn direction="up">
               <h1 className="max-w-4xl font-mono text-3xl font-bold uppercase leading-tight tracking-[0.16em] text-white md:text-5xl">
                 Rewriting how

@@ -225,9 +225,9 @@ export default async function PluginPage({
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <FadeIn direction="up" delay={0.1}>
-              <div className="night-card p-6">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2">
+            <FadeIn direction="up" delay={0.1} className="h-full">
+              <div className="night-card h-full p-6">
                 <h3 className="font-semibold mb-4">Plugin Info</h3>
                 <ul className="space-y-4 text-sm">
                   <li className="flex justify-between gap-4">
@@ -246,8 +246,8 @@ export default async function PluginPage({
               </div>
             </FadeIn>
 
-            <FadeIn direction="up" delay={0.2}>
-              <div className="night-card p-6">
+            <FadeIn direction="up" delay={0.2} className="h-full">
+              <div className="night-card h-full p-6">
                 <h3 className="font-semibold mb-4">Support</h3>
                 <div className="space-y-3 flex flex-col">
                   <Link href="/docs" className="text-sm text-muted-foreground hover:text-white transition-colors">Documentation</Link>
