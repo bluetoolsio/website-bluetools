@@ -125,7 +125,7 @@ export default async function PluginPage({
                     <GumroadIcon />
                     Gumroad
                   </a>
-                  <Link href="/docs" className="w-full sm:w-auto">
+                  <Link href={`/docs/${plugin.slug}`} className="w-full sm:w-auto">
                     <Button variant="outline" size="lg" className="w-full sm:w-auto">
                       Documentation
                     </Button>
@@ -250,7 +250,7 @@ export default async function PluginPage({
               <div className="night-card h-full p-6">
                 <h3 className="font-semibold mb-4">Support</h3>
                 <div className="space-y-3 flex flex-col">
-                  <Link href="/docs" className="text-sm text-muted-foreground hover:text-white transition-colors">Documentation</Link>
+                  <Link href={`/docs/${plugin.slug}`} className="text-sm text-muted-foreground hover:text-white transition-colors">Documentation</Link>
                   <Link href="/report-bug" className="text-sm text-muted-foreground hover:text-white transition-colors">Report an Issue</Link>
                   <Link href="#" className="text-sm text-muted-foreground hover:text-white transition-colors">Contact Support</Link>
                 </div>
