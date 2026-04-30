@@ -51,7 +51,6 @@ const supportedEditors = [
 ];
 
 const actionModules = [
-  ["None", "Leaves a direction unused."],
   ["Operator", "Runs a Blender operator directly, with optional properties and static or dynamic execution."],
   ["Menu", "Opens a built-in Blender menu, attached to the slot or as a detached pie-style menu."],
   ["Shortcut", "Replays an existing Blender keymap entry from inside a slot, list item, macro step, or nested pie."],
