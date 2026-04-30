@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 flex flex-col items-center justify-between border-t border-[rgba(199,251,255,.1)] pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} BlueTools. All rights reserved.
+            &copy; 2026 Olsens Multimedia / BlueTools. All rights reserved.
           </p>
         </div>
       </div>
