@@ -14,8 +14,6 @@ export const metadata = {
 export default function DocsHubPage() {
   return (
     <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="absolute inset-x-4 top-24 -z-10 h-72 bg-black/16" />
-
       <FadeIn direction="up">
         <div className="mb-14 max-w-3xl">
           <p className="hud-label mb-4">Documentation</p>

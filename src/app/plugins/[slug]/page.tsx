@@ -197,7 +197,6 @@ export default async function PluginPage({
 
       {plugin.showcase && plugin.showcase.length > 0 ? (
         <section className="relative border-b border-[rgba(199,251,255,.1)] bg-black/18 py-24">
-          <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[linear-gradient(180deg,rgba(65,223,241,0.025),transparent_72%)]" />
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <FadeIn direction="up">
               <div className="mb-12 max-w-3xl">

@@ -87,19 +87,19 @@ body::after {
 }
 
 body::before {
-  opacity: 0.24;
+  opacity: 0.13;
   background-image:
-    linear-gradient(rgba(199,251,255,.038) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199,251,255,.032) 1px, transparent 1px),
-    linear-gradient(rgba(65,223,241,.075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(65,223,241,.065) 1px, transparent 1px);
+    linear-gradient(rgba(199,251,255,.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199,251,255,.02) 1px, transparent 1px),
+    linear-gradient(rgba(65,223,241,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65,223,241,.038) 1px, transparent 1px);
   background-position: center top;
   background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px;
   mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,.9) 78%, transparent 100%);
 }
 
 body::after {
-  opacity: 0.032;
+  opacity: 0.018;
   background:
     repeating-linear-gradient(
       to bottom,
@@ -152,11 +152,11 @@ body::after {
 
   .bat-grid {
     background-image:
-      linear-gradient(rgba(199,251,255,.032) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(199,251,255,.026) 1px, transparent 1px),
-      linear-gradient(rgba(65,223,241,.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(65,223,241,.048) 1px, transparent 1px),
-      linear-gradient(135deg, rgba(65,223,241,.035), transparent 30rem);
+      linear-gradient(rgba(199,251,255,.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(199,251,255,.018) 1px, transparent 1px),
+      linear-gradient(rgba(65,223,241,.036) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(65,223,241,.03) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(65,223,241,.022), transparent 30rem);
     background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px, auto;
   }
 
@@ -196,10 +196,10 @@ body::after {
 
   .neo-field {
     background:
-      linear-gradient(rgba(199,251,255,.026) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(199,251,255,.022) 1px, transparent 1px),
-      linear-gradient(rgba(65,223,241,.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(65,223,241,.044) 1px, transparent 1px),
+      linear-gradient(rgba(199,251,255,.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(199,251,255,.014) 1px, transparent 1px),
+      linear-gradient(rgba(65,223,241,.032) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(65,223,241,.027) 1px, transparent 1px),
       radial-gradient(ellipse at 10% 88%, rgba(65,223,241,.07), transparent 34%),
       radial-gradient(ellipse at 84% 16%, rgba(199,251,255,.032), transparent 30%),
       linear-gradient(110deg, rgba(65,223,241,.032), transparent 34%),

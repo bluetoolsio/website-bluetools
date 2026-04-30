@@ -126,7 +126,6 @@ export default function Home() {
       </section>
 
       <section className="relative py-22 md:py-30">
-        <div className="absolute inset-x-0 top-0 -z-10 mx-auto h-80 max-w-4xl bg-black/16" />
         <div className="absolute inset-x-0 top-16 -z-10 mx-auto h-px max-w-5xl bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <FadeIn direction="up">

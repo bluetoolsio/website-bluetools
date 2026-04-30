@@ -23,7 +23,6 @@ export default function BugReportPage() {
 
   return (
     <div className="relative mx-auto max-w-3xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="absolute inset-x-0 top-20 -z-10 h-72 bg-black/16" />
       <FadeIn direction="up">
         <div className="mb-12 text-center">
           <div className="addon-glow mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-[rgba(199,251,255,.16)] bg-black/28 text-cyan-100">
