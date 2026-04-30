@@ -140,13 +140,13 @@ export default function Home() {
             <span className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center  border border-cyan-200/20 bg-black/35 text-cyan-100 ">
               <OctoPieIcon className="h-8 w-8" />
             </span>
-            <div className="mb-5 flex justify-center gap-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              <span className="inline-flex items-center gap-2  border border-white/10 bg-black/28 px-3 py-2"><Gauge className="h-3.5 w-3.5 text-cyan-100" /> Fast</span>
-              <span className="inline-flex items-center gap-2  border border-white/10 bg-black/28 px-3 py-2"><Sparkles className="h-3.5 w-3.5 text-cyan-100" /> Focused</span>
+            <div className="mb-5 grid grid-cols-2 justify-center gap-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="inline-flex h-10 w-32 items-center justify-center gap-2 border border-white/10 bg-black/28 px-3 py-2"><Gauge className="h-3.5 w-3.5 text-cyan-100" /> Fast</span>
+              <span className="inline-flex h-10 w-32 items-center justify-center gap-2 border border-white/10 bg-black/28 px-3 py-2"><Sparkles className="h-3.5 w-3.5 text-cyan-100" /> Focused</span>
             </div>
             <h2 className="font-mono text-3xl font-bold tracking-[0.08em] md:text-5xl">Start with OctoPie.</h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Build menus around the actions, assets, scripts, and macros you reach for every day — then reploy them wherever your workflow moves next.
+              Build menus around the actions, assets, scripts, and macros you reach for every day, then redeploy them wherever your workflow moves next.
             </p>
             <div className="mt-10">
               <Link href="/plugins/octopie">
