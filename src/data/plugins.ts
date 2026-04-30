@@ -47,7 +47,7 @@ export const plugins: PluginData[] = [
     previewImage: '/plugins/octopie/preview.gif',
     heroVideo: '', // Optional video
     purchaseLinks: {
-      superhive: 'https://superhivemarket.com/products/smart-pie-menus',
+      superhive: 'https://superhivemarket.com/',
       gumroad: 'https://gumroad.com/'
     },
     gallery: [
