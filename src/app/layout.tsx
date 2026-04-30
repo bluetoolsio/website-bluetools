@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <BlueprintMotion />
         <Navbar />
-        <main className="flex-grow pt-16">
+        <main className="neo-field flex-grow pt-16">
           {children}
         </main>
         <Footer />

@@ -10,7 +10,7 @@ const assetBasePath = "/website-smartblender";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col overflow-hidden">
-      <section className="relative overflow-hidden pb-16 pt-12 md:pb-20 md:pt-16">
+      <section className="relative overflow-hidden pb-16 pt-5 md:pb-20 md:pt-6">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 neo-field" />
           <div className="absolute inset-0 opacity-[0.11] [background-image:linear-gradient(rgba(94,234,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(94,234,255,.05)_1px,transparent_1px)] [background-size:96px_96px]" />
