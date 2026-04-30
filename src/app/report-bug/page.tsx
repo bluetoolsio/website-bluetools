@@ -3,15 +3,53 @@
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { Bug, Send } from "lucide-react";
-import { useState } from "react";
+import { Bug, Check, ChevronDown, Send } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+const pluginOptions = [
+  { value: "octopie", label: "OctoPie" },
+];
 
 export default function BugReportPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [selectedPlugin, setSelectedPlugin] = useState("");
+  const [isPluginOpen, setIsPluginOpen] = useState(false);
+  const [pluginError, setPluginError] = useState(false);
+  const pluginMenuRef = useRef<HTMLDivElement>(null);
+
+  const selectedPluginLabel = pluginOptions.find((plugin) => plugin.value === selectedPlugin)?.label;
+
+  useEffect(() => {
+    function handlePointerDown(event: PointerEvent) {
+      if (!pluginMenuRef.current?.contains(event.target as Node)) {
+        setIsPluginOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsPluginOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!selectedPlugin) {
+      setPluginError(true);
+      return;
+    }
+
     setIsSubmitting(true);
     
     // Simulate API call or form submission for static site
@@ -52,15 +90,60 @@ export default function BugReportPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="space-y-2">
-                  <label htmlFor="plugin" className="text-sm font-medium text-white">Plugin</label>
-                  <select 
-                    id="plugin" 
-                    className="h-10 w-full border border-[rgba(199,251,255,.12)] bg-black/32 px-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/60"
-                    required
-                  >
-                    <option value="" disabled selected>Select a plugin</option>
-                    <option value="octopie">OctoPie</option>
-                  </select>
+                  <label id="plugin-label" className="text-sm font-medium text-white">Plugin</label>
+                  <div ref={pluginMenuRef} className="relative">
+                    <button
+                      type="button"
+                      aria-labelledby="plugin-label"
+                      aria-haspopup="listbox"
+                      aria-expanded={isPluginOpen}
+                      onClick={() => {
+                        setIsPluginOpen((current) => !current);
+                        setPluginError(false);
+                      }}
+                      className={`flex h-10 w-full items-center justify-between border bg-black/32 px-3 text-left text-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent/60 ${
+                        pluginError ? "border-red-300/60" : "border-[rgba(199,251,255,.12)] hover:border-cyan-200/24"
+                      }`}
+                    >
+                      <span className={selectedPluginLabel ? "text-white" : "text-muted-foreground"}>
+                        {selectedPluginLabel ?? "Select a plugin"}
+                      </span>
+                      <ChevronDown
+                        className={`h-4 w-4 text-cyan-100 transition-transform ${isPluginOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+
+                    {isPluginOpen && (
+                      <div
+                        role="listbox"
+                        aria-labelledby="plugin-label"
+                        className="absolute left-0 top-[calc(100%+.5rem)] z-40 w-full border border-[rgba(199,251,255,.16)] bg-[rgba(3,8,14,.98)] p-1.5 shadow-[0_18px_45px_rgba(0,0,0,.4),inset_0_1px_0_rgba(255,255,255,.04)] backdrop-blur-xl"
+                      >
+                        {pluginOptions.map((plugin) => (
+                          <button
+                            key={plugin.value}
+                            type="button"
+                            role="option"
+                            aria-selected={selectedPlugin === plugin.value}
+                            onClick={() => {
+                              setSelectedPlugin(plugin.value);
+                              setPluginError(false);
+                              setIsPluginOpen(false);
+                            }}
+                            className="flex h-11 w-full items-center justify-between border border-transparent px-3 text-left font-mono text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:border-cyan-200/18 hover:bg-cyan-300/8 hover:text-white"
+                          >
+                            <span>{plugin.label}</span>
+                            {selectedPlugin === plugin.value && (
+                              <Check className="h-4 w-4 text-cyan-100" />
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  {pluginError && (
+                    <p className="text-xs text-red-300">Select a plugin before submitting.</p>
+                  )}
                 </div>
                 
                 <div className="space-y-2">
