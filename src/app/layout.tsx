@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Space_Mono } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,12 +8,6 @@ const readFont = IBM_Plex_Sans({
   variable: "--font-read",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const headingFont = Space_Mono({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${readFont.variable} ${headingFont.variable} h-full antialiased`}>
+    <html lang="en" className={`${readFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Navbar />
         <main className="flex-grow pt-16">

@@ -23,7 +23,6 @@
   --color-border: var(--border);
 
   --font-sans: var(--font-read);
-  --font-mono: var(--font-heading);
 }
 
 * {
@@ -46,6 +45,15 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
 }
 
 body::before,

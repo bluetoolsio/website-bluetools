@@ -9,11 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center text-xl text-white">
-              <BlueToolsLogo markClassName="h-8 w-8" wordClassName="text-xl" showTagline />
+              <BlueToolsLogo markClassName="h-8 w-8" wordClassName="text-xl" />
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Electric-blue workflow add-ons for Blender menus, shortcuts, scripts, assets, and custom daily tools.
-            </p>
           </div>
           
           <div>
