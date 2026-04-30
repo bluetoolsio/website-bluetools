@@ -100,7 +100,7 @@ export default async function PluginPage({
                   )}
                 </h1>
                 <p className="section-copy mb-8 max-w-xl text-xl md:text-2xl">
-                  shortcut — plus custom macros, scripts, assets, lists, and nested pie menus.
+                  Customizable Blender add-on for building personal pie menu systems.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 font-mono text-sm font-bold text-cyan-100">v{plugin.version}</span>
