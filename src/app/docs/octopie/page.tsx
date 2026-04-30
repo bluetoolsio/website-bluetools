@@ -146,21 +146,22 @@ export default function DocsPage() {
     <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-12 sm:px-6 md:flex-row lg:px-8">
       <aside className="w-full md:w-64 flex-shrink-0">
         <div className="sticky top-24">
-          <h2 className="font-bold text-lg mb-4">Documentation</h2>
+          <div className="mb-8">
+            <OctoPieLabel
+              className="gap-3"
+              iconBoxClassName="h-8 w-8"
+              iconClassName="h-4 w-4"
+              textClassName="font-mono text-lg font-bold uppercase tracking-[0.08em]"
+            />
+            <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+              Documentation
+            </p>
+          </div>
           <nav className="space-y-6">
             {navGroups.map((group) => (
               <div key={group.title}>
                 <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                  {group.title === "OctoPie" ? (
-                    <OctoPieLabel
-                      className="gap-2"
-                      iconBoxClassName="h-6 w-6 "
-                      iconClassName="h-3.5 w-3.5"
-                      textClassName="normal-case"
-                    />
-                  ) : (
-                    group.title
-                  )}
+                  {group.title}
                 </h3>
                 <ul className="space-y-2">
                   {group.links.map(([href, label], index) => (
