@@ -36,10 +36,10 @@ html {
 
 body {
   background:
-    radial-gradient(circle at 4% 82%, rgba(0, 229, 255, 0.20), transparent 24rem),
-    radial-gradient(circle at 18% 18%, rgba(0, 73, 255, 0.18), transparent 28rem),
-    radial-gradient(circle at 90% 4%, rgba(180, 225, 255, 0.08), transparent 22rem),
-    linear-gradient(125deg, #02050a 0%, #030714 42%, #01030a 100%);
+    radial-gradient(ellipse at 12% 86%, rgba(0, 178, 255, 0.13), transparent 34rem),
+    radial-gradient(ellipse at 82% 12%, rgba(39, 84, 255, 0.11), transparent 30rem),
+    linear-gradient(115deg, rgba(0, 184, 255, 0.06), transparent 26rem),
+    linear-gradient(180deg, #020711 0%, #01040b 48%, #000207 100%);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -115,10 +115,10 @@ body::after {
 
   .bat-grid {
     background-image:
-      linear-gradient(rgba(89,241,255,.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(23,183,255,.07) 1px, transparent 1px),
-      radial-gradient(circle at 8% 0%, rgba(89,241,255,.14), transparent 38rem);
-    background-size: 56px 56px, 56px 56px, auto;
+      linear-gradient(rgba(89,241,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(23,183,255,.04) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(23,183,255,.07), transparent 28rem);
+    background-size: 64px 64px, 64px 64px, auto;
   }
 
   .hud-label {
@@ -157,18 +157,20 @@ body::after {
 
   .neo-field {
     background:
-      radial-gradient(circle at 3% 92%, rgba(0,229,255,.20), transparent 24%),
-      radial-gradient(circle at 76% 18%, rgba(68,108,255,.12), transparent 26%),
-      linear-gradient(135deg, #02050a 0%, #030714 42%, #000207 100%);
+      radial-gradient(ellipse at 10% 88%, rgba(0,229,255,.16), transparent 34%),
+      radial-gradient(ellipse at 84% 16%, rgba(41,92,255,.09), transparent 30%),
+      linear-gradient(110deg, rgba(0,229,255,.055), transparent 34%),
+      linear-gradient(180deg, #020711 0%, #01040b 54%, #000207 100%);
   }
 
   .tech-frame {
     position: relative;
-    border: 1px solid rgba(99,240,255,.22);
+    border: 1px solid rgba(99,240,255,.20);
     background:
-      linear-gradient(180deg, rgba(0,0,0,.56), rgba(0,0,0,.38)),
-      radial-gradient(circle at 86% 20%, rgba(23,183,255,.10), transparent 22rem);
-    box-shadow: 0 0 0 1px rgba(23,183,255,.06), 0 0 54px rgba(23,183,255,.10), inset 0 0 80px rgba(23,183,255,.035);
+      linear-gradient(180deg, rgba(0,0,0,.64), rgba(0,0,0,.44)),
+      linear-gradient(120deg, rgba(0,229,255,.06), transparent 34%),
+      radial-gradient(ellipse at 86% 20%, rgba(23,183,255,.07), transparent 24rem);
+    box-shadow: 0 0 0 1px rgba(23,183,255,.05), 0 0 42px rgba(23,183,255,.075), inset 0 0 80px rgba(23,183,255,.028);
   }
 
   .tech-frame::before,
@@ -190,9 +192,9 @@ body::after {
     width: 14rem;
     height: 14rem;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(0,229,255,.45), rgba(0,229,255,.10) 38%, transparent 68%);
-    filter: blur(2px);
-    opacity: .78;
+    background: radial-gradient(circle, rgba(0,229,255,.32), rgba(0,229,255,.075) 38%, transparent 68%);
+    filter: blur(3px);
+    opacity: .62;
   }
 
   .blue-mark::after {

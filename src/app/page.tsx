@@ -14,9 +14,9 @@ export default function Home() {
       <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-6 md:pb-28 md:pt-32 lg:px-8">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 neo-field" />
-          <div className="absolute left-[-18%] bottom-[-28%] h-[620px] w-[620px] rounded-full bg-cyan-300/22 blur-3xl" />
-          <div className="absolute right-[-16%] top-[-24%] h-[620px] w-[620px] rounded-full bg-blue-950/80 blur-3xl" />
-          <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(94,234,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(94,234,255,.075)_1px,transparent_1px)] [background-size:88px_88px]" />
+          <div className="absolute left-[-18%] bottom-[-30%] h-[620px] w-[620px] rounded-full bg-cyan-300/12 blur-3xl" />
+          <div className="absolute right-[-18%] top-[-26%] h-[620px] w-[620px] rounded-full bg-blue-950/70 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.11] [background-image:linear-gradient(rgba(94,234,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(94,234,255,.05)_1px,transparent_1px)] [background-size:96px_96px]" />
         </div>
 
         <div className="mx-auto max-w-7xl">
