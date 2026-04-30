@@ -120,7 +120,7 @@ export default async function PluginPage({
                     className="inline-flex h-12 w-full items-center justify-center gap-2.5 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-5 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,.025)] transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50 sm:w-auto sm:min-w-44"
                   >
                     <SuperhiveIcon />
-                    Superhive
+                    Buy
                   </a>
                   <a
                     href={plugin.purchaseLinks.gumroad}
@@ -129,11 +129,11 @@ export default async function PluginPage({
                     className="inline-flex h-12 w-full items-center justify-center gap-2.5 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-5 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,.025)] transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50 sm:w-auto sm:min-w-44"
                   >
                     <GumroadIcon />
-                    Gumroad
+                    Buy
                   </a>
                   <Link href={`/docs/${plugin.slug}`} className="w-full sm:w-auto">
                     <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                      Documentation
+                      Docs
                     </Button>
                   </Link>
                 </div>
