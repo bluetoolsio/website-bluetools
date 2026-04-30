@@ -48,6 +48,7 @@ html {
 }
 
 body {
+  position: relative;
   background:
     radial-gradient(ellipse at 8% 92%, rgba(65, 223, 241, 0.06), transparent 34rem),
     radial-gradient(ellipse at 84% 16%, rgba(159, 246, 255, 0.035), transparent 30rem),
@@ -56,8 +57,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-read), sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  isolation: isolate;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1,
@@ -75,27 +83,32 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
 body::before {
-  opacity: 0.075;
+  opacity: 0.24;
   background-image:
-    linear-gradient(rgba(199,251,255,.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199,251,255,.055) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(to bottom, black, transparent 72%);
+    linear-gradient(rgba(199,251,255,.038) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199,251,255,.032) 1px, transparent 1px),
+    linear-gradient(rgba(65,223,241,.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65,223,241,.065) 1px, transparent 1px);
+  background-position: center top;
+  background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px;
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,.9) 78%, transparent 100%);
 }
 
 body::after {
-  opacity: 0.04;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,.2) 0,
-    rgba(255,255,255,.2) 1px,
-    transparent 1px,
-    transparent 5px
-  );
+  opacity: 0.032;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.22) 0,
+      rgba(255,255,255,.22) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    linear-gradient(90deg, transparent, rgba(65,223,241,.10), transparent);
   mix-blend-mode: screen;
 }
 
@@ -139,10 +152,12 @@ body::after {
 
   .bat-grid {
     background-image:
-      linear-gradient(rgba(199,251,255,.026) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(65,223,241,.022) 1px, transparent 1px),
+      linear-gradient(rgba(199,251,255,.032) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(199,251,255,.026) 1px, transparent 1px),
+      linear-gradient(rgba(65,223,241,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(65,223,241,.048) 1px, transparent 1px),
       linear-gradient(135deg, rgba(65,223,241,.035), transparent 30rem);
-    background-size: 64px 64px, 64px 64px, auto;
+    background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px, auto;
   }
 
   .hud-label {
@@ -181,10 +196,15 @@ body::after {
 
   .neo-field {
     background:
+      linear-gradient(rgba(199,251,255,.026) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(199,251,255,.022) 1px, transparent 1px),
+      linear-gradient(rgba(65,223,241,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(65,223,241,.044) 1px, transparent 1px),
       radial-gradient(ellipse at 10% 88%, rgba(65,223,241,.07), transparent 34%),
       radial-gradient(ellipse at 84% 16%, rgba(199,251,255,.032), transparent 30%),
       linear-gradient(110deg, rgba(65,223,241,.032), transparent 34%),
       linear-gradient(180deg, var(--bt-bg) 0%, #01040b 54%, var(--bt-black) 100%);
+    background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px, auto, auto, auto, auto;
   }
 
   .tech-frame {
