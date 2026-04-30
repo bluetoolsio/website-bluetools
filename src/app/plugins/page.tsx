@@ -32,12 +32,6 @@ export default function PluginsPage() {
           <FadeIn key={plugin.id} direction="up" delay={index * 0.1}>
             <Card hoverEffect className="flex h-full flex-col night-card">
               <div className="media-panel octopie-preview-stage relative flex aspect-[4/3] items-center justify-center overflow-hidden border-x-0 border-t-0">
-                {plugin.slug === "octopie" && (
-                  <div className="absolute left-4 top-4 z-20 inline-flex items-center gap-2 border border-[rgba(199,251,255,.16)] bg-black/55 px-3 py-2 text-xs font-bold uppercase tracking-[0.14em] text-cyan-100 backdrop-blur">
-                    <OctoPieLabel iconBoxClassName="h-6 w-6" iconClassName="h-3.5 w-3.5" textClassName="sr-only" />
-                    OctoPie
-                  </div>
-                )}
                 {plugin.previewImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
