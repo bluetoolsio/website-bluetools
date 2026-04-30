@@ -65,7 +65,7 @@ export default function Home() {
             <Link
               href="/plugins/octopie"
               aria-label="Open OctoPie plugin page"
-              className="group relative grid overflow-hidden border border-cyan-200/10 bg-black/20 p-2 shadow-black/30 backdrop-blur-xl transition duration-300 hover:border-cyan-200/20 hover:bg-cyan-300/[0.025] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background md:grid-cols-[0.9fr_1.1fr]"
+              className="group relative grid overflow-hidden bg-black/20 shadow-black/30 backdrop-blur-xl transition duration-300 hover:bg-cyan-300/[0.025] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background md:grid-cols-[0.9fr_1.1fr]"
             >
               <div className="flex flex-col justify-between border border-white/10 bg-[#080b12]/95 p-5 md:border-r-0">
                 <div>
