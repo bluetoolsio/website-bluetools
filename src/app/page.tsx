@@ -13,8 +13,6 @@ export default function Home() {
       <section className="relative overflow-hidden pb-16 pt-12 md:pb-20 md:pt-16">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 neo-field" />
-          <div className="absolute left-[-18%] bottom-[-30%] h-[620px] w-[620px]  bg-cyan-300/[0.035]" />
-          <div className="absolute right-[-18%] top-[-26%] h-[620px] w-[620px]  bg-blue-950/25" />
           <div className="absolute inset-0 opacity-[0.11] [background-image:linear-gradient(rgba(94,234,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(94,234,255,.05)_1px,transparent_1px)] [background-size:96px_96px]" />
         </div>
 

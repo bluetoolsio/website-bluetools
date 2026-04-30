@@ -3,6 +3,7 @@ import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import BlueprintMotion from "@/components/layout/BlueprintMotion";
 
 const readFont = IBM_Plex_Sans({
   variable: "--font-read",
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${readFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <BlueprintMotion />
         <Navbar />
         <main className="flex-grow pt-16">
           {children}

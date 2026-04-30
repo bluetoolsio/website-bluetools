@@ -112,6 +112,156 @@ body::after {
   mix-blend-mode: screen;
 }
 
+.blueprint-motion-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  contain: layout paint;
+  opacity: .78;
+}
+
+.blueprint-sweep {
+  position: absolute;
+  left: -48vw;
+  height: 1px;
+  width: 46vw;
+  background: linear-gradient(90deg, transparent, rgba(159,246,255,.05), rgba(65,223,241,.24), transparent);
+  box-shadow: 0 0 18px rgba(65,223,241,.12);
+  transform: rotate(-13deg);
+  animation: blueprint-sweep 18s linear infinite;
+}
+
+.blueprint-sweep-a {
+  top: 23vh;
+}
+
+.blueprint-sweep-b {
+  top: 68vh;
+  width: 34vw;
+  opacity: .48;
+  animation-delay: -9s;
+  animation-duration: 24s;
+  transform: rotate(9deg);
+}
+
+.blueprint-cursor {
+  position: absolute;
+  width: clamp(5.5rem, 11vw, 9rem);
+  height: clamp(5.5rem, 11vw, 9rem);
+  opacity: .42;
+  transform: translate3d(0, 0, 0);
+  animation: blueprint-drift 26s ease-in-out infinite;
+}
+
+.blueprint-cursor::before,
+.blueprint-cursor::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(199,251,255,.18), rgba(65,223,241,.34), rgba(199,251,255,.18), transparent);
+  box-shadow: 0 0 16px rgba(65,223,241,.08);
+}
+
+.blueprint-cursor::before {
+  left: 0;
+  top: 50%;
+  height: 1px;
+  width: 100%;
+}
+
+.blueprint-cursor::after {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(199,251,255,.15), rgba(65,223,241,.28), rgba(199,251,255,.15), transparent);
+}
+
+.blueprint-cursor-a {
+  right: 12vw;
+  top: 18vh;
+}
+
+.blueprint-cursor-b {
+  bottom: 16vh;
+  left: 9vw;
+  opacity: .24;
+  animation-delay: -12s;
+  animation-duration: 34s;
+}
+
+.blueprint-ticks {
+  position: absolute;
+  right: 0;
+  top: 18%;
+  height: 64%;
+  width: 1px;
+  opacity: .28;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(159,246,255,.20) 0,
+      rgba(159,246,255,.20) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  animation: blueprint-ticks 16s linear infinite;
+}
+
+@keyframes blueprint-sweep {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: .9;
+  }
+
+  78% {
+    opacity: .42;
+  }
+
+  100% {
+    translate: 150vw 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blueprint-drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  45% {
+    translate: -2.25rem 1.4rem;
+  }
+
+  72% {
+    translate: 1.2rem -1.1rem;
+  }
+}
+
+@keyframes blueprint-ticks {
+  from {
+    translate: 0 -22px;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blueprint-sweep,
+  .blueprint-cursor,
+  .blueprint-ticks {
+    animation: none;
+  }
+}
+
 ::selection {
   background: rgba(65, 223, 241, 0.32);
   color: white;
