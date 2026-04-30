@@ -103,7 +103,7 @@ const troubleshooting = [
 ];
 
 export const metadata = {
-  title: "OctoPie Documentation | Reploy",
+  title: "OctoPie Documentation | BlueTools",
   description: "Learn how OctoPie works in Blender.",
 };
 

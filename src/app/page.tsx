@@ -4,6 +4,7 @@ import { ArrowRight, Gauge, Orbit, Sparkles, Workflow, Zap } from "lucide-react"
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
+import { BlueToolsLogo } from "@/components/brand/BlueToolsLogo";
 
 const assetBasePath = "/website-smartblender";
 
@@ -12,8 +13,10 @@ export default function Home() {
     <div className="flex min-h-screen flex-col overflow-hidden">
       <section className="relative overflow-hidden px-4 pb-20 pt-28 sm:px-6 md:pb-28 md:pt-36 lg:px-8">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(110,168,255,0.20),transparent_34%),radial-gradient(circle_at_18%_30%,rgba(124,92,255,0.14),transparent_30%),linear-gradient(180deg,#070a12_0%,#05070d_58%,#03050a_100%)]" />
-          <div className="absolute left-1/2 top-20 h-[520px] w-[520px] -translate-x-1/2 rounded-full border border-accent/20 bg-accent/10 blur-3xl" />
+          <div className="absolute inset-0 neo-field" />
+          <div className="absolute left-[-12%] bottom-[-22%] h-[620px] w-[620px] rounded-full bg-cyan-300/35 blur-3xl" />
+          <div className="absolute right-[-10%] top-[-20%] h-[560px] w-[560px] rounded-full bg-blue-950/70 blur-3xl" />
+          <div className="absolute left-1/2 top-16 h-[480px] w-[480px] -translate-x-1/2 rounded-full border border-cyan-200/20 bg-accent/10 blur-3xl" />
           <div className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:72px_72px]" />
         </div>
 
@@ -22,21 +25,24 @@ export default function Home() {
             <FadeIn direction="up">
               <div className="hud-label mx-auto mb-7 w-fit">
                 <Orbit className="h-4 w-4" />
-                Creative systems for builders
+Electric workflow systems
+              </div>
+              <div className="mb-7 flex justify-center">
+                <BlueToolsLogo markClassName="h-14 w-14 rounded-2xl" wordClassName="text-4xl md:text-5xl" showTagline />
               </div>
               <h1 className="mx-auto max-w-5xl text-5xl font-black tracking-[-0.065em] text-white md:text-7xl lg:text-8xl">
-                Rewriting how
+                Tools that feel
                 <span className="block text-addonline">
-                  creators work.
+                  electrically fast.
                 </span>
               </h1>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
               <div className="mx-auto mt-8 max-w-3xl space-y-4 text-lg leading-8 text-muted-foreground md:text-xl">
-                <p>Built to replace friction with control.</p>
+                <p>BlueTools replaces friction with clean, precise creative control.</p>
                 <p>
-                  Reploy is a growing suite of tools designed to streamline how you create. Less clutter. Faster execution. A workflow that scales with you.
+                  A growing suite of electric-blue workflow tools for creators who want less clutter, faster execution, and software that stays out of the way.
                 </p>
               </div>
             </FadeIn>
@@ -97,13 +103,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Smart Blender add-ons, built for flow</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">BlueTools add-ons, built for flow</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl">
                 Less clutter. More control.
                 <span className="block">A faster way to create.</span>
               </h2>
               <p className="mt-5 text-muted-foreground">
-                Reploy builds smart Blender add-ons that reduce friction, speed up repetitive work, and change how creators move through production.
+                BlueTools builds smart Blender add-ons that reduce friction, speed up repetitive work, and make production feel lighter, cleaner, and faster.
               </p>
             </div>
           </FadeIn>
@@ -142,7 +148,7 @@ export default function Home() {
             </div>
             <h2 className="text-4xl font-black tracking-tight md:text-6xl">Start with OctoPie.</h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Build menus around the actions, assets, scripts, and macros you reach for every day — then reploy them wherever your workflow moves next.
+              Build menus around the actions, assets, scripts, and macros you reach for every day — then deploy them wherever your workflow moves next.
             </p>
             <div className="mt-10">
               <Link href="/plugins/octopie">

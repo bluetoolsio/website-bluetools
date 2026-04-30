@@ -8,8 +8,8 @@ import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 const assetBasePath = "/website-smartblender";
 
 export const metadata = {
-  title: "Plugins | Reploy",
-  description: "Browse focused plugins and specialist tools from Reploy.",
+  title: "Plugins | BlueTools",
+  description: "Browse focused plugins and specialist tools from BlueTools.",
 };
 
 export default function PluginsPage() {
@@ -18,10 +18,10 @@ export default function PluginsPage() {
       <div className="absolute inset-x-4 top-24 -z-10 h-72 rounded-full bg-accent/10 blur-3xl" />
       <FadeIn direction="up">
         <div className="mb-16">
-          <p className="hud-label mb-4">Reploy plugins</p>
+          <p className="hud-label mb-4">BlueTools plugins</p>
           <h1 className="mb-4 text-4xl font-black tracking-tight md:text-6xl">Plugins and specialist tools for <span className="text-addonline">focused work.</span></h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
-            Reploy is a base for sharp, practical products across creative and technical workflows — starting with OctoPie for Blender.
+            BlueTools is a base for sharp, practical products across creative and technical workflows — starting with OctoPie for Blender.
           </p>
         </div>
       </FadeIn>

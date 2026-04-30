@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Reploy | Blender Workflow Add-ons",
-  description: "Polished Blender add-ons for context-aware menus, shortcuts, scripts, assets, and faster creative workflows.",
+  title: "BlueTools | Blender Workflow Add-ons",
+  description: "Electric-blue Blender add-ons for context-aware menus, shortcuts, scripts, assets, and faster creative workflows.",
 };
 
 export default function RootLayout({

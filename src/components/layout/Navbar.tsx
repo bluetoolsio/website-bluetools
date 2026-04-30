@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { BlueToolsLogo } from "@/components/brand/BlueToolsLogo";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -12,11 +13,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className="group inline-flex items-center gap-3 text-xl font-black tracking-[-0.04em] text-white">
-              <span className="relative flex h-7 w-7 items-center justify-center rounded-lg border border-accent/35 bg-accent/10 shadow-[0_0_24px_rgba(110,168,255,.38)]">
-                <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(110,168,255,.9)] transition-transform group-hover:scale-125" />
-              </span>
-              Re<span className="text-accent">ploy</span>
+            <Link href="/" className="group inline-flex items-center text-xl text-white">
+              <BlueToolsLogo markClassName="h-8 w-8" wordClassName="text-xl" />
             </Link>
           </div>
           <div className="hidden md:block">

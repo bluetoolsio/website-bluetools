@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
+import { BlueToolsLogo } from "@/components/brand/BlueToolsLogo";
 
 export default function Footer() {
   return (
@@ -7,14 +8,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           <div className="md:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-3 text-xl font-black tracking-[-0.04em] text-white">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/35 bg-accent/10 shadow-[0_0_24px_rgba(110,168,255,.35)]">
-                <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(110,168,255,.9)]" />
-              </span>
-              Re<span className="text-accent">ploy</span>
+            <Link href="/" className="inline-flex items-center text-xl text-white">
+              <BlueToolsLogo markClassName="h-8 w-8" wordClassName="text-xl" showTagline />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Polished Blender workflow add-ons for menus, shortcuts, scripts, assets, and custom daily tools.
+              Electric-blue workflow add-ons for Blender menus, shortcuts, scripts, assets, and custom daily tools.
             </p>
           </div>
           
@@ -72,7 +70,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Reploy. All rights reserved.
+            &copy; {new Date().getFullYear()} BlueTools. All rights reserved.
           </p>
         </div>
       </div>
