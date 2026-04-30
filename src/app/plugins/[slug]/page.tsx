@@ -91,7 +91,7 @@ export default async function PluginPage({
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
             <FadeIn direction="right">
               <div>
-                <p className="hud-label mb-5">Plugin dossier</p>
+                <p className="hud-label mb-5">Blender add-on</p>
                 <h1 className="mb-4 font-mono text-4xl font-bold uppercase tracking-[0.08em] md:text-5xl">
                   {plugin.slug === "octopie" ? (
                     <OctoPieLabel iconBoxClassName="h-14 w-14" iconClassName="h-7 w-7" />
@@ -100,7 +100,7 @@ export default async function PluginPage({
                   )}
                 </h1>
                 <p className="section-copy mb-8 max-w-xl text-xl md:text-2xl">
-                  {plugin.tagline}
+                  shortcut — plus custom macros, scripts, assets, lists, and nested pie menus.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 font-mono text-sm font-bold text-cyan-100">v{plugin.version}</span>
