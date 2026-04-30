@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function PluginsPage() {
   return (
-    <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
+    <div className="relative mx-auto max-w-6xl px-4 pb-24 pt-12 sm:px-6 md:pt-14 lg:px-8">
       <FadeIn direction="up">
         <div className="mb-16">
           <p className="hud-label mb-4">BlueTools plugins</p>
