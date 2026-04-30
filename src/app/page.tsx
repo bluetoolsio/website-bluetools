@@ -61,12 +61,14 @@ export default function Home() {
             >
               <div className="flex flex-col justify-between border border-[rgba(199,251,255,.10)] bg-[rgba(5,9,16,.96)] p-6 md:border-r-0 lg:p-7">
                 <div>
-                  <p className="section-kicker">Featured add-on</p>
+                  <p className="section-kicker">Blender Add-on</p>
                   <h2 className="mt-3 font-mono text-2xl font-bold uppercase tracking-[0.12em] text-white">
                     <OctoPieLabel iconBoxClassName="h-10 w-10 " iconClassName="h-5 w-5" />
                   </h2>
                   <p className="section-copy mt-5 text-sm">
-                    A customizable Blender pie menu system for Operator, Shortcut, Keyboard, Menu, Script, Asset, Macro, List, and nested Pie Menus.
+                    fully customizable pie menu system for Blender.
+                    <br />
+                    Build your own workflow with Operators, Shortcuts, Keyboard inputs, Menus, Scripts, Assets, Macros, Lists, and nested Pie Menus.
                   </p>
                 </div>
                 <span className="mt-8 inline-flex w-fit items-center gap-2 border border-[rgba(199,251,255,.14)] bg-[rgba(0,2,7,.42)] px-4 py-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.16em] text-white transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8">
