@@ -74,14 +74,14 @@ export default function Home() {
                 </span>
               </div>
 
-              <div className="media-panel relative min-h-[300px] overflow-hidden">
+              <div className="media-panel octopie-preview-stage relative min-h-[300px] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${assetBasePath}/plugins/octopie/preview.gif`}
                   alt="OctoPie preview"
-                  className="h-full w-full object-cover opacity-[0.78] saturate-95 contrast-110 transition duration-500 group-hover:scale-[1.012] group-hover:opacity-90"
+                  className="relative z-10 h-full w-full object-cover opacity-[0.92] saturate-105 contrast-105 transition duration-500 group-hover:scale-[1.012] group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/28 via-transparent to-black/18" />
+                <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/14 via-transparent to-black/10" />
               </div>
             </Link>
           </FadeIn>

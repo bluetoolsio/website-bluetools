@@ -397,6 +397,29 @@ body::after {
     box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
   }
 
+  .octopie-preview-stage {
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(159,246,255,.115), transparent 28rem),
+      radial-gradient(ellipse at 50% 58%, rgba(65,223,241,.07), transparent 22rem),
+      linear-gradient(rgba(199,251,255,.038) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(199,251,255,.034) 1px, transparent 1px),
+      linear-gradient(rgba(65,223,241,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(65,223,241,.045) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(12,26,36,.92), rgba(7,17,25,.94));
+    background-size: auto, auto, 24px 24px, 24px 24px, 96px 96px, 96px 96px, auto;
+  }
+
+  .octopie-preview-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(199,251,255,.08), transparent 22%, transparent 78%, rgba(199,251,255,.06)),
+      linear-gradient(180deg, rgba(255,255,255,.035), transparent 34%, rgba(0,0,0,.18));
+    opacity: .62;
+  }
+
   .scrollbar-hidden {
     scrollbar-width: none;
     -ms-overflow-style: none;
