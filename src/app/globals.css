@@ -22,7 +22,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
 
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-read);
+  --font-mono: var(--font-heading);
 }
 
 * {
@@ -41,7 +42,8 @@ body {
     linear-gradient(115deg, rgba(65, 223, 241, 0.045), transparent 26rem),
     linear-gradient(180deg, #00040c 0%, #01050b 48%, #000207 100%);
   color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-read), sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
