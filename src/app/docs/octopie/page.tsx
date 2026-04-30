@@ -193,7 +193,7 @@ export default function DocsPage() {
               <p className="text-lg text-muted-foreground mb-8">
                 OctoPie is a Blender add-on for building fast, customized pie menus from the N-panel. You configure slots, profiles, contexts, scripts, assets, and shortcuts in the sidebar, then launch the finished pie at your cursor with a keyboard shortcut.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-10">
                 <div className="night-card p-5">
                   <p className="text-sm text-muted-foreground mb-2">Pies per editor</p>
                   <p className="text-3xl font-bold">8</p>
@@ -201,10 +201,6 @@ export default function DocsPage() {
                 <div className="night-card p-5">
                   <p className="text-sm text-muted-foreground mb-2">Slots per pie</p>
                   <p className="text-3xl font-bold">8</p>
-                </div>
-                <div className="night-card p-5">
-                  <p className="text-sm text-muted-foreground mb-2">Guide updated</p>
-                  <p className="text-3xl font-bold">Apr 24</p>
                 </div>
               </div>
               <div className="not-prose  border border-cyan-200/18 bg-black/30 p-5 mb-10">
