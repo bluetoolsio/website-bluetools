@@ -2,6 +2,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { plugins } from "@/data/plugins";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 import { PluginBuyDropdown } from "@/components/plugins/PluginPurchaseActions";
@@ -71,7 +72,10 @@ export default function PluginsPage() {
 
                 <div className="mt-auto flex gap-4">
                   <Link href={`/plugins/${plugin.slug}`} className="flex-1">
-                    <Button className="w-full">View Details</Button>
+                    <Button className="w-full gap-2.5">
+                      <ExternalLink className="h-4 w-4 text-cyan-100" />
+                      Open
+                    </Button>
                   </Link>
                   <PluginBuyDropdown
                     size="md"
