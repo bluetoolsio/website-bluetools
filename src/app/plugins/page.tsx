@@ -15,7 +15,7 @@ export const metadata = {
 export default function PluginsPage() {
   return (
     <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="absolute inset-x-4 top-24 -z-10 h-72 rounded-full bg-accent/10 blur-3xl" />
+      <div className="absolute inset-x-4 top-24 -z-10 h-72  bg-black/20" />
       <FadeIn direction="up">
         <div className="mb-16">
           <p className="hud-label mb-4">BlueTools plugins</p>
@@ -32,8 +32,8 @@ export default function PluginsPage() {
             <Card hoverEffect className="flex flex-col h-full night-card">
               <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-white/10 bg-black">
                 {plugin.slug === "octopie" && (
-                  <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-black/60 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-accent backdrop-blur">
-                    <OctoPieLabel iconBoxClassName="h-6 w-6 rounded-md" iconClassName="h-3.5 w-3.5" textClassName="sr-only" />
+                  <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2  border border-cyan-200/20 bg-black/60 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur">
+                    <OctoPieLabel iconBoxClassName="h-6 w-6 " iconClassName="h-3.5 w-3.5" textClassName="sr-only" />
                     OctoPie
                   </div>
                 )}
@@ -61,7 +61,7 @@ export default function PluginsPage() {
                       plugin.name
                     )}
                   </h2>
-                  <span className="text-accent font-semibold">{plugin.price}</span>
+                  <span className="text-cyan-100 font-semibold">{plugin.price}</span>
                 </div>
                 
                 <p className="text-muted-foreground mb-6 flex-grow">

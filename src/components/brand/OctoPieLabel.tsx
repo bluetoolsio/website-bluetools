@@ -36,7 +36,7 @@ export function OctoPieLabel({
     <span className={cn("inline-flex items-center gap-3", className)}>
       <span
         className={cn(
-          "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/20 text-accent",
+          "inline-flex h-10 w-10 shrink-0 items-center justify-center border border-cyan-200/20 bg-black/35 text-cyan-100",
           iconBoxClassName
         )}
       >

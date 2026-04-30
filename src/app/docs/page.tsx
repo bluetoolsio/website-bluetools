@@ -115,9 +115,9 @@ function ReferenceTable({
   rows: string[][];
 }) {
   return (
-    <div className="not-prose overflow-x-auto rounded-lg border border-white/10 mb-8">
+    <div className="not-prose overflow-x-auto  border border-white/10 mb-8">
       <table className="w-full text-left text-sm">
-        <thead className="bg-white/5 text-white">
+        <thead className="bg-black/28 text-white">
           <tr>
             {headers.map((header) => (
               <th key={header} className="px-4 py-3 font-semibold">
@@ -155,7 +155,7 @@ export default function DocsPage() {
                   {group.title === "OctoPie" ? (
                     <OctoPieLabel
                       className="gap-2"
-                      iconBoxClassName="h-6 w-6 rounded-md"
+                      iconBoxClassName="h-6 w-6 "
                       iconClassName="h-3.5 w-3.5"
                       textClassName="normal-case"
                     />
@@ -170,7 +170,7 @@ export default function DocsPage() {
                         href={`#${href}`}
                         className={
                           index === 0 && group.title === "Getting Started"
-                            ? "text-accent font-medium block border-l-2 border-accent pl-3 -ml-[2px]"
+                            ? "text-cyan-100 font-medium block border-l-2 border-accent pl-3 -ml-[2px]"
                             : "text-muted-foreground hover:text-white transition-colors block border-l-2 border-transparent pl-3 -ml-[2px]"
                         }
                       >
@@ -194,20 +194,20 @@ export default function DocsPage() {
                 OctoPie is a Blender add-on for building fast, customized pie menus from the N-panel. You configure slots, profiles, contexts, scripts, assets, and shortcuts in the sidebar, then launch the finished pie at your cursor with a keyboard shortcut.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose mb-10">
-                <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+                <div className=" border border-white/10 bg-black/28 p-5">
                   <p className="text-sm text-muted-foreground mb-2">Pies per editor</p>
                   <p className="text-3xl font-bold">8</p>
                 </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+                <div className=" border border-white/10 bg-black/28 p-5">
                   <p className="text-sm text-muted-foreground mb-2">Slots per pie</p>
                   <p className="text-3xl font-bold">8</p>
                 </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+                <div className=" border border-white/10 bg-black/28 p-5">
                   <p className="text-sm text-muted-foreground mb-2">Guide updated</p>
                   <p className="text-3xl font-bold">Apr 24</p>
                 </div>
               </div>
-              <div className="not-prose rounded-lg border border-accent/20 bg-accent/10 p-5 mb-10">
+              <div className="not-prose  border border-cyan-200/18 bg-black/30 p-5 mb-10">
                 <h2 className="text-white font-semibold mb-2">Core idea</h2>
                 <p className="text-sm text-muted-foreground mb-0">
                   The pie menu is your runtime launcher. All setup and editing happens in the N-panel.
@@ -235,15 +235,15 @@ export default function DocsPage() {
                 The N-panel is split into a header area, a context and profile area, and the slot editor. This keeps editing separate from the runtime pie, so the pie itself stays quick and uncluttered.
               </p>
               <div className="not-prose grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+                <div className=" border border-white/10 bg-black/28 p-5">
                   <h3 className="text-white font-semibold mb-2">Header</h3>
                   <p className="text-sm text-muted-foreground">Preferences, pie selector, shortcut button, and live preview toggle.</p>
                 </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+                <div className=" border border-white/10 bg-black/28 p-5">
                   <h3 className="text-white font-semibold mb-2">Context & Profile</h3>
                   <p className="text-sm text-muted-foreground">Resolved context, Global override, active profile, and profile actions.</p>
                 </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+                <div className=" border border-white/10 bg-black/28 p-5">
                   <h3 className="text-white font-semibold mb-2">Slots</h3>
                   <p className="text-sm text-muted-foreground">Add, expand, move, lock, remove, name, icon, and configure each slot.</p>
                 </div>
@@ -261,7 +261,7 @@ export default function DocsPage() {
                   ["Add slots and test", "Add up to eight slots, set each module and target, then press the shortcut in Blender to test the pie at your cursor."],
                 ].map(([title, body], index) => (
                   <div key={title} className="flex gap-4">
-                    <div className={index === 4 ? "flex-shrink-0 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-bold" : "flex-shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-white"}>
+                    <div className={index === 4 ? "flex-shrink-0 w-8 h-8  bg-accent text-cyan-100-foreground flex items-center justify-center font-bold" : "flex-shrink-0 w-8 h-8  bg-white/10 flex items-center justify-center font-bold text-white"}>
                       {index + 1}
                     </div>
                     <div>
@@ -295,7 +295,7 @@ export default function DocsPage() {
               </p>
               <div className="not-prose flex flex-wrap gap-2 mb-8">
                 {supportedEditors.map((editor) => (
-                  <span key={editor} className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-muted-foreground">
+                  <span key={editor} className=" border border-white/10 bg-black/28 px-3 py-1.5 text-sm text-muted-foreground">
                     {editor}
                   </span>
                 ))}
@@ -332,7 +332,7 @@ export default function DocsPage() {
               <h2 className="text-2xl font-semibold mt-12 mb-4">Action Types Reference</h2>
               <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {actionModules.map(([name, description]) => (
-                  <div key={name} className="rounded-lg border border-white/10 bg-white/5 p-5">
+                  <div key={name} className=" border border-white/10 bg-black/28 p-5">
                     <h3 className="text-white font-semibold mb-2">{name}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
                   </div>
@@ -361,7 +361,7 @@ export default function DocsPage() {
               <p className="text-muted-foreground mb-4">
                 Script slots create or import Python files into OctoPie&apos;s scripts folder. Scripts execute inside Blender with <code>bpy</code> and <code>context</code> available.
               </p>
-              <div className="mt-6 p-6 bg-accent/10 border border-accent/20 rounded-lg">
+              <div className="mt-6 p-6 bg-black/30 border border-cyan-200/18 ">
                 <h3 className="text-white font-semibold mb-2">Script Safety</h3>
                 <p className="text-muted-foreground text-sm mb-0">
                   OctoPie scripts are not sandboxed. Only run scripts you wrote yourself or fully trust.
@@ -378,7 +378,7 @@ export default function DocsPage() {
                   ["Script management", "Create, import, and edit Python scripts directly from OctoPie."],
                   ["Asset actions", "Assign selected Asset Browser items and choose append, append reuse, or link behavior."],
                 ].map(([title, body]) => (
-                  <div key={title} className="rounded-lg border border-white/10 bg-white/5 p-5">
+                  <div key={title} className=" border border-white/10 bg-black/28 p-5">
                     <h3 className="text-white font-semibold mb-2">{title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
                   </div>
@@ -409,7 +409,7 @@ export default function DocsPage() {
               <h2 className="text-2xl font-semibold mt-12 mb-4">Quick Reference</h2>
               <ReferenceTable headers={["If you want to", "Use"]} rows={quickGuide} />
               <ReferenceTable headers={["Control", "Click", "Result"]} rows={clickBehaviors} />
-              <div className="not-prose rounded-lg border border-white/10 bg-white/5 p-5 mb-8">
+              <div className="not-prose  border border-white/10 bg-black/28 p-5 mb-8">
                 <h3 className="text-white font-semibold mb-2">Runtime pie keys</h3>
                 <p className="text-sm text-muted-foreground mb-0">
                   Escape closes the pie without action. Clicking a slot executes that slot. Clicking outside closes the pie.

@@ -17,7 +17,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         whileHover={hoverEffect ? { y: -5 } : undefined}
         transition={{ duration: 0.2 }}
         className={cn(
-          "rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden",
+          "border border-white/10 bg-black/28 backdrop-blur-md overflow-hidden transition-colors hover:border-cyan-200/22",
           className
         )}
         {...props}

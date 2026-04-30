@@ -85,7 +85,7 @@ export default async function PluginPage({
       {/* Plugin Hero */}
       <section className="bat-grid relative overflow-hidden border-b border-white/10 pb-20 pt-24">
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-accent/16 via-background/40 to-background" />
-        <div className="absolute left-1/2 top-20 z-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute left-1/2 top-20 z-0 h-[32rem] w-[32rem] -translate-x-1/2  bg-black/20" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -103,7 +103,7 @@ export default async function PluginPage({
                   {plugin.tagline}
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-8">
-                  <span className="rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-sm font-bold text-accent">v{plugin.version}</span>
+                  <span className=" border border-cyan-200/20 bg-black/30 px-3 py-1 text-sm font-bold text-cyan-100">v{plugin.version}</span>
                   <span className="text-sm text-muted-foreground">Updated {plugin.lastUpdated}</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -111,7 +111,7 @@ export default async function PluginPage({
                     href={plugin.purchaseLinks.superhive}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-lg bg-accent px-5 text-base font-bold text-accent-foreground shadow-lg shadow-accent/25 transition-colors hover:bg-[#ff3659] sm:w-auto sm:min-w-44"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5  bg-accent px-5 text-base font-bold text-cyan-100-foreground  transition-colors hover:bg-[#ff3659] sm:w-auto sm:min-w-44"
                   >
                     <SuperhiveIcon />
                     Superhive
@@ -120,7 +120,7 @@ export default async function PluginPage({
                     href={plugin.purchaseLinks.gumroad}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-lg bg-accent px-5 text-base font-bold text-accent-foreground shadow-lg shadow-accent/25 transition-colors hover:bg-[#ff3659] sm:w-auto sm:min-w-44"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2.5  bg-accent px-5 text-base font-bold text-cyan-100-foreground  transition-colors hover:bg-[#ff3659] sm:w-auto sm:min-w-44"
                   >
                     <GumroadIcon />
                     Gumroad
@@ -135,9 +135,9 @@ export default async function PluginPage({
             </FadeIn>
             
             <FadeIn direction="left" delay={0.2}>
-              <div className="terminal-panel addon-glow group relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl">
+              <div className="terminal-panel addon-glow group relative flex aspect-video items-center justify-center overflow-hidden ">
                 <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="flex h-20 w-20 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-accent/80 shadow-lg shadow-accent/50 backdrop-blur-sm transition-transform group-hover:scale-110">
+                  <div className="flex h-20 w-20 cursor-pointer items-center justify-center  border border-white/20 bg-accent/80  backdrop-blur-sm transition-transform group-hover:scale-110">
                     <Play className="h-8 w-8 text-white ml-1" />
                   </div>
                 </div>
@@ -174,8 +174,8 @@ export default async function PluginPage({
                       : CheckCircle2;
 
                     return (
-                      <div key={index} className="night-card flex gap-4 rounded-2xl p-6">
-                        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/15 text-accent">
+                      <div key={index} className="night-card flex gap-4  p-6">
+                        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center  border border-cyan-200/20 bg-black/35 text-cyan-100">
                           <Icon className="h-4 w-4" />
                         </span>
                         <div>
@@ -194,7 +194,7 @@ export default async function PluginPage({
 
       {plugin.showcase && plugin.showcase.length > 0 ? (
         <section className="relative border-b border-white/10 bg-black/25 py-24">
-          <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[radial-gradient(circle_at_50%_0%,rgba(110,168,255,0.16),transparent_45%)]" />
+          <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[linear-gradient(180deg,rgba(23,183,255,0.045),transparent_72%)]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn direction="up">
               <div className="mb-12 max-w-3xl">

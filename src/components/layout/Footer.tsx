@@ -23,7 +23,7 @@ export default function Footer() {
                 <Link href="/plugins/octopie" className="text-sm text-muted-foreground hover:text-white transition-colors">
                   <OctoPieLabel
                     className="gap-2"
-                    iconBoxClassName="h-6 w-6 rounded-md"
+                    iconBoxClassName="h-6 w-6 "
                     iconClassName="h-3.5 w-3.5"
                   />
                 </Link>
