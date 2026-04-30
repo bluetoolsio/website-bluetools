@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
+import { PluginBuyDropdown } from "@/components/plugins/PluginPurchaseActions";
 
 const assetBasePath = "/website-smartblender";
 
@@ -30,7 +31,7 @@ export default function PluginsPage() {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {plugins.map((plugin, index) => (
           <FadeIn key={plugin.id} direction="up" delay={index * 0.1}>
-            <Card hoverEffect className="flex h-full flex-col night-card">
+            <Card hoverEffect className="flex h-full flex-col overflow-visible night-card">
               <div className="media-panel octopie-preview-stage relative flex aspect-[4/3] items-center justify-center overflow-hidden border-x-0 border-t-0">
                 {plugin.previewImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -72,9 +73,11 @@ export default function PluginsPage() {
                   <Link href={`/plugins/${plugin.slug}`} className="flex-1">
                     <Button className="w-full">View Details</Button>
                   </Link>
-                  <Button variant="outline" className="px-4">
-                    Buy Now
-                  </Button>
+                  <PluginBuyDropdown
+                    size="md"
+                    className="flex-1"
+                    purchaseLinks={plugin.purchaseLinks}
+                  />
                 </div>
               </div>
             </Card>

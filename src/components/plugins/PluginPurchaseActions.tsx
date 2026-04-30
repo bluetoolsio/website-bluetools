@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 import { ChevronDown, FileText, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -55,10 +56,22 @@ function GumroadIcon() {
   );
 }
 
-export function PluginPurchaseActions({
-  docsHref,
+interface PluginBuyDropdownProps {
+  className?: string;
+  menuClassName?: string;
+  purchaseLinks: {
+    superhive: string;
+    gumroad: string;
+  };
+  size?: "md" | "lg";
+}
+
+export function PluginBuyDropdown({
+  className,
+  menuClassName,
   purchaseLinks,
-}: PluginPurchaseActionsProps) {
+  size = "lg",
+}: PluginBuyDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -85,57 +98,69 @@ export function PluginPurchaseActions({
   }, []);
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
-      <div ref={menuRef} className="relative w-full sm:w-44">
-        <Button
-          type="button"
-          size="lg"
-          aria-haspopup="menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((current) => !current)}
-          className="w-full gap-2.5"
-        >
-          <ShoppingCart className="h-5 w-5 text-cyan-100" />
-          Buy
-          <ChevronDown
-            className={`h-4 w-4 text-muted-foreground transition-transform ${isOpen ? "rotate-180" : ""}`}
-          />
-        </Button>
+    <div ref={menuRef} className={cn("relative w-full", className)}>
+      <Button
+        type="button"
+        size={size}
+        aria-haspopup="menu"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((current) => !current)}
+        className="w-full gap-2.5"
+      >
+        <ShoppingCart className="h-5 w-5 text-cyan-100" />
+        Buy
+        <ChevronDown
+          className={`h-4 w-4 text-muted-foreground transition-transform ${isOpen ? "rotate-180" : ""}`}
+        />
+      </Button>
 
-        {isOpen && (
-          <div
-            role="menu"
-            className="absolute left-0 top-[calc(100%+.5rem)] z-40 w-full border border-[rgba(199,251,255,.16)] bg-[rgba(3,8,14,.96)] p-1.5 shadow-[0_18px_45px_rgba(0,0,0,.38),inset_0_1px_0_rgba(255,255,255,.04)] backdrop-blur-xl"
+      {isOpen && (
+        <div
+          role="menu"
+          className={cn(
+            "absolute left-0 top-[calc(100%+.5rem)] z-50 w-full border border-[rgba(199,251,255,.16)] bg-[rgba(3,8,14,.96)] p-1.5 shadow-[0_18px_45px_rgba(0,0,0,.38),inset_0_1px_0_rgba(255,255,255,.04)] backdrop-blur-xl",
+            menuClassName
+          )}
+        >
+          <a
+            role="menuitem"
+            href={purchaseLinks.gumroad}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-11 items-center gap-3 border border-transparent px-3 font-mono text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:border-cyan-200/18 hover:bg-cyan-300/8 hover:text-white"
+            onClick={() => setIsOpen(false)}
           >
-            <a
-              role="menuitem"
-              href={purchaseLinks.superhive}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-11 items-center gap-3 border border-transparent px-3 font-mono text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:border-cyan-200/18 hover:bg-cyan-300/8 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              <span className="flex h-7 w-7 items-center justify-center border border-[rgba(199,251,255,.14)] bg-black/28 text-cyan-100">
-                <SuperhiveIcon />
-              </span>
-              Superhive
-            </a>
-            <a
-              role="menuitem"
-              href={purchaseLinks.gumroad}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-11 items-center gap-3 border border-transparent px-3 font-mono text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:border-cyan-200/18 hover:bg-cyan-300/8 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              <span className="flex h-7 w-7 items-center justify-center border border-[rgba(199,251,255,.14)] bg-black/28 text-cyan-100">
-                <GumroadIcon />
-              </span>
-              Gumroad
-            </a>
-          </div>
-        )}
-      </div>
+            <span className="flex h-7 w-7 items-center justify-center border border-[rgba(199,251,255,.14)] bg-black/28 text-cyan-100">
+              <GumroadIcon />
+            </span>
+            Gumroad
+          </a>
+          <a
+            role="menuitem"
+            href={purchaseLinks.superhive}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-11 items-center gap-3 border border-transparent px-3 font-mono text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:border-cyan-200/18 hover:bg-cyan-300/8 hover:text-white"
+            onClick={() => setIsOpen(false)}
+          >
+            <span className="flex h-7 w-7 items-center justify-center border border-[rgba(199,251,255,.14)] bg-black/28 text-cyan-100">
+              <SuperhiveIcon />
+            </span>
+            Superhive
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function PluginPurchaseActions({
+  docsHref,
+  purchaseLinks,
+}: PluginPurchaseActionsProps) {
+  return (
+    <div className="flex flex-col gap-3 sm:flex-row">
+      <PluginBuyDropdown className="sm:w-44" purchaseLinks={purchaseLinks} />
 
       <Link href={docsHref} className="w-full sm:w-44">
         <Button variant="outline" size="lg" className="w-full gap-2.5">

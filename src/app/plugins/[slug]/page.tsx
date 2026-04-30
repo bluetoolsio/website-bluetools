@@ -41,7 +41,7 @@ export default async function PluginPage({
   return (
     <div className="pb-24">
       {/* Plugin Hero */}
-      <section className="neo-field relative overflow-hidden border-b border-[rgba(199,251,255,.1)] pb-20 pt-12 md:pt-14">
+      <section className="neo-field relative overflow-visible border-b border-[rgba(199,251,255,.1)] pb-20 pt-12 md:pt-14">
         <div className="absolute inset-0 z-0 opacity-[0.08] [background-image:linear-gradient(rgba(199,251,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(65,223,241,.045)_1px,transparent_1px)] [background-size:96px_96px]" />
         <div className="absolute inset-x-0 bottom-0 z-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         
