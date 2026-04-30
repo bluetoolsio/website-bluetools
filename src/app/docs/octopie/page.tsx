@@ -214,14 +214,14 @@ export default function DocsPage() {
             <section id="installation">
               <h2 className="text-2xl font-semibold mt-12 mb-4">Installation & Setup</h2>
               <ol className="list-decimal pl-6 space-y-2 text-muted-foreground mb-8">
-                <li>Download the OctoPie add-on zip or repository.</li>
-                <li>Install it from Blender Preferences &gt; Add-ons, or copy the OctoPie folder into Blender&apos;s add-ons directory.</li>
-                <li>Search for OctoPie and enable the add-on.</li>
-                <li>Open Edit &gt; Preferences &gt; Add-ons &gt; OctoPie and enable the editors where you want the panel to appear.</li>
-                <li>In a supported editor, press <code>N</code> if the sidebar is hidden and open the OctoPie tab.</li>
+                <li>Download the OctoPie .zip file.</li>
+                <li>Open Blender and go to Edit &gt; Preferences &gt; Add-ons.</li>
+                <li>Click Install... and select the downloaded .zip file.</li>
+                <li>Search for OctoPie in the add-ons list and enable it.</li>
+                <li>Open a supported editor, press <code>N</code> if the sidebar is hidden, and go to the OctoPie tab.</li>
               </ol>
               <p className="text-muted-foreground mb-4">
-                The 3D View and Node Editor are enabled by default. Other editors can be toggled in Preferences under Editors & Behaviors.
+                The 3D View are enabled by default. Other supported editors can be enabled in Preferences &gt; Add-ons &gt; OctoPie.
               </p>
             </section>
 
