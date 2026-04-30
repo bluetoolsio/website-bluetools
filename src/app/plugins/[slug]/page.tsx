@@ -88,7 +88,7 @@ export default async function PluginPage({
         <div className="absolute inset-x-0 bottom-0 z-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
             <FadeIn direction="right">
               <div>
                 <p className="hud-label mb-5">Plugin dossier</p>
@@ -134,7 +134,7 @@ export default async function PluginPage({
               </div>
             </FadeIn>
             
-            <FadeIn direction="left" delay={0.2}>
+            <FadeIn direction="left" delay={0.2} className="lg:pt-10">
               <div className="terminal-panel addon-glow group relative flex aspect-video items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <div className="flex h-20 w-20 cursor-pointer items-center justify-center border border-[rgba(199,251,255,.18)] bg-black/45 text-cyan-100 backdrop-blur-sm transition-transform group-hover:scale-105">
