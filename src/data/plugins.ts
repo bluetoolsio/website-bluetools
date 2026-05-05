@@ -17,7 +17,7 @@ export interface PluginData {
   tagline: string;
   description: string;
   price: string;
-  regularPrice: string;
+  discountLabel: string;
   version: string;
   lastUpdated: string;
   features: PluginFeature[];
@@ -39,8 +39,8 @@ export const plugins: PluginData[] = [
     name: 'OctoPie',
     tagline: 'Context-aware pie menus, shortcuts, assets, and scripts for Blender',
     description: 'OctoPie lets you build your own Blender pie menus around the way you work. Create editor- and mode-aware profiles, fill slots with operators, shortcuts, scripts, assets, macros, lists, or nested pies, and keep your most-used actions within one fast gesture.',
-    price: '$20',
-    regularPrice: '$25',
+    price: '$25',
+    discountLabel: '10% off',
     version: '1.0.0',
     lastUpdated: 'April 2026',
     heroImage: '/plugins/octopie/hero.jpg',

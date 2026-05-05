@@ -59,8 +59,8 @@ export default function PluginsPage() {
                     )}
                   </h2>
                   <span className="flex flex-col items-end gap-1 text-right leading-none">
-                    <span className="text-xs font-semibold text-red-300/75 line-through decoration-red-300/60">
-                      {plugin.regularPrice}
+                    <span className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-cyan-100/75">
+                      {plugin.discountLabel}
                     </span>
                     <span className="font-semibold text-cyan-100">{plugin.price}</span>
                   </span>
