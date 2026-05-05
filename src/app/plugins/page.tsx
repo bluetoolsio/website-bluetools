@@ -58,12 +58,7 @@ export default function PluginsPage() {
                       plugin.name
                     )}
                   </h2>
-                  <span className="flex flex-col items-end gap-1 text-right leading-none">
-                    <span className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-cyan-100/75">
-                      {plugin.discountLabel}
-                    </span>
-                    <span className="font-semibold text-cyan-100">{plugin.price}</span>
-                  </span>
+                  <span className="font-semibold text-cyan-100">{plugin.price}</span>
                 </div>
 
                 <p className="section-copy mb-6 flex-grow text-sm">

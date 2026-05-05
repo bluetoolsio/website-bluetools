@@ -61,11 +61,8 @@ export default async function PluginPage({
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 font-mono text-sm font-bold text-cyan-100">v{plugin.version}</span>
-                  <span className="inline-flex flex-col items-end gap-1 border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 leading-none">
-                    <span className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-cyan-100/75">
-                      {plugin.discountLabel}
-                    </span>
-                    <span className="text-sm font-semibold text-cyan-100">{plugin.price}</span>
+                  <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 text-sm font-semibold text-cyan-100">
+                    {plugin.price}
                   </span>
                   <span className="text-sm text-muted-foreground">Updated {plugin.lastUpdated}</span>
                 </div>
@@ -194,12 +191,7 @@ export default async function PluginPage({
                   </li>
                   <li className="flex justify-between gap-4">
                     <span className="text-muted-foreground">Price</span>
-                    <span className="inline-flex flex-col items-end gap-1 leading-none">
-                      <span className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-cyan-100/75">
-                        {plugin.discountLabel}
-                      </span>
-                      <span>{plugin.price}</span>
-                    </span>
+                    <span>{plugin.price}</span>
                   </li>
                 </ul>
               </div>
