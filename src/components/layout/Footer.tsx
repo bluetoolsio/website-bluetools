@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center text-xl text-white">
-              <BlueToolsLogo markClassName="h-8 w-8" wordClassName="text-xl" />
+              <BlueToolsLogo logoClassName="h-9" />
             </Link>
           </div>
           

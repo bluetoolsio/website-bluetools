@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="group inline-flex items-center text-xl text-white">
-              <BlueToolsLogo markClassName="h-8 w-8" wordClassName="text-xl" />
+              <BlueToolsLogo logoClassName="h-9" />
             </Link>
           </div>
           <div className="hidden md:block">

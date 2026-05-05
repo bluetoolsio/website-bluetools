@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   description: "Polished Blender add-ons for context-aware menus, shortcuts, scripts, assets, and faster creative workflows.",
   icons: {
     icon: [
-      { url: "/brand/bluetools-icon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/bluetools-icon.png", type: "image/png" },
     ],
-    apple: [{ url: "/brand/bluetools-icon.png", sizes: "1024x1024", type: "image/png" }],
+    apple: [{ url: "/brand/bluetools-icon.png", type: "image/png" }],
   },
 };
 
