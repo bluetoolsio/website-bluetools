@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 256" role="img" aria-label="BlueTools logo">
+  <rect width="1180" height="256" fill="transparent"/>
+  <g>
+    <rect x="28" y="28" width="200" height="200" fill="none" stroke="#173846" stroke-width="7"/>
+    <rect x="72" y="72" width="112" height="112" fill="none" stroke="#26323a" stroke-width="7"/>
+    <rect x="101" y="101" width="54" height="54" fill="#9ff6ff"/>
+  </g>
+  <text x="310" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="78" font-weight="800" letter-spacing="22" fill="#f4fbff">BLUE</text>
+  <text x="592" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="78" font-weight="800" letter-spacing="22" fill="#41dff1">TOOLS</text>
+</svg>
