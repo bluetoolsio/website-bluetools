@@ -20,6 +20,7 @@ export function BlueToolsLogo({
         width={2500}
         height={368}
         priority
+        unoptimized
         className={cn("h-8 w-auto object-contain", logoClassName)}
       />
       {showTagline && (
