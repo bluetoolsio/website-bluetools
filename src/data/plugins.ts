@@ -48,7 +48,7 @@ export const plugins: PluginData[] = [
     heroVideo: '', // Optional video
     purchaseLinks: {
       superhive: 'https://superhivemarket.com/',
-      gumroad: 'https://gumroad.com/'
+      gumroad: 'https://bluetools.gumroad.com/l/fvynt'
     },
     gallery: [
       '/plugins/octopie/gallery-1.jpg',
