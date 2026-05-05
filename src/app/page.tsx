@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { OctoPieIcon, OctoPieLabel } from "@/components/brand/OctoPieLabel";
 
-const assetBasePath = "/website-smartblender";
+const assetBasePath = "";
 
 export default function Home() {
   return (

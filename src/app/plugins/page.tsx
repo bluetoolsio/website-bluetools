@@ -7,7 +7,7 @@ import Link from "next/link";
 import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 import { PluginBuyDropdown } from "@/components/plugins/PluginPurchaseActions";
 
-const assetBasePath = "/website-smartblender";
+const assetBasePath = "";
 
 export const metadata = {
   title: "Plugins | BlueTools",

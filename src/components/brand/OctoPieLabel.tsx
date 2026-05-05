@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-const assetBasePath = "/website-smartblender";
+const assetBasePath = "";
 
 interface OctoPieIconProps {
   className?: string;

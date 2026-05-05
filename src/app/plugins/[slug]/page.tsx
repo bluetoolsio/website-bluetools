@@ -13,7 +13,7 @@ import { OctoPieLabel } from "@/components/brand/OctoPieLabel";
 import { ShowcaseCarousel } from "@/components/plugins/ShowcaseCarousel";
 import { PluginPurchaseActions } from "@/components/plugins/PluginPurchaseActions";
 
-const assetBasePath = "/website-smartblender";
+const assetBasePath = "";
 
 const featureIcons: Record<string, LucideIcon> = {
   "Build From Scratch": ChartPie,
