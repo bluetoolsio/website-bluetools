@@ -4,7 +4,6 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import {
   ChartPie,
   CheckCircle2,
-  Play,
   Radar,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -78,13 +77,22 @@ export default async function PluginPage({
             </FadeIn>
             
             <FadeIn direction="left" delay={0.2} className="lg:pt-16">
-              <div className="terminal-panel addon-glow group relative flex aspect-video items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="flex h-20 w-20 cursor-pointer items-center justify-center border border-[rgba(199,251,255,.18)] bg-black/45 text-cyan-100 backdrop-blur-sm transition-transform group-hover:scale-105">
-                    <Play className="h-8 w-8 ml-1" />
-                  </div>
-                </div>
-                <span className="section-copy z-10 text-sm">Trailer Video Placeholder</span>
+              <div className="terminal-panel addon-glow relative aspect-video overflow-hidden">
+                {plugin.heroVideo ? (
+                  <iframe
+                    src={plugin.heroVideo}
+                    title={`${plugin.name} demo video`}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                ) : (
+                  <span className="section-copy absolute inset-0 flex items-center justify-center text-sm">
+                    Trailer Video Placeholder
+                  </span>
+                )}
               </div>
             </FadeIn>
           </div>
