@@ -64,7 +64,6 @@ export default async function PluginPage({
                   <span className="border border-[rgba(199,251,255,.16)] bg-black/35 px-3 py-1 text-sm font-semibold text-cyan-100">
                     {plugin.price}
                   </span>
-                  <span className="text-sm text-muted-foreground">Updated {plugin.lastUpdated}</span>
                 </div>
                 <PluginPurchaseActions
                   docsHref={`/docs/${plugin.slug}`}
@@ -180,10 +179,6 @@ export default async function PluginPage({
                   <li className="flex justify-between gap-4">
                     <span className="text-muted-foreground">Version</span>
                     <span>{plugin.version}</span>
-                  </li>
-                  <li className="flex justify-between gap-4">
-                    <span className="text-muted-foreground">Last Updated</span>
-                    <span>{plugin.lastUpdated}</span>
                   </li>
                   <li className="flex justify-between gap-4">
                     <span className="text-muted-foreground">Compatibility</span>
