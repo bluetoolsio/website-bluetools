@@ -45,7 +45,7 @@ export const plugins: PluginData[] = [
     previewImage: '/plugins/octopie/preview.gif',
     heroVideo: 'https://www.youtube.com/embed/u8TsCMp8k2w',
     purchaseLinks: {
-      superhive: 'https://superhivemarket.com/',
+      superhive: 'https://superhivemarket.com/products/octopie',
       gumroad: 'https://bluetools.gumroad.com/l/fvynt'
     },
     gallery: [
