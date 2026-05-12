@@ -20,11 +20,21 @@ Flow:
 
 ## Deploy
 
+Copy the example config first:
+
+```powershell
+Copy-Item cloudflare/community-upload-worker/wrangler.example.toml cloudflare/community-upload-worker/wrangler.toml
+```
+
+Then edit `wrangler.toml` if the bucket name or route should be different.
+
 ```powershell
 npx wrangler deploy --config cloudflare/community-upload-worker/wrangler.toml
 ```
 
 Recommended route: `https://community-upload.bluetools.io/submit`
+
+Until this Worker route exists in Cloudflare DNS, the website cannot upload profiles and will show that the upload service is not live.
 
 If you use another URL, build the site with:
 

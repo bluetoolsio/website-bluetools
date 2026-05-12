@@ -22,6 +22,7 @@ interface ParsedProfile {
 
 const uploadEndpoint =
   process.env.NEXT_PUBLIC_COMMUNITY_UPLOAD_ENDPOINT || "https://community-upload.bluetools.io/submit";
+const defaultUploadEndpoint = "https://community-upload.bluetools.io/submit";
 
 function readString(value: unknown) {
   return typeof value === "string" && value.trim().length > 0 ? value.trim() : "";
@@ -71,10 +72,11 @@ export function OctoPieProfileSubmitter() {
 
       setUploadKey(result.objectKey);
     } catch (caught) {
+      const message = caught instanceof Error ? caught.message : "";
       setError(
-        caught instanceof Error
-          ? caught.message
-          : "Upload failed. Please try again."
+        message.includes("fetch") || message.includes("NetworkError")
+          ? `Upload service is not live yet. Deploy the Cloudflare Worker and route ${defaultUploadEndpoint}.`
+          : message || "Upload failed. Please try again."
       );
     } finally {
       setIsUploading(false);
