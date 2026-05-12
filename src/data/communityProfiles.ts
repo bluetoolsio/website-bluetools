@@ -26,7 +26,7 @@ export const communityPlugins: CommunityPlugin[] = plugins.map((plugin) => ({
   description: `Download approved community profiles for ${plugin.name}, or submit your own setup for review.`,
   submitHref:
     plugin.slug === "octopie"
-      ? "https://github.com/bluetoolsio/website-bluetools/issues/new?template=octopie-profile-submission.md&title=OctoPie%20profile%20submission%3A%20"
+      ? "/community/octopie/submit"
       : "https://github.com/bluetoolsio/website-bluetools/issues/new",
 }));
 

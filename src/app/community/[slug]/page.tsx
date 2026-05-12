@@ -88,8 +88,6 @@ export default async function CommunityPluginPage({
                 </div>
                 <a
                   href={plugin.submitHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex h-11 w-full items-center justify-center gap-2 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-4 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50"
                 >
                   <Upload className="h-4 w-4 text-cyan-100" />
@@ -167,8 +165,6 @@ export default async function CommunityPluginPage({
               </p>
               <a
                 href={plugin.submitHref}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mt-6 inline-flex h-11 items-center justify-center gap-2 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-4 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50"
               >
                 <Upload className="h-4 w-4 text-cyan-100" />

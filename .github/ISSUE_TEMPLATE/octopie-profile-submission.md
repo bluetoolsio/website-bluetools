@@ -8,19 +8,13 @@ assignees: ""
 
 ## Profile
 
-- Profile name:
-- Author name:
-- Short description:
-- OctoPie version:
-- Blender version:
+Use the BlueTools community submitter to parse the `.octopie` manifest automatically:
 
-## Profile JSON
+https://bluetools.io/community/octopie/submit
 
-Attach the exported `.json` file to this issue, or paste the JSON below.
+## Profile File
 
-```json
-
-```
+Attach the exported `.octopie` file to this issue.
 
 ## Notes
 
