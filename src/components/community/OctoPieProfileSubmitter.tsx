@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { CheckCircle2, Clipboard, ExternalLink, FileJson, Upload, XCircle } from "lucide-react";
+import { CheckCircle2, FileJson, Upload, XCircle } from "lucide-react";
 
 interface OctoPieManifest {
   type?: string;
@@ -16,77 +16,74 @@ interface ParsedProfile {
   fileName: string;
   fileSize: number;
   manifest: OctoPieManifest;
+  rawText: string;
   slotCount: number;
 }
 
-const githubIssueBase = "https://github.com/bluetoolsio/website-bluetools/issues/new";
-
-function formatFileSize(bytes: number) {
-  if (bytes < 1024) {
-    return `${bytes} B`;
-  }
-
-  return `${Math.round(bytes / 1024)} KB`;
-}
+const uploadEndpoint =
+  process.env.NEXT_PUBLIC_COMMUNITY_UPLOAD_ENDPOINT || "https://community-upload.bluetools.io/submit";
 
 function readString(value: unknown) {
   return typeof value === "string" && value.trim().length > 0 ? value.trim() : "";
-}
-
-function buildIssueBody(profile: ParsedProfile) {
-  const { manifest } = profile;
-  const manifestJson = JSON.stringify(manifest, null, 2);
-
-  return `## Profile
-
-- Profile name: ${readString(manifest.name) || "Not specified"}
-- Author: ${readString(manifest.author) || "Not specified"}
-- Description: ${readString(manifest.description) || "Not specified"}
-- OctoPie version: ${readString(manifest.octopie_version) || "Not specified"}
-- Blender version: ${readString(manifest.blender_version) || "Not specified"}
-- Slots: ${profile.slotCount}
-- File: ${profile.fileName} (${formatFileSize(profile.fileSize)})
-
-## Profile File
-
-I will attach the parsed \`.octopie\` file to this issue.
-
-## Parsed Manifest
-
-\`\`\`json
-${manifestJson}
-\`\`\`
-
-## Notes
-
-- I confirm this profile is my own work or I have permission to share it.
-- I understand BlueTools may review, edit metadata, or decline the submission before publishing.`;
-}
-
-function getIssueHref(profile: ParsedProfile) {
-  const title = `OctoPie profile submission: ${readString(profile.manifest.name) || profile.fileName}`;
-  const body = buildIssueBody(profile);
-  const params = new URLSearchParams({
-    title,
-    body,
-    labels: "community-profile",
-  });
-
-  return `${githubIssueBase}?${params.toString()}`;
 }
 
 export function OctoPieProfileSubmitter() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [profile, setProfile] = useState<ParsedProfile | null>(null);
   const [error, setError] = useState("");
-  const [copied, setCopied] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadKey, setUploadKey] = useState("");
 
-  const issueHref = useMemo(() => (profile ? getIssueHref(profile) : ""), [profile]);
+  const statusText = useMemo(() => {
+    if (isUploading) {
+      return "Uploading profile";
+    }
+
+    if (uploadKey) {
+      return "Uploaded for review";
+    }
+
+    return profile ? profile.fileName : "Waiting for profile";
+  }, [isUploading, profile, uploadKey]);
+
+  async function uploadProfile(file: File) {
+    setIsUploading(true);
+    setUploadKey("");
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file, file.name);
+
+      const response = await fetch(uploadEndpoint, {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = (await response.json()) as {
+        error?: string;
+        objectKey?: string;
+      };
+
+      if (!response.ok || !result.objectKey) {
+        throw new Error(result.error || "Upload service did not confirm the upload.");
+      }
+
+      setUploadKey(result.objectKey);
+    } catch (caught) {
+      setError(
+        caught instanceof Error
+          ? caught.message
+          : "Upload failed. Please try again."
+      );
+    } finally {
+      setIsUploading(false);
+    }
+  }
 
   async function parseFile(file: File) {
     setError("");
-    setCopied(false);
+    setUploadKey("");
 
     try {
       const text = await file.text();
@@ -108,9 +105,10 @@ export function OctoPieProfileSubmitter() {
         throw new Error("This .octopie file does not look like a profile export.");
       }
 
-      setProfile({
+      const parsedProfile = {
         fileName: file.name,
         fileSize: file.size,
+        rawText: text,
         manifest: {
           type: readString(manifest.type) || "profile",
           name: readString(manifest.name) || readString(data.profile?.name),
@@ -120,20 +118,14 @@ export function OctoPieProfileSubmitter() {
           description: readString(manifest.description),
         },
         slotCount: Array.isArray(data.profile?.slots) ? data.profile.slots.length : 0,
-      });
+      };
+
+      setProfile(parsedProfile);
+      await uploadProfile(file);
     } catch (caught) {
       setProfile(null);
       setError(caught instanceof Error ? caught.message : "Could not read this profile.");
     }
-  }
-
-  async function handleCopy() {
-    if (!profile) {
-      return;
-    }
-
-    await navigator.clipboard.writeText(buildIssueBody(profile));
-    setCopied(true);
   }
 
   return (
@@ -178,17 +170,32 @@ export function OctoPieProfileSubmitter() {
           Drop .octopie profile
         </h2>
         <p className="section-copy mt-3 max-w-xl">
-          The manifest is read in your browser and used for the GitHub submission.
+          The profile is uploaded to the BlueTools review queue. No GitHub step needed.
         </p>
 
         <button
           type="button"
           onClick={() => inputRef.current?.click()}
-          className="mt-7 inline-flex h-11 items-center justify-center gap-2 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-5 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50"
+          disabled={isUploading}
+          className="mt-7 inline-flex h-11 items-center justify-center gap-2 border border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] px-5 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50 disabled:pointer-events-none disabled:opacity-55"
         >
           <FileJson className="h-4 w-4 text-cyan-100" />
-          Choose file
+          {isUploading ? "Uploading..." : "Choose file"}
         </button>
+
+        {isUploading ? (
+          <div className="mt-6 flex items-center gap-2 text-sm text-cyan-100">
+            <Upload className="h-4 w-4" />
+            Uploading to review queue...
+          </div>
+        ) : null}
+
+        {uploadKey ? (
+          <div className="mt-6 flex items-center gap-2 text-sm text-cyan-100">
+            <CheckCircle2 className="h-4 w-4" />
+            Uploaded for review.
+          </div>
+        ) : null}
 
         {error ? (
           <div className="mt-6 flex items-center gap-2 text-sm text-red-200">
@@ -205,10 +212,10 @@ export function OctoPieProfileSubmitter() {
           </span>
           <div>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-white">
-              Parsed Manifest
+              Submission
             </p>
             <p className="text-sm text-muted-foreground">
-              {profile ? profile.fileName : "Waiting for profile"}
+              {statusText}
             </p>
           </div>
         </div>
@@ -231,31 +238,9 @@ export function OctoPieProfileSubmitter() {
           ))}
         </dl>
 
-        <div className="mt-6 grid gap-3">
-          <a
-            href={profile ? issueHref : undefined}
-            aria-disabled={!profile}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex h-11 items-center justify-center gap-2 border px-4 font-mono text-sm font-bold uppercase tracking-[0.12em] transition-colors ${
-              profile
-                ? "border-[rgba(199,251,255,.14)] bg-[rgba(5,9,16,.62)] text-white hover:border-cyan-200/28 hover:bg-cyan-300/8 hover:text-cyan-50"
-                : "pointer-events-none border-white/10 bg-white/5 text-muted-foreground opacity-55"
-            }`}
-          >
-            <ExternalLink className="h-4 w-4 text-cyan-100" />
-            Open GitHub issue
-          </a>
-          <button
-            type="button"
-            disabled={!profile}
-            onClick={() => void handleCopy()}
-            className="inline-flex h-10 items-center justify-center gap-2 border border-transparent px-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:border-[rgba(199,251,255,.14)] hover:bg-cyan-300/7 hover:text-white disabled:pointer-events-none disabled:opacity-55"
-          >
-            <Clipboard className="h-4 w-4" />
-            {copied ? "Copied" : "Copy issue text"}
-          </button>
-        </div>
+        <p className="section-copy mt-6 text-sm">
+          Approved profiles appear here after they are moved into the public community profile folder.
+        </p>
       </div>
     </div>
   );

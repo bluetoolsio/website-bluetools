@@ -1,0 +1,10 @@
+name = "bluetools-community-upload"
+main = "src/index.ts"
+compatibility_date = "2026-05-12"
+
+[vars]
+ALLOWED_ORIGIN = "https://bluetools.io"
+
+[[r2_buckets]]
+binding = "COMMUNITY_UPLOADS"
+bucket_name = "bluetools-community"
