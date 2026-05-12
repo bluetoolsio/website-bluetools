@@ -32,7 +32,9 @@ Then edit `wrangler.toml` if the bucket name or route should be different.
 npx wrangler deploy --config cloudflare/community-upload-worker/wrangler.toml
 ```
 
-Recommended route: `https://community-upload.bluetools.io/submit`
+Current route: `https://bluetools-community-upload.magnus-884.workers.dev/submit`
+
+Optional custom route later: `https://community-upload.bluetools.io/submit`
 
 Until this Worker route exists in Cloudflare DNS, the website cannot upload profiles and will show that the upload service is not live.
 
