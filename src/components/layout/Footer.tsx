@@ -37,6 +37,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/community" className="text-sm text-muted-foreground hover:text-white transition-colors">
+                  Community
+                </Link>
+              </li>
+              <li>
                 <Link href="/report-bug" className="text-sm text-muted-foreground hover:text-white transition-colors">
                   Report a Bug
                 </Link>

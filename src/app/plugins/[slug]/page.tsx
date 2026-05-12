@@ -197,6 +197,7 @@ export default async function PluginPage({
                 <h3 className="font-semibold mb-4">Support</h3>
                 <div className="space-y-3 flex flex-col">
                   <Link href={`/docs/${plugin.slug}`} className="text-sm text-muted-foreground hover:text-white transition-colors">Documentation</Link>
+                  <Link href={`/community/${plugin.slug}`} className="text-sm text-muted-foreground hover:text-white transition-colors">Community Profiles</Link>
                   <Link href="/report-bug" className="text-sm text-muted-foreground hover:text-white transition-colors">Report an Issue</Link>
                   <Link href="#" className="text-sm text-muted-foreground hover:text-white transition-colors">Contact Support</Link>
                 </div>

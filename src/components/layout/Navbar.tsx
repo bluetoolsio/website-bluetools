@@ -21,6 +21,7 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link href="/plugins" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Plugins</Link>
               <Link href="/docs" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Docs</Link>
+              <Link href="/community" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-white">Community</Link>
               <Link href="/report-bug" className=" border border-cyan-200/18 bg-black/30 px-3 py-1.5 text-sm font-semibold text-cyan-100 transition-colors hover:bg-black/35 hover:text-white">Report Bug</Link>
             </div>
           </div>
@@ -40,6 +41,7 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/plugins" onClick={() => setIsOpen(false)} className="block px-3 py-2  text-base font-medium hover:bg-black/28">Plugins</Link>
             <Link href="/docs" onClick={() => setIsOpen(false)} className="block px-3 py-2  text-base font-medium hover:bg-black/28">Docs</Link>
+            <Link href="/community" onClick={() => setIsOpen(false)} className="block px-3 py-2  text-base font-medium hover:bg-black/28">Community</Link>
             <Link href="/report-bug" onClick={() => setIsOpen(false)} className="block px-3 py-2  text-base font-medium hover:bg-black/28">Report Bug</Link>
           </div>
         </div>
