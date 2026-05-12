@@ -12,6 +12,9 @@ interface R2Bucket {
 interface Env {
   COMMUNITY_UPLOADS: R2Bucket;
   ALLOWED_ORIGIN?: string;
+  GITHUB_TOKEN?: string;
+  GITHUB_REPO?: string;
+  GITHUB_LABELS?: string;
 }
 
 interface OctoPieManifest {
@@ -31,7 +34,9 @@ interface OctoPieProfileFile {
   };
 }
 
-const MAX_FILE_BYTES = 512 * 1024;
+const MAX_FILE_BYTES = 1024 * 1024;
+const DEFAULT_REPO = "bluetoolsio/website-bluetools";
+const DEFAULT_LABELS = ["community-profile", "octopie"];
 
 function jsonResponse(data: unknown, status = 200, origin = "*") {
   return new Response(JSON.stringify(data), {
@@ -68,6 +73,92 @@ function getCorsOrigin(request: Request, env: Env) {
   return allowed.includes(requestOrigin) ? requestOrigin : allowed[0] || "*";
 }
 
+function getLabels(env: Env) {
+  return (env.GITHUB_LABELS || DEFAULT_LABELS.join(","))
+    .split(",")
+    .map((label) => label.trim())
+    .filter(Boolean);
+}
+
+function buildIssueBody({
+  fileName,
+  fileSize,
+  manifest,
+  objectKey,
+  slotCount,
+  submittedAt,
+}: {
+  fileName: string;
+  fileSize: number;
+  manifest: Required<OctoPieManifest>;
+  objectKey: string;
+  slotCount: number;
+  submittedAt: string;
+}) {
+  return `## OctoPie Profile Submission
+
+- Profile name: ${manifest.name || "Not specified"}
+- Author: ${manifest.author || "Not specified"}
+- Description: ${manifest.description || "Not specified"}
+- OctoPie version: ${manifest.octopie_version || "Not specified"}
+- Blender version: ${manifest.blender_version || "Not specified"}
+- Slots: ${slotCount}
+- Original file: ${fileName} (${Math.round(fileSize / 1024)} KB)
+- Submitted: ${submittedAt}
+
+## R2 Location
+
+\`${objectKey}\`
+
+In Cloudflare, open the \`bluetools-community\` R2 bucket, then browse:
+
+\`pending/octopie/\`
+
+Download this file, review it, and if approved move/copy it into:
+
+\`public/community/octopie/profiles/\`
+
+Then rebuild and publish the website.`;
+}
+
+async function createGitHubIssue({
+  env,
+  body,
+  title,
+}: {
+  env: Env;
+  body: string;
+  title: string;
+}) {
+  if (!env.GITHUB_TOKEN) {
+    return null;
+  }
+
+  const repo = env.GITHUB_REPO || DEFAULT_REPO;
+  const response = await fetch(`https://api.github.com/repos/${repo}/issues`, {
+    method: "POST",
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      "Content-Type": "application/json",
+      "User-Agent": "bluetools-community-upload-worker",
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+    body: JSON.stringify({
+      title,
+      body,
+      labels: getLabels(env),
+    }),
+  });
+
+  if (!response.ok) {
+    const details = await response.text();
+    throw new Error(`GitHub issue creation failed: ${response.status} ${details}`);
+  }
+
+  return response.json() as Promise<{ html_url: string; number: number }>;
+}
+
 async function handleSubmit(request: Request, env: Env) {
   const origin = getCorsOrigin(request, env);
   const formData = await request.formData();
@@ -78,7 +169,7 @@ async function handleSubmit(request: Request, env: Env) {
   }
 
   if (file.size > MAX_FILE_BYTES) {
-    return jsonResponse({ error: "Profile is too large. Maximum size is 512 KB." }, 413, origin);
+    return jsonResponse({ error: "Profile is too large. Maximum size is 1 MB." }, 413, origin);
   }
 
   const text = await file.text();
@@ -130,9 +221,33 @@ async function handleSubmit(request: Request, env: Env) {
     },
   });
 
+  let issue: { html_url: string; number: number } | null = null;
+  let issueError = "";
+
+  try {
+    issue = await createGitHubIssue({
+      env,
+      title: `OctoPie profile submission: ${manifest.name}`,
+      body: buildIssueBody({
+        fileName: file.name,
+        fileSize: file.size,
+        manifest,
+        objectKey,
+        slotCount,
+        submittedAt,
+      }),
+    });
+  } catch (error) {
+    issueError = error instanceof Error ? error.message : "GitHub issue creation failed.";
+  }
+
   return jsonResponse(
     {
       objectKey,
+      issueCreated: Boolean(issue),
+      issueError,
+      issueNumber: issue?.number,
+      issueUrl: issue?.html_url,
       manifest,
       slotCount,
     },

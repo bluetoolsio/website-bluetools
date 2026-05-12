@@ -4,6 +4,8 @@ compatibility_date = "2026-05-12"
 
 [vars]
 ALLOWED_ORIGIN = "https://bluetools.io"
+GITHUB_REPO = "bluetoolsio/website-bluetools"
+GITHUB_LABELS = "community-profile,octopie"
 
 [[r2_buckets]]
 binding = "COMMUNITY_UPLOADS"
